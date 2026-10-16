@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://hosiinabaszadeh84.github.io/hakem-zehn-website/sitemap.xml
