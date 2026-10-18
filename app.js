@@ -66,6 +66,24 @@
     });
   });
   document.getElementById('year').textContent = new Intl.NumberFormat('fa', {useGrouping: false}).format(new Date().getFullYear());
+  const needs = {
+    begin: {kicker:'شروعِ قابل انجام', title:'لازم نیست تمام مسیر را امروز بروی.', description:'اولین قدم می‌تواند شناختن یک محرک، نوشتن حال امروز یا خواندن یک بخش کوتاه باشد. مسیر ۲۰ هفته‌ای و ثبت روزانه، به تصمیم تو شکل مشخص‌تری می‌دهند.', tool:'همراه تو: مسیر مرحله‌ای و ثبت روزانه', link:'مسیر را ببین', href:'#journey'},
+    pause: {kicker:'فضایی برای مکث', title:'همین لحظه، برای خودت کمی فاصله بساز.', description:'برای چند لحظه از موقعیت فاصله بگیر. بخش SOS با تمرین تنفس و ابزارهای آرام‌سازی در دسترس توست. همین‌جا هم می‌توانی یک مکث کوتاه را امتحان کنی.', tool:'همراه تو: SOS و تمرین تنفس', link:'یک مکث را امتحان کن', href:'#calm-title'},
+    return: {kicker:'فرصت دوباره برای ادامه', title:'تجربهٔ امروز، تمام داستان تو نیست.', description:'به‌جای سرزنش، ببین چه اتفاقی افتاد: کجا بودی و چه احساسی داشتی؟ ثبت تجربه و مرور روندها کمک می‌کند برای موقعیت بعدی، قدم مشخص‌تری انتخاب کنی.', tool:'همراه تو: ثبت روزانه و مرور روندها', link:'ابزارها را از نزدیک ببین', href:'#experience'}
+  };
+  document.querySelectorAll('[data-need]').forEach(button => {
+    button.addEventListener('click', () => {
+      const choice = needs[button.dataset.need];
+      if (!choice) return;
+      document.querySelectorAll('[data-need]').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+      for (const key of ['kicker','title','description','tool']) document.getElementById('need-' + key).textContent = choice[key];
+      const link = document.getElementById('need-link');
+      link.href = choice.href;
+      link.replaceChildren(document.createTextNode(choice.link + ' '));
+      const arrow = document.createElement('span');
+      arrow.setAttribute('aria-hidden', 'true'); arrow.textContent = '←'; link.append(arrow);
+    });
+  });
   // The official store URL is intentionally absent until supplied by the owner.
   let storeUrl;
   try {
