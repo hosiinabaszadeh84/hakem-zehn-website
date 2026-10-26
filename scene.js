@@ -100,6 +100,8 @@
     draw();
   },undefined,()=>{host.dataset.modelLoaded='fallback';});
   host.classList.add('is-ready');
+  host.setAttribute('aria-label','مدل سه‌بعدی تعاملی مغز؛ با کشیدن افقی یا کلیدهای جهت آن را بچرخانید.');
+  document.querySelector('.scene-modes').hidden=false;
   hint.textContent='بکش و بچرخان';
   motion.hidden=false;reset.hidden=false;
   let angleX=.12, angleY=.55, dragging=false, previousX=0,previousY=0;
@@ -161,6 +163,6 @@
   new IntersectionObserver(entries=>{inView=entries[0].isIntersecting;if(inView){draw();schedule();}else stop();},{threshold:.05}).observe(host);
   document.addEventListener('visibilitychange',()=>{if(document.hidden)stop();else schedule();});
   reduced.addEventListener('change',event=>{if(event.matches){paused=true;updateMotion();}});
-  renderer.domElement.addEventListener('webglcontextlost',event=>{event.preventDefault();paused=true;stop();host.classList.remove('is-ready');hint.textContent='فضای شخصیِ یک شروع تازه';motion.hidden=true;reset.hidden=true;});
+  renderer.domElement.addEventListener('webglcontextlost',event=>{event.preventDefault();paused=true;stop();host.classList.remove('is-ready');hint.textContent='فضای شخصیِ یک شروع تازه';motion.hidden=true;reset.hidden=true;document.querySelector('.scene-modes').hidden=true;});
   updateMotion();draw();
 })();
