@@ -46,3 +46,10 @@ Property: `https://hosiinabaszadeh84.github.io/hakem-zehn-website/` از نوع 
 - درخواست ایندکس خانه پذیرفته شده؛ اقدام فوری دیگری برای ارسال همان URL لازم نیست. وضعیت Google Index و گزارش Sitemap را در نوبت پایش بعدی بررسی کن.
 - پس از پذیرش درخواست، آن را برای تغییر یکسان مکرر تکرار نکن. ایندکس‌شدن و رتبه در اختیار تصمیم‌های گوگل است و بعداً جداگانه بررسی می‌شود.
 - Google Indexing API عمومی به کار نرفته است. [راهنمای رسمی شروع Search Console](https://developers.google.com/search/docs/monitor-debug/search-console-start).
+
+## بررسی ۸ نوامبر ۲۰۲۶
+
+- سایت‌مپ همچنان `Couldn't fetch` / ‏`Sitemap could not be read`؛ ثبت‌شده ۲۶ اکتبر، آخرین خواندن ۲۶ اکتبر، صفحات کشف‌شده: ۰. دلیل دقیق از طرف گوگل نمایش داده نشد. فایل از بیرون HTTP 200 با `Content-Type: application/xml` و XML معتبر دارد؛ علت قطعی سمت گوگل مشخص نیست.
+- گزارش Pages هنوز `Processing data, please check again in a day or so`؛ عملکرد جستجو در ۲۸ روز گذشته: ۰ کلیک / ۰ نمایش.
+- سه صفحهٔ تازه (relapse.html ،tark-khod-arzaei-eslam.html ،porn-brain.html) پیش از درخواست، `URL is not on Google` و `URL is unknown to Google` بودند؛ تست زنده موفق و درخواست ایندکس هر سه پذیرفته شد: `Indexing requested`. پذیرش به معنی ایندکس‌شدن نیست.
+- اقدام بعدی: بررسی دوبارهٔ وضعیت سایت‌مپ و ایندکس صفحات چند روز دیگر؛ در صورت باقی‌ماندن خطای سایت‌مپ، حذف و ارسال دوبارهٔ همان سایت‌مپ به‌روز (۱۱ URL) را امتحان کن.
