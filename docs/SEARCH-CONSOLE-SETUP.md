@@ -53,3 +53,12 @@ Property: `https://hosiinabaszadeh84.github.io/hakem-zehn-website/` از نوع 
 - گزارش Pages هنوز `Processing data, please check again in a day or so`؛ عملکرد جستجو در ۲۸ روز گذشته: ۰ کلیک / ۰ نمایش.
 - سه صفحهٔ تازه (relapse.html ،tark-khod-arzaei-eslam.html ،porn-brain.html) پیش از درخواست، `URL is not on Google` و `URL is unknown to Google` بودند؛ تست زنده موفق و درخواست ایندکس هر سه پذیرفته شد: `Indexing requested`. پذیرش به معنی ایندکس‌شدن نیست.
 - اقدام بعدی: بررسی دوبارهٔ وضعیت سایت‌مپ و ایندکس صفحات چند روز دیگر؛ در صورت باقی‌ماندن خطای سایت‌مپ، حذف و ارسال دوبارهٔ همان سایت‌مپ به‌روز (۱۱ URL) را امتحان کن.
+
+## مهاجرت به hakemzehn.ir — ۹ نوامبر ۲۰۲۶
+
+پراپرتی URL-prefix قدیمی (`hosiinabaszadeh84.github.io/hakem-zehn-website/`) کنار گذاشته شد؛ همهٔ بررسی‌های بعدی روی پراپرتی تازه است.
+
+- پراپرتی تازه: Domain از نوع `hakemzehn.ir`؛ مالکیت با رکورد DNS TXT در پنل آروان تأیید شد (`Ownership verified`). فایل قدیمی `google511fb0de5f6155d4.html` در ریپو مانده و حذف نشده است.
+- سایت‌مپ تازه: `https://hakemzehn.ir/sitemap.xml` ارسال شد؛ وضعیت `Sitemap processed successfully`، آخرین خوانش ۹ نوامبر ۲۰۲۶، **۱۱ صفحه کشف‌شده** (برخلاف پراپرتی قدیمی که همیشه `Couldn't fetch` بود).
+- درخواست ایندکس (URL Inspection) برای چهار URL ثبت شد — `Indexing requested` برای هر چهارتا؛ پیش از درخواست: خانه و tark-khod-arzaei-eslam.html ‏`URL is unknown to Google`، و relapse.html و porn-brain.html ‏`Discovered - currently not indexed`. در زمان بازرسی هیچ‌کدام هنوز ایندکس نشده بودند.
+- پایش بعدی: پنجشنبه ۲۲ آبان (۱۲ نوامبر) حدود ۱۰:۳۸ — وضعیت ایندکس، سایت‌مپ و Queryها روی پراپرتی Domain تازه.
