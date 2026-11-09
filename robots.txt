@@ -1,6 +1,3 @@
-# Informational only: this project-subdirectory file is not the host robots policy.
-# The effective location is https://hosiinabaszadeh84.github.io/robots.txt
-# Submit the sitemap directly in the verified URL-prefix Search Console property.
 User-agent: *
 Allow: /
-Sitemap: https://hosiinabaszadeh84.github.io/hakem-zehn-website/sitemap.xml
+Sitemap: https://hakemzehn.ir/sitemap.xml
