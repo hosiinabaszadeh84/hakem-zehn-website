@@ -227,3 +227,15 @@
   .quick-dock-links{gap:6px}
   .quick-dock-link{padding:6px 11px;font-size:11px}
 }
+/* Inline visual app proof inside editorial guides */
+.editorial-media{display:grid;grid-template-columns:190px minmax(0,1fr);gap:24px;align-items:center;margin-block:24px;padding:20px 24px;border:1px solid #2b4552;border-radius:20px;background:radial-gradient(ellipse at 100% 0,#72d8db12,transparent 60%),#0c1822}
+.editorial-media-frame{margin:0;padding:8px;border:1px solid #3c5966;border-radius:22px;background:#081119;box-shadow:0 14px 35px #0006;justify-self:center;width:100%;max-width:190px}
+.editorial-media-frame img{width:100%;height:auto;border-radius:15px}
+.editorial-media-copy{display:flex;flex-direction:column;gap:10px}
+.editorial-media-copy .eyebrow{margin-bottom:0;color:var(--cyan);font-size:10px}
+.editorial-media-copy h3{margin:0;font-size:18px;color:var(--ink);line-height:1.55}
+.editorial-media-copy p{margin:0;font-size:13px;line-height:2;color:#b8c7d0}
+@media(max-width:760px){
+  .editorial-media{grid-template-columns:1fr;padding:18px;gap:16px}
+  .editorial-media-frame{max-width:170px}
+}
