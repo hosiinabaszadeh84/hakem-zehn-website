@@ -4,40 +4,38 @@
   const trigger = document.getElementById('scene-load');
   if (!host || !trigger) return;
   const hint = document.getElementById('scene-hint');
-  const connection = navigator.connection;
-  const lightweight = matchMedia('(max-width: 760px)').matches || connection?.saveData || ['slow-2g','2g'].includes(connection?.effectiveType) || (navigator.deviceMemory && navigator.deviceMemory <= 2);
   let loading = false;
-  host.setAttribute('aria-label','نمای مغز حاکم ذهن؛ برای فعال‌کردن مدل سه‌بعدی از دکمهٔ نمایش یا کلید Enter استفاده کنید.');
-  trigger.textContent = 'تعامل ۳۶۰°';
-  trigger.hidden = false;
-  const script = src => new Promise((resolve,reject) => {
+
+  const loadScript = src => new Promise((resolve, reject) => {
     const element = document.createElement('script');
-    element.src = src; element.onload = resolve; element.onerror = reject;
+    element.src = src;
+    element.onload = resolve;
+    element.onerror = reject;
     document.head.append(element);
   });
-  async function load() {
-    if (loading) return;
-    loading = true; trigger.disabled = true; trigger.textContent = 'در حال آماده‌سازی مدل…';
+
+  async function activate3D() {
+    if (loading || host.classList.contains('is-ready')) return;
+    loading = true;
+    trigger.disabled = true;
+    trigger.textContent = 'در حال آماده‌سازی…';
     try {
-      await script('assets/vendor/three.min.js');
-      await script('assets/vendor/GLTFLoader.js');
-      await script('scene.js');
+      await loadScript('assets/vendor/three.min.js');
+      await loadScript('assets/vendor/GLTFLoader.js');
+      await loadScript('scene.js');
       trigger.hidden = true;
-      if (!host.classList.contains('is-ready')) hint.textContent = 'نمای سبک؛ مدل سه‌بعدی در این مرورگر در دسترس نیست.';
     } catch (_) {
-      // Keep the brand poster and readable content when the network or WebGL fails.
       trigger.hidden = true;
-      hint.textContent = 'نمای سبک؛ مدل سه‌بعدی در دسترس نیست.';
+      if (hint) hint.textContent = 'نمایش پایدار مغز حاکم ذهن';
       host.dataset.modelLoaded = 'unavailable';
     }
   }
-  trigger.addEventListener('click', load);
-  host.addEventListener('keydown', event => {if(event.key === 'Enter' || event.key === ' ') {event.preventDefault();load();}});
-  if (lightweight) {hint.textContent = 'مدل سه‌بعدی مغز؛ برای چرخش لمسی ۳۶۰° بزنید';return;}
-  new IntersectionObserver((entries, observer) => {
-    if (!entries.some(entry=>entry.isIntersecting)) return;
-    observer.disconnect();
-    if ('requestIdleCallback' in window) requestIdleCallback(load,{timeout:2500});
-    else setTimeout(load,500);
-  },{rootMargin:'0px',threshold:.1}).observe(host);
+
+  trigger.addEventListener('click', activate3D);
+  host.addEventListener('keydown', event => {
+    if (!host.classList.contains('is-ready') && (event.key === 'Enter' || event.key === ' ')) {
+      event.preventDefault();
+      activate3D();
+    }
+  });
 })();
