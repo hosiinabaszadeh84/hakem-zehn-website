@@ -67,9 +67,9 @@
   });
   document.getElementById('year').textContent = new Intl.NumberFormat('fa', {useGrouping: false}).format(new Date().getFullYear());
   const needs = {
-    begin: {kicker:'شروعِ قابل انجام', title:'لازم نیست تمام مسیر را امروز بروی.', description:'اولین قدم می‌تواند شناختن یک محرک، نوشتن حال امروز یا خواندن یک بخش کوتاه باشد. مسیر ۲۰ هفته‌ای و ثبت روزانه، به تصمیم تو شکل مشخص‌تری می‌دهند.', tool:'همراه تو: مسیر مرحله‌ای و ثبت روزانه', link:'مسیر را ببین', href:'#journey'},
-    pause: {kicker:'فضایی برای مکث', title:'همین لحظه، برای خودت کمی فاصله بساز.', description:'برای چند لحظه از موقعیت فاصله بگیر. بخش SOS با تمرین تنفس و ابزارهای آرام‌سازی در دسترس توست. همین‌جا هم می‌توانی یک مکث کوتاه را امتحان کنی.', tool:'همراه تو: SOS و تمرین تنفس', link:'یک مکث را امتحان کن', href:'#calm-title'},
-    return: {kicker:'فرصت دوباره برای ادامه', title:'تجربهٔ امروز، تمام داستان تو نیست.', description:'به‌جای سرزنش، ببین چه اتفاقی افتاد: کجا بودی و چه احساسی داشتی؟ ثبت تجربه و مرور روندها کمک می‌کند برای موقعیت بعدی، قدم مشخص‌تری انتخاب کنی.', tool:'همراه تو: ثبت روزانه و مرور روندها', link:'ابزارها را از نزدیک ببین', href:'#experience'}
+    begin: {kicker:'شروعِ قابل انجام', title:'لازم نیست تمام مسیر را امروز بروی.', description:'اولین قدم می‌تواند شناختن یک محرک، خواندن گام اول روش آسان یا جداکردن ثبت پورن و خودارضایی باشد. مسیر ۲۰ هفته‌ای و ثبت روزانه، به تصمیم تو شکل مشخص‌تری می‌دهند.', tool:'همراه تو: مسیر مرحله‌ای و ثبت روزانه', link:'راهنمای عملی ترک را ببین', href:'tark-porn.html'},
+    pause: {kicker:'فضایی برای مکث', title:'همین لحظه، برای خودت کمی فاصله بساز.', description:'برای چند دقیقه از موقعیت فاصله بگیر. بخش SOS با تمرین تنفس و ابزارهای آرام‌سازی در دسترس توست. همین‌جا هم می‌توانی یک مکث کوتاه را امتحان کنی.', tool:'همراه تو: SOS و تمرین تنفس', link:'یک مکث را امتحان کن', href:'#calm-title'},
+    return: {kicker:'فرصت دوباره برای ادامه', title:'یک لغزش، تمام مسیر تو را صفر نمی‌کند.', description:'به‌جای سرزنش، ببین چه اتفاقی افتاد: کجا بودی و چه احساسی داشتی؟ ثبت تجربه و راهنمای ساعت اول پس از لغزش کمک می‌کند دوباره و سبک‌تر ادامه بدهی.', tool:'همراه تو: ثبت جداگانه و راهنمای بازگشت', link:'بعد از لغزش چه کنم؟', href:'relapse.html'}
   };
   document.querySelectorAll('[data-need]').forEach(button => {
     button.addEventListener('click', () => {
@@ -84,7 +84,6 @@
       arrow.setAttribute('aria-hidden', 'true'); arrow.textContent = '←'; link.append(arrow);
     });
   });
-  // The official store URL is intentionally absent until supplied by the owner.
   let storeUrl;
   try {
     const url = new URL(window.HAKEM_SITE?.myketUrl || '');
@@ -95,8 +94,11 @@
       link.href=storeUrl;link.target='_blank';link.rel='noopener noreferrer';
       link.removeAttribute('aria-disabled');link.removeAttribute('tabindex');
     });
-    document.querySelector('[data-myket-label]').textContent='دریافت از مایکت';
-    document.querySelector('[data-store-note]').textContent='دریافت و به‌روزرسانی از صفحهٔ رسمی حاکم ذهن در مایکت.';
+    document.querySelectorAll('[data-myket-label]').forEach(label=>{
+      if (!label.textContent.trim()) label.textContent='دریافت رایگان از مایکت';
+    });
+    const note = document.querySelector('[data-store-note]');
+    if (note) note.textContent='دریافت و به‌روزرسانی فقط از صفحهٔ رسمی حاکم ذهن در مایکت.';
   }
   const breathButton=document.getElementById('breath-toggle');
   const breathLabel=document.getElementById('breath-label');
