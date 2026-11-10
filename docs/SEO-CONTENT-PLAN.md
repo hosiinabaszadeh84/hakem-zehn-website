@@ -41,3 +41,12 @@
 ## توسعهٔ آبان ۱۴۰۵ — ۸ نوامبر ۲۰۲۶
 
 بر اساس تحقیق کلمات کلیدی و رقبا (۸ نوامبر): سه صفحهٔ تازه ساخته شد — `relapse.html` (لغزش بعد از ترک؛ رقابت متوسط، خلأ رقبا)، `tark-khod-arzaei-eslam.html` (زاویهٔ دینی؛ مزیت طلبه)، `porn-brain.html` (تاثیر پورن بر مغز؛ رد باورهای غلط با منبع). هر صفحه FAQ با FAQPage Schema، لینک داخلی به ۲ تا ۳ صفحهٔ دیگر، و منابع Mayo Clinic / Kraus ۲۰۱۸ / WHO دارد. صفحات بعدیِ پیشنهادی به ترتیب: `tark-porn.html`، `tark-khod-arzaei.html`، `avarze-khod-arzaei.html`، `khod-arzaei-zanan.html`، `tark-nojavanan.html` — فقط پس از ایندکس‌شدنِ سه صفحهٔ اول و بررسی Queryهای واقعی در Search Console.
+
+## ارتقای ساختاری و رفع هم‌پوشانی — ۱۰ نوامبر ۲۰۲۶
+
+- هر پنج راهنمای بعدی (`tark-porn.html`، `tark-khod-arzaei.html`، `avarze-khod-arzaei.html`، `khod-arzaei-zanan.html`، `tark-nojavanan.html`) روی `main` تکمیل و در `sitemap.xml` ۱۶ صفحه‌ای ثبت شدند.
+- تکرارهای متنی میان صفحات (تا ۱۹ پاراگراف `<p>` مشترک قبلی بین راهنماهای خودارضایی، زنان، نوجوانان و پورن) بازنویسی و مرزبندی شدند تا هر صفحه برای قصد جست‌وجوی مشخص خودش یکتا بماند: `tark-porn.html` (روش آسان + ترک سریع دسترسی دیجیتال)، `tark-khod-arzaei.html` (عادت تخت/تنهایی + نقشهٔ ۴ هفته‌ای)، `avarze-khod-arzaei.html` (تفکیک عوارض خودارضایی و عوارض پورن از شایعات)، `start.html` (۴۸ ساعت اول) و `habits.html` (مرز علمی ICD-11).
+- صفحهٔ اصلی (`/`) اکنون مستقیماً به همهٔ راهنماهای ستون اصلی لینک داخلی می‌دهد و صفحهٔ `triggers.html` به‌عنوان اولین صفحهٔ ایندکس‌شده مسیر هدایت به راهنماهای تازه و مایکت را پوشش می‌دهد.
+- `privacy.html` و `features.html` با کد نسخهٔ ۱.۸ (`PurchaseVerificationClient.kt`: تأیید محلی رسید مایکت بدون ارسال به سرور واسط) همگام شدند.
+
+بر اساس تحقیق کلمات کلیدی و رقبا (۸ نوامبر): سه صفحهٔ تازه ساخته شد — `relapse.html` (لغزش بعد از ترک؛ رقابت متوسط، خلأ رقبا)، `tark-khod-arzaei-eslam.html` (زاویهٔ دینی؛ مزیت طلبه)، `porn-brain.html` (تاثیر پورن بر مغز؛ رد باورهای غلط با منبع). هر صفحه FAQ با FAQPage Schema، لینک داخلی به ۲ تا ۳ صفحهٔ دیگر، و منابع Mayo Clinic / Kraus ۲۰۱۸ / WHO دارد. صفحات بعدیِ پیشنهادی به ترتیب: `tark-porn.html`، `tark-khod-arzaei.html`، `avarze-khod-arzaei.html`، `khod-arzaei-zanan.html`، `tark-nojavanan.html` — فقط پس از ایندکس‌شدنِ سه صفحهٔ اول و بررسی Queryهای واقعی در Search Console.

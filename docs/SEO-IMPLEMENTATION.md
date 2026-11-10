@@ -76,3 +76,10 @@ Schema Markup Validator رسمی برای خانه و `start.html` صفر خطا
 مخزن عمومی لینک Website نداشت. فیلد Homepage با نشانی Canonical واقعی و Description با توضیح صادقانهٔ فارسی محصول تکمیل شد؛ تغییر پس از اجرا از GitHub بازخوانی شد. این یک مسیر کشف واقعی است، نه بک‌لینک خریداری‌شده یا تضمین رتبه.
 
 آخرین وضعیت مستقل گوگل در `SEARCH-CONSOLE-SETUP.md` ثبت شده است: مالکیت تأیید، تست زندهٔ خانه و دریافت فایل Sitemap موفق و درخواست ایندکس خانه پذیرفته شد. پیام `Indexing requested` پس از اقدام مالک مستقیماً در مرورگر تأیید و ذخیره شد. گزارش پردازش Sitemap هنوز خطا دارد. ایندکس‌شدن و رتبه هنوز تأیید نشده‌اند.
+
+## به‌روزرسانی ۱۰ نوامبر ۲۰۲۶ (۱۶ صفحه، همگام‌سازی ۱.۸ و کامپوننت‌های خوانایی)
+
+- خطای بسته‌نشدن تگ `<a>` در `guides.html` و خطای `long-title` (>70 کاراکتر) در `tark-khod-arzaei.html`، `khod-arzaei-zanan.html` و `tark-nojavanan.html` برطرف شدند (`html-validate`: صفر خطا روی کل ۱۷ فایل HTML).
+- بخش‌های ماژولار CSS در `styles.css` (با حفظ همان پالت تیره/طلایی/فیروزه‌ای): خلاصهٔ ۳۰ ثانیه‌ای (`.quick-summary`)، کارت‌های گام عملی (`.step-cards`)، جدول مقایسه (`.comparison-table`)، چک‌لیست (`.checklist-box`)، آکاردئون FAQ با `<details>` (`.faq-accordion`)، فراخوان متنی مایکت (`.inline-app-cta`) و راهنماهای مرتبط (`.related-guides`).
+- لینک‌های مایکت در HTML استاتیک `index.html` از حالت `aria-disabled="true"` خارج و به‌صورت پیوند مستقیم `https://myket.ir/app/ir.hakemzehn.app` فعال شدند؛ اسکیمای `MobileApplication` با نسخهٔ ۱.۸ و `FAQPage` خانه و `Article` روی مقالات افزوده شد.
+- `privacy.html` و `features.html` بر اساس `PurchaseVerificationClient.kt` نسخهٔ ۱.۸ (`myket_local`؛ اعتبارسنجی محلی امضای مایکت روی دستگاه بدون ارسال به سرور واسط) به‌روزرسانی شدند.
