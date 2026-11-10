@@ -20,6 +20,7 @@
   <link rel="icon" type="image/png" href="assets/icon.png">
   <link rel="apple-touch-icon" href="assets/icon.png">
   <link rel="preload" href="assets/fonts/regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/bold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
   <script src="site-config.js" defer></script>
   <script src="scene-loader.js" defer></script>
@@ -48,7 +49,7 @@
       <div class="hero-visual neural-visual">
         <div class="scene-grid" aria-hidden="true"></div><div class="scene-aura" aria-hidden="true"></div>
         <div class="visual-label" lang="en"><span></span> YOUR MIND. YOUR WAY.</div>
-        <div id="brain-stage" class="brain-stage" role="img" aria-label="مدل سه‌بعدی تعاملی مغز؛ با کشیدن افقی یا کلیدهای جهت آن را بچرخانید" tabindex="0"><img class="scene-poster" src="assets/icon-large.webp" width="512" height="512" alt="نشان حاکم ذهن؛ مغز نورانی و تاج طلایی" loading="eager"></div>
+        <div id="brain-stage" class="brain-stage" role="img" aria-label="مدل سه‌بعدی تعاملی مغز؛ با کشیدن افقی یا کلیدهای جهت آن را بچرخانید" tabindex="0"><img class="scene-poster" src="assets/icon-large.webp" width="512" height="512" alt="نشان حاکم ذهن؛ مغز نورانی و تاج طلایی" loading="eager" fetchpriority="high"></div>
         <button id="scene-load" class="scene-load" type="button" hidden>نمایش مدل سه‌بعدی</button>
         <span class="scene-coordinate coordinate-top" aria-hidden="true" lang="en">MIND / 01</span><span class="scene-coordinate coordinate-bottom" aria-hidden="true" lang="en">SPACE TO BEGIN AGAIN</span>
         <div class="scene-controls"><button id="scene-motion" class="scene-motion" type="button" aria-label="توقف چرخش خودکار" aria-pressed="false" hidden>Ⅱ</button><span id="scene-hint">فضای شخصیِ یک شروع تازه</span><button id="scene-reset" class="scene-reset" type="button" aria-label="بازگرداندن زاویهٔ مدل" hidden>↺</button></div>

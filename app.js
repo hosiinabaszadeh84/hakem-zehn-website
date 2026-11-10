@@ -65,18 +65,20 @@
       }
     });
   });
-  document.getElementById('year').textContent = new Intl.NumberFormat('fa', {useGrouping: false}).format(new Date().getFullYear());
+  const yearEl = document.getElementById('year');
+  const currentYear = new Intl.NumberFormat('fa', { useGrouping: false }).format(new Date().getFullYear());
+  if (yearEl && yearEl.textContent !== currentYear) yearEl.textContent = currentYear;
   const needs = {
-    begin: {kicker:'شروعِ قابل انجام', title:'لازم نیست تمام مسیر را امروز بروی.', description:'اولین قدم می‌تواند شناختن یک محرک، خواندن گام اول روش آسان یا جداکردن ثبت پورن و خودارضایی باشد. مسیر ۲۰ هفته‌ای و ثبت روزانه، به تصمیم تو شکل مشخص‌تری می‌دهند.', tool:'همراه تو: مسیر مرحله‌ای و ثبت روزانه', link:'راهنمای عملی ترک را ببین', href:'tark-porn.html'},
-    pause: {kicker:'فضایی برای مکث', title:'همین لحظه، برای خودت کمی فاصله بساز.', description:'برای چند دقیقه از موقعیت فاصله بگیر. بخش SOS با تمرین تنفس و ابزارهای آرام‌سازی در دسترس توست. همین‌جا هم می‌توانی یک مکث کوتاه را امتحان کنی.', tool:'همراه تو: SOS و تمرین تنفس', link:'یک مکث را امتحان کن', href:'#calm-title'},
-    return: {kicker:'فرصت دوباره برای ادامه', title:'یک لغزش، تمام مسیر تو را صفر نمی‌کند.', description:'به‌جای سرزنش، ببین چه اتفاقی افتاد: کجا بودی و چه احساسی داشتی؟ ثبت تجربه و راهنمای ساعت اول پس از لغزش کمک می‌کند دوباره و سبک‌تر ادامه بدهی.', tool:'همراه تو: ثبت جداگانه و راهنمای بازگشت', link:'بعد از لغزش چه کنم؟', href:'relapse.html'}
+    begin: { kicker: 'شروعِ قابل انجام', title: 'لازم نیست تمام مسیر را امروز بروی.', description: 'اولین قدم می‌تواند شناختن یک محرک، خواندن گام اول روش آسان یا جداکردن ثبت پورن و خودارضایی باشد. مسیر ۲۰ هفته‌ای و ثبت روزانه، به تصمیم تو شکل مشخص‌تری می‌دهند.', tool: 'همراه تو: مسیر مرحله‌ای و ثبت روزانه', link: 'راهنمای عملی ترک را ببین', href: 'tark-porn.html' },
+    pause: { kicker: 'فضایی برای مکث', title: 'همین لحظه، برای خودت کمی فاصله بساز.', description: 'برای چند دقیقه از موقعیت فاصله بگیر. بخش SOS با تمرین تنفس و ابزارهای آرام‌سازی در دسترس توست. همین‌جا هم می‌توانی یک مکث کوتاه را امتحان کنی.', tool: 'همراه تو: SOS و تمرین تنفس', link: 'یک مکث را امتحان کن', href: '#calm-title' },
+    return: { kicker: 'فرصت دوباره برای ادامه', title: 'یک لغزش، تمام مسیر تو را صفر نمی‌کند.', description: 'به‌جای سرزنش، ببین چه اتفاقی افتاد: کجا بودی و چه احساسی داشتی؟ ثبت تجربه و راهنمای ساعت اول پس از لغزش کمک می‌کند دوباره و سبک‌تر ادامه بدهی.', tool: 'همراه تو: ثبت جداگانه و راهنمای بازگشت', link: 'بعد از لغزش چه کنم؟', href: 'relapse.html' }
   };
   document.querySelectorAll('[data-need]').forEach(button => {
     button.addEventListener('click', () => {
       const choice = needs[button.dataset.need];
       if (!choice) return;
       document.querySelectorAll('[data-need]').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
-      for (const key of ['kicker','title','description','tool']) document.getElementById('need-' + key).textContent = choice[key];
+      for (const key of ['kicker', 'title', 'description', 'tool']) document.getElementById('need-' + key).textContent = choice[key];
       const link = document.getElementById('need-link');
       link.href = choice.href;
       link.replaceChildren(document.createTextNode(choice.link + ' '));
@@ -87,45 +89,49 @@
   let storeUrl;
   try {
     const url = new URL(window.HAKEM_SITE?.myketUrl || '');
-    if (url.protocol === 'https:' && url.hostname === 'myket.ir' && /^\/app\/[\w.%-]+\/?$/.test(url.pathname) && !url.username && !url.password) storeUrl=url.href;
-  } catch (_) {}
+    if (url.protocol === 'https:' && url.hostname === 'myket.ir' && /^\/app\/[\w.%-]+\/?$/.test(url.pathname) && !url.username && !url.password) storeUrl = url.href;
+  } catch (_) { }
   if (storeUrl) {
-    document.querySelectorAll('[data-myket-link]').forEach(link=>{
-      link.href=storeUrl;link.target='_blank';link.rel='noopener noreferrer';
-      link.removeAttribute('aria-disabled');link.removeAttribute('tabindex');
+    document.querySelectorAll('[data-myket-link]').forEach(link => {
+      if (link.href !== storeUrl) link.href = storeUrl;
+      if (link.target !== '_blank') link.target = '_blank';
+      if (link.rel !== 'noopener noreferrer') link.rel = 'noopener noreferrer';
+      if (link.hasAttribute('aria-disabled')) link.removeAttribute('aria-disabled');
+      if (link.hasAttribute('tabindex')) link.removeAttribute('tabindex');
     });
-    document.querySelectorAll('[data-myket-label]').forEach(label=>{
-      if (!label.textContent.trim()) label.textContent='دریافت رایگان از مایکت';
+    document.querySelectorAll('[data-myket-label]').forEach(label => {
+      if (!label.textContent.trim()) label.textContent = 'دریافت رایگان از مایکت';
     });
     const note = document.querySelector('[data-store-note]');
-    if (note) note.textContent='دریافت و به‌روزرسانی فقط از صفحهٔ رسمی حاکم ذهن در مایکت.';
+    const storeNoteText = 'دریافت و به‌روزرسانی فقط از صفحهٔ رسمی حاکم ذهن در مایکت.';
+    if (note && note.textContent !== storeNoteText) note.textContent = storeNoteText;
   }
-  const breathButton=document.getElementById('breath-toggle');
-  const breathLabel=document.getElementById('breath-label');
-  const breathStatus=document.getElementById('breath-status');
-  const calmPanel=document.querySelector('.calm-panel');
-  let breathTimer=0,breathStarted=0;
-  function stopBreathing(completed=false) {
-    clearInterval(breathTimer);breathTimer=0;
-    calmPanel.classList.remove('is-breathing','is-exhaling');
-    breathButton.setAttribute('aria-pressed','false');
-    breathButton.textContent='یک مکث کوتاه ↗';breathLabel.textContent='مکث';
-    breathStatus.textContent=completed?'همین مکث کوچک هم یک قدم است.':'هر زمان خواستی می‌توانی متوقفش کنی.';
+  const breathButton = document.getElementById('breath-toggle');
+  const breathLabel = document.getElementById('breath-label');
+  const breathStatus = document.getElementById('breath-status');
+  const calmPanel = document.querySelector('.calm-panel');
+  let breathTimer = 0, breathStarted = 0;
+  function stopBreathing(completed = false) {
+    clearInterval(breathTimer); breathTimer = 0;
+    calmPanel.classList.remove('is-breathing', 'is-exhaling');
+    breathButton.setAttribute('aria-pressed', 'false');
+    breathButton.textContent = 'یک مکث کوتاه ↗'; breathLabel.textContent = 'مکث';
+    breathStatus.textContent = completed ? 'همین مکث کوچک هم یک قدم است.' : 'هر زمان خواستی می‌توانی متوقفش کنی.';
   }
-  breathButton.addEventListener('click',()=>{
-    if(breathTimer){stopBreathing();return;}
-    breathStarted=performance.now();
+  breathButton.addEventListener('click', () => {
+    if (breathTimer) { stopBreathing(); return; }
+    breathStarted = performance.now();
     calmPanel.classList.add('is-breathing');
-    breathButton.setAttribute('aria-pressed','true');breathButton.textContent='پایان مکث ×';
-    breathStatus.textContent='آرام و بدون فشار؛ فقط اگر برایت راحت است.';
-    const tick=()=>{
-      const elapsed=performance.now()-breathStarted;
-      if(elapsed>=32000){stopBreathing(true);return;}
-      const exhaling=elapsed%8000>=4000;
-      calmPanel.classList.toggle('is-exhaling',exhaling);
-      breathLabel.textContent=exhaling?'بازدم آرام':'دم آرام';
+    breathButton.setAttribute('aria-pressed', 'true'); breathButton.textContent = 'پایان مکث ×';
+    breathStatus.textContent = 'آرام و بدون فشار؛ فقط اگر برایت راحت است.';
+    const tick = () => {
+      const elapsed = performance.now() - breathStarted;
+      if (elapsed >= 32000) { stopBreathing(true); return; }
+      const exhaling = elapsed % 8000 >= 4000;
+      calmPanel.classList.toggle('is-exhaling', exhaling);
+      breathLabel.textContent = exhaling ? 'بازدم آرام' : 'دم آرام';
     };
-    tick();breathTimer=setInterval(tick,250);
+    tick(); breathTimer = setInterval(tick, 250);
   });
-  document.addEventListener('visibilitychange',()=>{if(document.hidden && breathTimer)stopBreathing();});
+  document.addEventListener('visibilitychange', () => { if (document.hidden && breathTimer) stopBreathing(); });
 })();
