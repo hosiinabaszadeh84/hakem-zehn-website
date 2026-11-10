@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <radialGradient id="disc" cx="50%" cy="38%" r="75%">
+      <stop offset="0%" stop-color="#16303f"/>
+      <stop offset="55%" stop-color="#0e1c28"/>
+      <stop offset="100%" stop-color="#081220"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f6ddab"/>
+      <stop offset="45%" stop-color="#e7c68b"/>
+      <stop offset="100%" stop-color="#b9822e"/>
+    </linearGradient>
+    <linearGradient id="goldBand" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#c99a45"/>
+      <stop offset="50%" stop-color="#f2d49a"/>
+      <stop offset="100%" stop-color="#c99a45"/>
+    </linearGradient>
+  </defs>
+  <!-- medallion disc -->
+  <circle cx="50" cy="50" r="48" fill="url(#disc)"/>
+  <circle cx="50" cy="50" r="48" fill="none" stroke="#2b4256" stroke-width="1.5"/>
+  <circle cx="50" cy="50" r="44.5" fill="none" stroke="#e7c68b" stroke-opacity="0.25" stroke-width="0.8"/>
+  <!-- crown -->
+  <path d="M24 40 L30 24 L40 34 L50 20 L60 34 L70 24 L76 40 L72 40 L70 44 L30 44 L28 40 Z" fill="url(#gold)"/>
+  <rect x="28" y="40" width="44" height="4.5" rx="1.5" fill="url(#goldBand)"/>
+  <path d="M50 29 L54.5 34 L50 39 L45.5 34 Z" fill="#cfeef2"/>
+  <!-- network brain -->
+  <g stroke="#72d8db" stroke-width="1.1" stroke-linecap="round" fill="none" opacity="0.95">
+    <path d="M32 62 L42 56 L52 62 L62 54 L70 60"/>
+    <path d="M38 70 L46 62 L56 70 L66 64"/>
+    <path d="M42 56 L46 62 M52 62 L56 70 M62 54 L56 70 M70 60 L66 64"/>
+    <path d="M30 68 L38 70 M70 60 L72 68"/>
+  </g>
+  <g fill="#a9e6e8">
+    <circle cx="32" cy="62" r="2.1"/>
+    <circle cx="42" cy="56" r="2.4"/>
+    <circle cx="52" cy="62" r="2.4"/>
+    <circle cx="62" cy="54" r="2.1"/>
+    <circle cx="70" cy="60" r="2.1"/>
+    <circle cx="38" cy="70" r="2"/>
+    <circle cx="46" cy="62" r="1.8"/>
+    <circle cx="56" cy="70" r="2"/>
+    <circle cx="66" cy="64" r="1.8"/>
+    <circle cx="30" cy="68" r="1.5"/>
+    <circle cx="72" cy="68" r="1.5"/>
+  </g>
+  <circle cx="52" cy="62" r="3.4" fill="none" stroke="#eafafb" stroke-width="0.9"/>
+</svg>
