@@ -8,6 +8,7 @@
   const lightweight = matchMedia('(max-width: 760px)').matches || connection?.saveData || ['slow-2g','2g'].includes(connection?.effectiveType) || (navigator.deviceMemory && navigator.deviceMemory <= 2);
   let loading = false;
   host.setAttribute('aria-label','نمای مغز حاکم ذهن؛ برای فعال‌کردن مدل سه‌بعدی از دکمهٔ نمایش یا کلید Enter استفاده کنید.');
+  trigger.textContent = 'تعامل ۳۶۰°';
   trigger.hidden = false;
   const script = src => new Promise((resolve,reject) => {
     const element = document.createElement('script');
@@ -32,7 +33,7 @@
   }
   trigger.addEventListener('click', load);
   host.addEventListener('keydown', event => {if(event.key === 'Enter' || event.key === ' ') {event.preventDefault();load();}});
-  if (lightweight) {hint.textContent = 'نمای سبک؛ نمایش سه‌بعدی اختیاری است.';return;}
+  if (lightweight) {hint.textContent = 'مدل سه‌بعدی مغز؛ برای چرخش لمسی ۳۶۰° بزنید';return;}
   new IntersectionObserver((entries, observer) => {
     if (!entries.some(entry=>entry.isIntersecting)) return;
     observer.disconnect();
