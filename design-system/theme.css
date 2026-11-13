@@ -1,0 +1,351 @@
+/* ==========================================================================
+   Hakem Zehn Master Design System — theme.css
+   Visual Identity: Deep Obsidian Navy · Warm Sanctuary Gold · Calming Turquoise
+   Large Expressive Persian Typography Scale & Unified Rhythmic Spacing
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Self-Hosted Expressive Persian Font Architecture (2+1 System)
+   -------------------------------------------------------------------------- */
+
+@font-face {
+  font-family: 'Lalezar';
+  src: url('/assets/fonts/lalezar-arabic-400-normal.woff2') format('woff2'),
+       url('/assets/fonts/lalezar-latin-400-normal.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Noto Naskh Arabic';
+  src: url('/assets/fonts/noto-naskh-arabic-arabic-400-normal.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Noto Naskh Arabic';
+  src: url('/assets/fonts/noto-naskh-arabic-arabic-700-normal.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('/assets/fonts/regular.woff2') format('woff2'),
+       url('/assets/fonts/regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('/assets/fonts/bold.woff2') format('woff2'),
+       url('/assets/fonts/bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* --------------------------------------------------------------------------
+   2. Core Design Tokens (:root)
+   -------------------------------------------------------------------------- */
+
+:root {
+  /* === Palette: Deep Obsidian Navy Canvas & Slightly Lighter Slate-Navy Card Surfaces === */
+  --theme-navy-950: #050a10;
+  --theme-navy-900: #080e15;
+  --theme-navy-800: #111c28;
+  --theme-navy-700: #172636;
+  --theme-navy-600: #1e3144;
+  --theme-slate-border: rgba(168, 194, 218, 0.12);
+  --theme-slate-border-strong: rgba(168, 194, 218, 0.22);
+
+  /* === Palette: Higher-Contrast Warm Neutrals for Dark Mode === */
+  --theme-text-primary: #f2f5f7;
+  --theme-text-secondary: #cfd9e2;
+  --theme-text-muted: #9eb0c0;
+
+  /* === Palette: Warm Sanctuary Gold & Calming Turquoise (10% Accents) === */
+  --theme-gold-400: #f4dcb0;
+  --theme-gold-500: #e7c68b;
+  --theme-gold-600: #c79f59;
+  --theme-gold-soft: rgba(231, 198, 139, 0.14);
+  --theme-gold-border: rgba(231, 198, 139, 0.36);
+
+  --theme-cyan-400: #99e8eb;
+  --theme-cyan-500: #72d8db;
+  --theme-cyan-600: #47afb3;
+  --theme-cyan-soft: rgba(114, 216, 219, 0.13);
+  --theme-cyan-border: rgba(114, 216, 219, 0.36);
+
+  /* === Semantic Feedback Tokens === */
+  --theme-danger-soft: rgba(240, 113, 120, 0.14);
+  --theme-danger-border: rgba(240, 113, 120, 0.42);
+  --theme-danger-text: #f3a1a5;
+
+  /* === Sophisticated Subtle Gradients, Lighter Card Tones & Depth === */
+  --theme-grad-horizon: radial-gradient(
+      ellipse 82% 48% at 16% 0%,
+      rgba(231, 198, 139, 0.08) 0%,
+      transparent 64%
+    ),
+    radial-gradient(
+      ellipse 68% 44% at 86% 14%,
+      rgba(114, 216, 219, 0.06) 0%,
+      transparent 60%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(17, 29, 43, 0.36) 0%,
+      rgba(8, 14, 21, 0) 460px
+    );
+  --theme-grad-surface: linear-gradient(
+    155deg,
+    rgba(24, 38, 54, 0.62) 0%,
+    rgba(15, 25, 36, 0.72) 100%
+  );
+  --theme-grad-surface-hover: linear-gradient(
+    155deg,
+    rgba(31, 49, 68, 0.76) 0%,
+    rgba(19, 31, 44, 0.84) 100%
+  );
+  --theme-grad-surface-featured: radial-gradient(
+      ellipse 90% 70% at 15% 0%,
+      rgba(231, 198, 139, 0.085) 0%,
+      transparent 62%
+    ),
+    linear-gradient(
+      155deg,
+      rgba(28, 44, 62, 0.72) 0%,
+      rgba(16, 27, 39, 0.8) 100%
+    );
+  --theme-grad-surface-cyan: radial-gradient(
+      ellipse 90% 70% at 15% 0%,
+      rgba(114, 216, 219, 0.085) 0%,
+      transparent 62%
+    ),
+    linear-gradient(
+      155deg,
+      rgba(22, 41, 56, 0.72) 0%,
+      rgba(15, 26, 37, 0.8) 100%
+    );
+  --theme-grad-gold-sheen: linear-gradient(
+    135deg,
+    #f4dcb0 0%,
+    #e7c68b 54%,
+    #cfa661 100%
+  );
+  --theme-grad-scrim: linear-gradient(
+    180deg,
+    rgba(8, 14, 21, 0.22) 0%,
+    rgba(8, 14, 21, 0.66) 56%,
+    rgba(8, 14, 21, 0.96) 100%
+  );
+  --theme-shadow-card: 0 10px 28px -12px rgba(2, 6, 12, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.055);
+  --theme-shadow-sheet: 0 22px 54px rgba(2, 6, 11, 0.68);
+  --theme-shadow-gold-glow: 0 10px 26px rgba(231, 198, 139, 0.18);
+  --theme-shadow-cyan-glow: 0 10px 26px rgba(114, 216, 219, 0.16);
+
+  /* === Typography System: Light, Readable, Minimalist Persian Scale === */
+  --theme-font-display: 'Vazirmatn', 'Noto Naskh Arabic', sans-serif;
+  --theme-font-editorial: 'Noto Naskh Arabic', 'Vazirmatn', serif;
+  --theme-font-sans: 'Vazirmatn', Tahoma, -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --theme-text-display: clamp(1.42rem, 2.2vw, 2.05rem);  /* 22.7px -> 32.8px */
+  --theme-text-h1: clamp(1.32rem, 1.9vw, 1.82rem);       /* 21.1px -> 29.1px */
+  --theme-text-h2: clamp(1.12rem, 1.45vw, 1.42rem);      /* 17.9px -> 22.7px */
+  --theme-text-h3: clamp(0.95rem, 1.08vw, 1.08rem);      /* 15.2px -> 17.3px */
+  --theme-text-lead: clamp(0.88rem, 0.96vw, 0.95rem);    /* 14.1px -> 15.2px */
+  --theme-text-body: clamp(0.84rem, 0.88vw, 0.89rem);    /* 13.4px -> 14.2px */
+  --theme-text-meta: 0.79rem;                            /* 12.6px */
+  --theme-text-caption: 0.74rem;                         /* 11.8px */
+
+  --theme-leading-display: 1.44;
+  --theme-leading-heading: 1.46;
+  --theme-leading-prose: 1.92;
+  --theme-measure-prose: 60ch;
+
+  /* === Spacing Scale (Airy 4px / 8px Editorial Rhythm) === */
+  --theme-space-1: 0.25rem;   /* 4px */
+  --theme-space-2: 0.5rem;    /* 8px */
+  --theme-space-3: 0.75rem;   /* 12px */
+  --theme-space-4: 1rem;      /* 16px */
+  --theme-space-5: 1.25rem;   /* 20px */
+  --theme-space-6: 1.5rem;    /* 24px */
+  --theme-space-7: 1.75rem;   /* 28px */
+  --theme-space-8: 2rem;      /* 32px */
+  --theme-space-10: 2.5rem;   /* 40px */
+  --theme-space-12: 3rem;     /* 48px */
+  --theme-space-16: 4rem;     /* 64px */
+  --theme-space-20: 5rem;     /* 80px */
+  --theme-space-24: 6rem;     /* 96px */
+
+  --theme-section-py: clamp(3rem, 5.5vw, 5rem);
+  --theme-section-px: clamp(1.125rem, 3.2vw, 2.5rem);
+  --theme-card-p: clamp(1.125rem, 1.8vw, 1.5rem);
+  --theme-grid-gap: clamp(1rem, 1.75vw, 1.45rem);
+  --theme-stack-gap: clamp(0.875rem, 1.4vw, 1.25rem);
+
+  /* === Geometry, Layout & Purposeful Motion === */
+  --theme-radius-xl: 22px;
+  --theme-radius-lg: 16px;
+  --theme-radius-md: 12px;
+  --theme-radius-sm: 9px;
+  --theme-radius-pill: 999px;
+
+  --theme-header-h: 56px;
+  --theme-mobile-chap-h: 48px;
+  --theme-container-max: 1080px;
+  --theme-toc-w: 250px;
+  --theme-margin-w: 280px;
+
+  --theme-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --theme-dur-fast: 180ms;
+  --theme-dur-med: 340ms;
+  --theme-dur-slow: 480ms;
+
+  /* ========================================================================
+     Unified Semantic Component Aliases (--hz-*)
+     Every page & module inherits directly from theme.css variables above
+     ======================================================================== */
+  --hz-bg: var(--theme-navy-900);
+  --hz-surface: var(--theme-navy-800);
+  --hz-surface-elevated: var(--theme-navy-700);
+  --hz-surface-subtle: #0d1620;
+  --hz-border: var(--theme-slate-border);
+  --hz-border-strong: var(--theme-slate-border-strong);
+
+  --hz-card-bg: var(--theme-grad-surface);
+  --hz-card-bg-hover: var(--theme-grad-surface-hover);
+  --hz-card-bg-featured: var(--theme-grad-surface-featured);
+  --hz-card-bg-cyan: var(--theme-grad-surface-cyan);
+  --hz-card-border: rgba(168, 194, 218, 0.115);
+  --hz-card-border-hover: rgba(231, 198, 139, 0.34);
+  --hz-card-shadow: var(--theme-shadow-card);
+
+  --hz-text: var(--theme-text-primary);
+  --hz-text-secondary: var(--theme-text-secondary);
+  --hz-text-muted: var(--theme-text-muted);
+
+  --hz-gold: var(--theme-gold-500);
+  --hz-gold-strong: var(--theme-gold-400);
+  --hz-gold-dim: var(--theme-gold-soft);
+  --hz-gold-border: var(--theme-gold-border);
+
+  --hz-cyan: var(--theme-cyan-500);
+  --hz-cyan-strong: var(--theme-cyan-400);
+  --hz-cyan-dim: var(--theme-cyan-soft);
+  --hz-cyan-border: var(--theme-cyan-border);
+
+  --hz-font-display: var(--theme-font-display);
+  --hz-font-serif: var(--theme-font-editorial);
+  --hz-font: var(--theme-font-sans);
+
+  --hz-text-display: var(--theme-text-display);
+  --hz-text-h1: var(--theme-text-h1);
+  --hz-text-h2: var(--theme-text-h2);
+  --hz-text-h3: var(--theme-text-h3);
+  --hz-text-lead: var(--theme-text-lead);
+  --hz-text-body: var(--theme-text-body);
+  --hz-text-meta: var(--theme-text-meta);
+  --hz-text-caption: var(--theme-text-caption);
+
+  --hz-space-1: var(--theme-space-1);
+  --hz-space-2: var(--theme-space-2);
+  --hz-space-3: var(--theme-space-3);
+  --hz-space-4: var(--theme-space-4);
+  --hz-space-5: var(--theme-space-5);
+  --hz-space-6: var(--theme-space-6);
+  --hz-space-7: var(--theme-space-7);
+  --hz-space-8: var(--theme-space-8);
+  --hz-space-10: var(--theme-space-10);
+  --hz-space-12: var(--theme-space-12);
+  --hz-space-16: var(--theme-space-16);
+  --hz-space-20: var(--theme-space-20);
+  --hz-space-24: var(--theme-space-24);
+
+  --hz-section-py: var(--theme-section-py);
+  --hz-section-px: var(--theme-section-px);
+  --hz-card-p: var(--theme-card-p);
+  --hz-grid-gap: var(--theme-grid-gap);
+
+  --hz-radius-lg: var(--theme-radius-lg);
+  --hz-radius-md: var(--theme-radius-md);
+  --hz-radius-sm: var(--theme-radius-sm);
+
+  --hz-header-h: var(--theme-header-h);
+  --hz-mobile-chap-h: var(--theme-mobile-chap-h);
+  --hz-container-max: var(--theme-container-max);
+  --hz-toc-w: var(--theme-toc-w);
+  --hz-margin-w: var(--theme-margin-w);
+
+  --hz-ease: var(--theme-ease);
+  --hz-dur-fast: var(--theme-dur-fast);
+  --hz-dur-med: var(--theme-dur-med);
+  --hz-dur-slow: var(--theme-dur-slow);
+}
+
+/* --------------------------------------------------------------------------
+   3. Shared Warm Cinematic Atmosphere & Typographic Helpers
+   -------------------------------------------------------------------------- */
+
+body {
+  background-color: var(--theme-navy-900);
+  background-image: var(--theme-grad-horizon);
+  background-repeat: no-repeat;
+  background-size: 100% 960px;
+  color: var(--theme-text-primary);
+}
+
+.hz-theme-display {
+  font-family: var(--theme-font-display);
+  font-size: var(--theme-text-display);
+  line-height: var(--theme-leading-display);
+  font-weight: 400;
+  color: var(--theme-text-primary);
+  text-wrap: balance;
+}
+
+.hz-theme-editorial {
+  font-family: var(--theme-font-editorial);
+  line-height: var(--theme-leading-prose);
+}
+
+.hz-theme-surface {
+  background: var(--theme-grad-surface);
+  border: 1px solid var(--theme-slate-border);
+  border-radius: var(--theme-radius-lg);
+  padding: var(--theme-card-p);
+  box-shadow: var(--theme-shadow-card);
+}
+
+.hz-theme-eyebrow {
+  font-size: var(--theme-text-caption);
+  color: var(--theme-gold-500);
+  letter-spacing: 0.015em;
+}
+
+.hz-theme-divider {
+  border: 0;
+  height: 1px;
+  margin: var(--theme-space-12) 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--theme-gold-border) 35%,
+    var(--theme-cyan-border) 65%,
+    transparent 100%
+  );
+}
+
+.hz-theme-prose {
+  max-width: var(--theme-measure-prose);
+  font-size: var(--theme-text-body);
+  line-height: var(--theme-leading-prose);
+  color: var(--theme-text-secondary);
+}
