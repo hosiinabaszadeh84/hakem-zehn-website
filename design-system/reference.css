@@ -6797,6 +6797,8 @@ body.hz-toolbox-page {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  align-items: center;
+  box-sizing: border-box;
   background: rgba(4, 8, 13, 0.78);
   backdrop-filter: blur(5px);
   /* z-index 300: the sheet is a modal — it must sit above .hz-mobile-dock
@@ -6818,18 +6820,22 @@ body.hz-toolbox-page {
   gap: 0;
   overflow: visible;
   box-shadow: none;
+  /* Floating panel: 14px clear gap from every screen edge. This must sit
+     AFTER the neutralize list above, or the neutralized padding:0 wins. */
+  padding: 14px;
 }
 
 .hz-sheet-chassis {
   width: 100%;
   max-width: 480px;
   margin: 0 auto;
-  height: 92dvh;
+  height: calc(100dvh - 28px);
   max-height: 820px;
   background: var(--bg);
   border-top: 1px solid var(--line-bright);
   border-inline: 1px solid var(--line);
-  border-radius: var(--radius) var(--radius) 0 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: var(--radius);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -6841,7 +6847,7 @@ body.hz-toolbox-page {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 7px 12px;
+  padding: 5px 12px;
   background: var(--surface);
   border-bottom: 1px solid var(--line);
 }
@@ -6888,7 +6894,7 @@ body.hz-toolbox-page {
   flex: 1 1 auto;
   overflow-y: auto;
   overflow-x: hidden;
-  padding: 9px 11px 11px;
+  padding: 7px 11px 8px;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -6910,7 +6916,7 @@ body.hz-toolbox-page {
   align-items: baseline;
   justify-content: space-between;
   gap: 8px;
-  padding-bottom: 4px;
+  padding-bottom: 3px;
   border-bottom: 1px solid var(--line);
 }
 
@@ -6936,20 +6942,20 @@ body.hz-toolbox-page {
 
 .hz-hud-split {
   display: grid;
-  grid-template-columns: 112px minmax(0, 1fr);
+  grid-template-columns: 100px minmax(0, 1fr);
   align-items: center;
   gap: 10px;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
-  padding: 8px 10px;
+  padding: 7px 10px;
   position: relative;
 }
 
 .hz-ring-wrap {
   position: relative;
-  width: 110px;
-  height: 110px;
+  width: 96px;
+  height: 96px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -6961,8 +6967,8 @@ body.hz-toolbox-page {
 
 /* Mandatory: rotation ONLY on SVG via CSS, ZERO transform attributes on <circle> */
 .hz-ring-svg {
-  width: 104px;
-  height: 104px;
+  width: 90px;
+  height: 90px;
   transform: rotate(-90deg);
   overflow: visible;
   display: block;
@@ -6995,7 +7001,7 @@ body.hz-toolbox-page {
 
 .hz-ring-center {
   position: absolute;
-  inset: 14px;
+  inset: 12px;
   border-radius: 50%;
   background: radial-gradient(circle, #101c28 0%, #080e15 100%);
   border: 1px solid rgba(255, 255, 255, 0.06);
@@ -7037,7 +7043,7 @@ body.hz-toolbox-page {
 .hz-hud-copy {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 3px;
   min-width: 0;
 }
 
@@ -7054,9 +7060,9 @@ body.hz-toolbox-page {
   background: var(--gold-dim);
   border: 1px solid rgba(231, 198, 139, 0.4);
   color: var(--gold);
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   font-weight: 800;
-  padding: 2px 7px;
+  padding: 2px 6px;
   border-radius: 6px;
 }
 
@@ -7066,9 +7072,9 @@ body.hz-toolbox-page {
   background: var(--cyan-dim);
   border: 1px solid rgba(114, 216, 219, 0.38);
   color: var(--cyan);
-  font-size: 0.67rem;
+  font-size: 0.64rem;
   font-weight: 700;
-  padding: 2px 7px;
+  padding: 2px 6px;
   border-radius: 6px;
 }
 
@@ -7076,25 +7082,26 @@ body.hz-toolbox-page {
   margin: 0;
   font-size: 0.72rem;
   color: var(--ink);
-  line-height: 1.44;
+  line-height: 1.38;
 }
 
 .hz-hud-status {
   margin: 0;
-  font-size: 0.69rem;
+  font-size: 0.67rem;
   font-weight: 700;
   color: var(--cyan);
   background: #060b10;
   border: 1px solid var(--line);
   border-radius: 7px;
   padding: 3px 7px;
+  line-height: 1.35;
 }
 
 /* Tactile Checkboxes & Toggles List (Tools 1 & 4) */
 .hz-switch-stack {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 4px;
 }
 
 .hz-switch-row {
@@ -7103,7 +7110,7 @@ body.hz-toolbox-page {
   grid-template-columns: 24px minmax(0, 1fr) 24px;
   align-items: center;
   gap: 8px;
-  padding: 6px 9px;
+  padding: 4px 9px;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius-sm);
@@ -7161,7 +7168,7 @@ body.hz-toolbox-page {
 .hz-switch-text {
   font-size: 0.73rem;
   color: var(--ink);
-  line-height: 1.4;
+  line-height: 1.35;
 }
 
 /* Mandatory ::after with content:'' and inset-inline-start:auto */
@@ -7445,17 +7452,17 @@ body.hz-toolbox-page {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
-  padding: 8px 10px;
+  padding: 7px 10px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 5px;
 }
 
 .hz-brain-intro {
   margin: 0;
   font-size: 0.73rem;
   color: var(--ink);
-  line-height: 1.44;
+  line-height: 1.38;
 }
 
 .hz-date-bar {
@@ -7466,7 +7473,7 @@ body.hz-toolbox-page {
   background: #060b10;
   border: 1px solid var(--line);
   border-radius: 10px;
-  padding: 5px 9px;
+  padding: 4px 9px;
 }
 
 .hz-date-label {
@@ -7503,7 +7510,7 @@ body.hz-toolbox-page {
   background: var(--surface);
   color: var(--ink);
   border-radius: 11px;
-  padding: 6px 6px;
+  padding: 4px 6px;
   cursor: pointer;
   font-family: inherit;
   display: flex;
@@ -7539,17 +7546,17 @@ body.hz-toolbox-page {
 .hz-station-panels {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 5px;
 }
 
 .hz-station-card {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
-  padding: 8px 10px;
+  padding: 6px 10px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 5px;
 }
 
 .hz-station-card.is-active {
@@ -7587,19 +7594,19 @@ body.hz-toolbox-page {
   margin: 0;
   font-size: 0.73rem;
   color: var(--ink);
-  line-height: 1.46;
+  line-height: 1.4;
 }
 
 .hz-station-bullets {
   margin: 0;
-  padding: 6px 8px;
+  padding: 4px 8px;
   list-style: none;
   background: #060b10;
   border: 1px solid var(--line);
   border-radius: 9px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 3px;
 }
 
 .hz-station-bullets li {
@@ -7625,10 +7632,10 @@ body.hz-toolbox-page {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
-  padding: 8px 10px;
+  padding: 7px 10px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 5px;
 }
 
 .hz-step-module--two {
@@ -7640,7 +7647,7 @@ body.hz-toolbox-page {
   align-items: center;
   justify-content: space-between;
   gap: 8px;
-  padding-bottom: 5px;
+  padding-bottom: 4px;
   border-bottom: 1px dashed var(--line);
 }
 
@@ -7679,7 +7686,7 @@ body.hz-toolbox-page {
   font-family: inherit;
   font-size: 0.75rem;
   font-weight: 700;
-  padding: 7px 8px;
+  padding: 6px 8px;
   border-radius: 9px;
   cursor: pointer;
   display: flex;
@@ -7704,17 +7711,17 @@ body.hz-toolbox-page {
 .hz-state-stack {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 4px;
 }
 
 .hz-route-console {
   background: #060b10;
   border: 1px solid var(--gold);
   border-radius: var(--radius-md);
-  padding: 9px 11px;
+  padding: 8px 11px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 5px;
 }
 
 .hz-route-top {
@@ -7768,7 +7775,7 @@ body.hz-toolbox-page {
   font-family: inherit;
   font-size: 0.75rem;
   font-weight: 800;
-  padding: 7px 9px;
+  padding: 6px 9px;
   border-radius: 9px;
   cursor: pointer;
 }
@@ -7781,7 +7788,7 @@ body.hz-toolbox-page {
   font-family: inherit;
   font-size: 0.74rem;
   font-weight: 700;
-  padding: 7px 8px;
+  padding: 6px 8px;
   border-radius: 9px;
   cursor: pointer;
 }
@@ -7808,7 +7815,7 @@ body.hz-toolbox-page {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 4px;
-  padding: 6px 8px calc(6px + env(safe-area-inset-bottom, 0px));
+  padding: 5px 8px calc(5px + env(safe-area-inset-bottom, 0px));
   background: var(--surface);
   border-top: 1px solid var(--line);
 }
@@ -7820,7 +7827,7 @@ body.hz-toolbox-page {
   color: var(--muted);
   font-family: inherit;
   border-radius: 11px;
-  padding: 6px 2px;
+  padding: 5px 2px;
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -7851,7 +7858,8 @@ body.hz-toolbox-page {
 /* Toast Notification */
 .hz-toast {
   position: fixed;
-  inset-block-end: 74px;
+  inset-block-start: 14px;
+  inset-block-end: auto;
   inset-inline-start: 50%;
   transform: translateX(-50%);
   z-index: 310; /* above the sheet (300): shown while the sheet is open */
