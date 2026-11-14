@@ -15,6 +15,8 @@ html {
   background-color: var(--hz-bg);
   color: var(--hz-text);
   overflow-x: clip;
+  scroll-padding-top: calc(var(--hz-header-h, 64px) + 12px);
+  scroll-padding-bottom: calc(96px + env(safe-area-inset-bottom));
 }
 
 body {
@@ -404,7 +406,8 @@ input {
   width: 100%;
   max-width: var(--hz-container-max);
   margin: 0 auto;
-  padding: var(--hz-space-10) var(--hz-section-px) clamp(84px, 11vh, 124px);
+  padding: var(--hz-space-10) var(--hz-section-px) clamp(84px, 11svh, 124px);
+  padding: var(--hz-space-10) var(--hz-section-px) clamp(84px, 11dvh, 124px);
   transform: translate3d(0, var(--hz-hero-copy-parallax), 0);
   opacity: var(--hz-hero-copy-opacity);
   will-change: transform, opacity;
@@ -1622,8 +1625,8 @@ input {
 
 .hz-loop-ring-wrap {
   position: relative;
-  width: 224px;
-  height: 224px;
+  width: min(224px, 78vw);
+  aspect-ratio: 1;
   margin: 0 auto;
 }
 
@@ -2309,7 +2312,7 @@ input {
 
 .hz-source-head {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
   margin-bottom: 8px;
 }
@@ -2791,7 +2794,7 @@ input {
 
   .hz-hero-media {
     inset: 4px 0 auto 0;
-    height: 35%;
+    height: 44%;
   }
 
   .hz-hero-media img {
@@ -2800,11 +2803,11 @@ input {
 
   .hz-hero-scrim {
     background:
-      linear-gradient(180deg, rgba(8, 14, 21, 0.12) 0%, rgba(8, 14, 21, 0.42) 22%, rgba(8, 14, 21, 0.95) 36%, #080e15 46%);
+      linear-gradient(180deg, rgba(8, 14, 21, 0.12) 0%, rgba(8, 14, 21, 0.42) 28%, rgba(8, 14, 21, 0.95) 44%, #080e15 54%);
   }
 
   .hz-hero-content {
-    padding: clamp(118px, 20svh, 178px) 16px 4px;
+    padding: clamp(56px, 10svh, 96px) 16px 16px;
   }
 
   .hz-quiet-kicker {
@@ -2814,9 +2817,9 @@ input {
   }
 
   .hz-hero-title {
-    font-size: clamp(1.28rem, 5.1vw, 1.64rem);
-    line-height: 1.38;
-    margin-bottom: 8px;
+    font-size: clamp(1.5rem, 7vw, 1.95rem);
+    line-height: 1.32;
+    margin-bottom: 10px;
   }
 
   .hz-hero-lead {
@@ -2844,7 +2847,7 @@ input {
   }
 
   .hz-scroll-cue {
-    margin: 8px auto calc(84px + env(safe-area-inset-bottom));
+    margin: 8px auto calc(16px + env(safe-area-inset-bottom));
     font-size: 0.73rem;
     gap: 4px;
   }
@@ -4215,7 +4218,7 @@ input {
     -webkit-backdrop-filter: blur(5px);
     opacity: 0;
     pointer-events: none;
-    transition: opacity 240ms var(--hz-ease);
+    transition: opacity 480ms cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .hz-dock-backdrop.is-open {
@@ -4233,7 +4236,8 @@ input {
     max-width: 500px;
     margin: 0 auto;
     bottom: calc(74px + env(safe-area-inset-bottom));
-    max-height: min(74vh, 560px);
+    max-height: min(92svh, 760px);
+    max-height: min(92dvh, 760px);
     z-index: 152;
     padding: 14px 16px 18px;
     border-radius: 22px;
@@ -4246,8 +4250,8 @@ input {
     pointer-events: none;
     transform: translate3d(0, 22px, 0) scale(0.97);
     transition:
-      opacity 260ms var(--hz-ease),
-      transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+      opacity 480ms cubic-bezier(0.16, 1, 0.3, 1),
+      transform 480ms cubic-bezier(0.16, 1, 0.3, 1);
     overflow-y: auto;
   }
 
@@ -4575,6 +4579,9 @@ input {
     gap: 12px;
     padding-bottom: 10px;
     scrollbar-width: none;
+    align-items: flex-start;
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 48px);
+    mask-image: linear-gradient(to right, transparent 0, #000 48px);
   }
 
   .hz-belief-grid::-webkit-scrollbar {
@@ -4956,12 +4963,14 @@ input {
 }
 
 .hz-price-strike {
+  display: inline-block;
   text-decoration: line-through;
   color: var(--hz-text-muted);
-  margin-left: 8px;
+  margin-inline-end: 10px;
 }
 
 .hz-price-now {
+  display: inline-block;
   color: var(--hz-gold);
   font-weight: 700;
 }
@@ -6242,5 +6251,1342 @@ input {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* ==========================================================================
+   Responsive hardening (2026-11-13) — modern methods, additive only.
+   No layout, content, or design tokens changed elsewhere by this section.
+   ========================================================================== */
+
+/* Comparison matrix: thin scrollbar + edge fade while a column is off-frame. */
+.hz-matrix-table-wrap {
+  scrollbar-width: thin;
+}
+
+@media (max-width: 639px) {
+  /* Narrower table on phones so the feature column and the PRO column
+     can sit side by side after the filter scrolls PRO into view. */
+  .hz-matrix-table {
+    min-width: 560px;
+  }
+
+  .hz-matrix-table th,
+  .hz-matrix-table td {
+    padding: 12px 10px;
+    font-size: 0.8rem;
+  }
+
+  /* With the PRO filter on, the free column hides entirely: feature + PRO
+     fit the phone width with no horizontal scroll at all. */
+  .hz-matrix-table.is-pro-only {
+    min-width: 0;
+  }
+
+  .hz-matrix-table.is-pro-only th:nth-child(2),
+  .hz-matrix-table.is-pro-only td:nth-child(2) {
+    display: none;
+  }
+}
+
+.hz-matrix-table-wrap.hz-can-scroll-more {
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 44px);
+  mask-image: linear-gradient(to right, transparent 0, #000 44px);
+}
+
+/* Technical terms (e.g. AES-256-GCM) must not break across lines. */
+.hz-term-nowrap {
+  white-space: nowrap;
+}
+
+/* Source marker stays glued to the first line of its link. */
+.hz-source-head .hz-source-num {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Comparison matrix: the PRO column reads as premium at a glance. */
+.hz-matrix-table th:nth-child(3) {
+  background: rgba(231, 198, 139, 0.13);
+}
+
+.hz-matrix-table td:nth-child(3) {
+  background: rgba(231, 198, 139, 0.06);
+}
+
+/* ==========================================================================
+   Toolbox (جعبه‌ابزار) — Stage + Rail.
+   Lives inside the mobile dock sheet (sheet is shown only ≤ 1079px), so
+   every rule here is scoped to that range. The sheet is a flex column:
+   head (fixed) → .hz-toolbox-stage (the scrolling scene) →
+   .hz-toolbox-rail (pinned tab bar, always visible). JS re-renders the
+   stage's innerHTML on every tool switch, so the stage children's
+   entrance animation replays as the crossfade/slide between tools.
+   Motion is compositor-only (transform / opacity), except the wake
+   fill (width, as specified) and the gauge/dial rings (stroke-dashoffset).
+   ========================================================================== */
+
+@media (max-width: 1079px) {
+  /* ---- Entrance keyframes: scene children + rail tabs ---- */
+  @keyframes hzToolboxStageIn {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 10px, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @keyframes hzToolboxRailIn {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 8px, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  /* ---- Stage: the scrolling scene (replaces grid + detail) ---- */
+  /* The stage's display rule beats the UA [hidden] rule — restore it. */
+  .hz-toolbox-stage[hidden] {
+    display: none;
+  }
+
+  .hz-toolbox-stage {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 8px 2px 12px;
+    background:
+      radial-gradient(120% 240px at 50% 0, rgba(231, 198, 139, 0.06), rgba(231, 198, 139, 0) 70%),
+      transparent;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(231, 198, 139, 0.35) transparent;
+  }
+
+  /* Staggered entrance; replays on every innerHTML re-render (tool switch).
+     Order: title 0ms / intro 60ms / content 120ms / actions 180ms.
+     flex-shrink: 0 — the stage is the scrollable area, so its children must
+     keep their natural height instead of shrinking when content overflows
+     (a shrunk date-field label let the journey overlap its input). */
+  .hz-toolbox-stage > * {
+    flex-shrink: 0;
+    animation: hzToolboxStageIn 220ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .hz-toolbox-stage > :nth-child(1) {
+    animation-delay: 0ms;
+  }
+
+  .hz-toolbox-stage > :nth-child(2) {
+    animation-delay: 60ms;
+  }
+
+  .hz-toolbox-stage > :nth-child(3) {
+    animation-delay: 120ms;
+  }
+
+  .hz-toolbox-stage > :nth-child(4) {
+    animation-delay: 180ms;
+  }
+
+  .hz-toolbox-stage > :nth-child(n+5) {
+    animation-delay: 220ms;
+  }
+
+  .hz-toolbox-stage-title {
+    margin: 0;
+    font-family: 'Lalezar', var(--hz-font-display);
+    font-size: clamp(1.7rem, 7.6vw, 2.15rem);
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--hz-text);
+  }
+
+  .hz-toolbox-detail-intro {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--hz-text-secondary);
+    line-height: 1.86;
+  }
+
+  /* ---- Rail: pinned tab bar, always visible below the stage ---- */
+  .hz-toolbox-rail {
+    position: relative;
+    flex-shrink: 0;
+    display: flex;
+    gap: 4px;
+    padding: 10px 2px calc(2px + env(safe-area-inset-bottom));
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    background: transparent;
+  }
+
+  /* Sliding gold pill behind the active tab; JS sizes it (style.width)
+     and positions it (style.transform = translateX(tab.offsetLeft)). */
+  .hz-toolbox-rail-pill {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    bottom: calc(2px + env(safe-area-inset-bottom));
+    width: 0;
+    border-radius: 14px;
+    border: 1px solid rgba(231, 198, 139, 0.22);
+    background: linear-gradient(180deg, rgba(231, 198, 139, 0.20), rgba(231, 198, 139, 0.10));
+    z-index: 0;
+    pointer-events: none;
+    transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1), width 300ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .hz-toolbox-rail-tab {
+    position: relative;
+    z-index: 1;
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    min-height: 60px;
+    padding: 8px 2px 6px;
+    border: 0;
+    border-radius: 12px;
+    background: transparent;
+    color: var(--hz-text-muted);
+    font: inherit;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    cursor: pointer;
+    animation: hzToolboxRailIn 300ms cubic-bezier(0.16, 1, 0.3, 1) both;
+    transition: background-color 180ms ease, color 180ms ease;
+  }
+
+  /* Rail tabs rise one after another, 40ms apart. */
+  .hz-toolbox-rail-tab:nth-of-type(1) {
+    animation-delay: 0ms;
+  }
+
+  .hz-toolbox-rail-tab:nth-of-type(2) {
+    animation-delay: 40ms;
+  }
+
+  .hz-toolbox-rail-tab:nth-of-type(3) {
+    animation-delay: 80ms;
+  }
+
+  .hz-toolbox-rail-tab:nth-of-type(4) {
+    animation-delay: 120ms;
+  }
+
+  .hz-toolbox-rail-tab:nth-of-type(5) {
+    animation-delay: 160ms;
+  }
+
+  .hz-toolbox-rail-tab svg {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+  }
+
+  .hz-toolbox-rail-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    line-height: 1;
+  }
+
+  .hz-toolbox-rail-tab:hover {
+    color: var(--hz-text);
+  }
+
+  /* No background of its own in the active state — the sliding pill is
+     the indicator; only the gold text remains. */
+  .hz-toolbox-rail-tab.is-active {
+    background: transparent;
+    color: var(--hz-gold-strong);
+    font-weight: 700;
+  }
+
+  /* ---- Checklist ---- */
+  .hz-toolbox-check {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .hz-toolbox-check-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    min-height: 54px;
+    padding: 13px 16px;
+    border-radius: var(--hz-radius-md);
+    border: 1px solid var(--hz-card-border);
+    background: var(--hz-card-bg);
+    box-shadow: var(--hz-card-shadow);
+    color: var(--hz-text-secondary);
+    font: inherit;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    text-align: right;
+    cursor: pointer;
+    transition: border-color var(--hz-dur-fast) var(--hz-ease), background 220ms var(--hz-ease), color var(--hz-dur-fast) var(--hz-ease);
+  }
+
+  .hz-toolbox-check-item:hover {
+    border-color: var(--hz-cyan-border);
+    background: var(--hz-card-bg-hover);
+    color: var(--hz-text);
+  }
+
+  /* Custom checkbox: the box itself. */
+  .hz-toolbox-check-item::before {
+    content: '';
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 7px;
+    border: 1.5px solid var(--hz-gold-border);
+    background: rgba(255, 255, 255, 0.03);
+    transition: background-color var(--hz-dur-fast) var(--hz-ease), border-color var(--hz-dur-fast) var(--hz-ease);
+  }
+
+  /* Tick mark, drawn over the box when checked. */
+  .hz-toolbox-check-item.is-checked::after,
+  .hz-toolbox-check-item[aria-checked="true"]::after,
+  .hz-toolbox-check-item:has(input:checked)::after {
+    content: '\2713';
+    position: absolute;
+    inset-inline-start: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--hz-bg);
+    font-size: 0.82rem;
+    font-weight: 700;
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .hz-toolbox-check-item.is-checked,
+  .hz-toolbox-check-item[aria-checked="true"],
+  .hz-toolbox-check-item:has(input:checked) {
+    border-color: rgba(231, 198, 139, 0.36);
+    background: var(--hz-card-bg-featured);
+    color: var(--hz-text);
+  }
+
+  .hz-toolbox-check-item.is-checked::before,
+  .hz-toolbox-check-item[aria-checked="true"]::before,
+  .hz-toolbox-check-item:has(input:checked)::before {
+    background: var(--hz-gold);
+    border-color: var(--hz-gold-strong);
+  }
+
+  /* Native checkbox inside the row, if JS builds one: hidden, state only. */
+  .hz-toolbox-check-item input[type="checkbox"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .hz-toolbox-reset {
+    width: 100%;
+    min-height: 40px;
+    padding: 0 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.025);
+    color: var(--hz-text-secondary);
+    font: inherit;
+    font-size: 0.83rem;
+    cursor: pointer;
+    transition: border-color var(--hz-dur-fast) var(--hz-ease), color var(--hz-dur-fast) var(--hz-ease), background-color var(--hz-dur-fast) var(--hz-ease);
+  }
+
+  .hz-toolbox-reset:hover {
+    border-color: rgba(231, 198, 139, 0.45);
+    background: rgba(231, 198, 139, 0.06);
+    color: var(--hz-gold-strong);
+  }
+
+  /* ---- Self-assessment ---- */
+  .hz-toolbox-assess {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hz-toolbox-assess button:not(.hz-toolbox-clear) {
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 14px;
+    border-radius: var(--hz-radius-md);
+    border: 1px solid var(--hz-card-border);
+    background: var(--hz-card-bg);
+    color: var(--hz-text-secondary);
+    font: inherit;
+    font-size: 0.88rem;
+    line-height: 1.7;
+    text-align: right;
+    cursor: pointer;
+    transition: border-color var(--hz-dur-fast) var(--hz-ease), background 220ms var(--hz-ease), color var(--hz-dur-fast) var(--hz-ease);
+  }
+
+  .hz-toolbox-assess button:not(.hz-toolbox-clear):hover {
+    border-color: var(--hz-cyan-border);
+    background: var(--hz-card-bg-hover);
+    color: var(--hz-text);
+  }
+
+  .hz-toolbox-assess button:not(.hz-toolbox-clear).is-selected,
+  .hz-toolbox-assess button:not(.hz-toolbox-clear)[aria-pressed="true"] {
+    border-color: rgba(114, 216, 219, 0.45);
+    background: var(--hz-card-bg-cyan);
+    color: var(--hz-text);
+    font-weight: 700;
+  }
+
+  /* Circular gauge: faint track + gold ring, count overlaid in the middle.
+     The svg is rotated so the ring starts at the top; JS sets the ring's
+     stroke-dasharray to the circumference and stroke-dashoffset per count. */
+  .hz-toolbox-gauge {
+    position: relative;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    gap: 10px;
+    padding: 18px 16px 16px;
+    border-radius: var(--hz-radius-md);
+    border: 1px solid var(--hz-card-border);
+    background: var(--hz-card-bg);
+    box-shadow: var(--hz-card-shadow);
+  }
+
+  .hz-toolbox-gauge svg {
+    grid-area: 1 / 1;
+    width: 200px;
+    height: 200px;
+    display: block;
+    transform: rotate(-90deg);
+  }
+
+  .hz-toolbox-gauge-track {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.08);
+    stroke-width: 12;
+  }
+
+  .hz-toolbox-gauge-ring {
+    fill: none;
+    stroke: var(--hz-gold);
+    stroke-width: 12;
+    stroke-linecap: round;
+    transform-origin: 50% 50%;
+    transition: stroke-dashoffset 480ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .hz-toolbox-gauge-count {
+    grid-area: 1 / 1;
+    z-index: 1;
+    margin: 0;
+    font-family: 'Lalezar', var(--hz-font-display);
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1.3;
+    color: var(--hz-gold-strong);
+    text-align: center;
+    pointer-events: none;
+  }
+
+  /* If JS draws the count as SVG <text> instead of an HTML overlay. */
+  .hz-toolbox-gauge svg .hz-toolbox-gauge-count {
+    fill: var(--hz-gold-strong);
+    font-family: 'Lalezar', var(--hz-font-display);
+    font-size: 30px;
+    text-anchor: middle;
+  }
+
+  .hz-toolbox-gauge-caption {
+    grid-column: 1;
+    margin: 0;
+    font-size: 0.82rem;
+    color: var(--hz-text-muted);
+    line-height: 1.7;
+    text-align: center;
+  }
+
+  .hz-toolbox-result {
+    padding: 16px 18px;
+    border-radius: var(--hz-radius-md);
+    border: 1px solid var(--hz-border);
+    background: var(--hz-surface-elevated);
+    font-size: 0.9rem;
+    color: var(--hz-text-secondary);
+    line-height: 1.86;
+    animation: hzFadeLift 220ms var(--hz-ease) 1;
+  }
+
+  .hz-toolbox-result strong {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.98rem;
+    color: var(--hz-text);
+  }
+
+  .hz-toolbox-result p {
+    margin: 0;
+  }
+
+  /* Noticeable signs: calm cyan, a nudge to reflect — not a verdict. */
+  .hz-toolbox-result--high {
+    border-color: rgba(114, 216, 219, 0.45);
+    background: var(--hz-card-bg-cyan);
+  }
+
+  .hz-toolbox-result--high strong {
+    color: var(--hz-cyan-strong);
+  }
+
+  /* Few signs: warm gold, reassuring. */
+  .hz-toolbox-result--low {
+    border-color: rgba(231, 198, 139, 0.36);
+    background: var(--hz-card-bg-featured);
+  }
+
+  .hz-toolbox-result--low strong {
+    color: var(--hz-gold-strong);
+  }
+
+  /* Verdict card: roomier padding + a solid gold side bar. */
+  .hz-toolbox-result--card {
+    padding: 20px 20px;
+    border-inline-start: 4px solid var(--hz-gold);
+  }
+
+  .hz-toolbox-result--card strong {
+    font-family: 'Lalezar', var(--hz-font-display);
+    font-size: 1.15rem;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  .hz-toolbox-disclaimer {
+    margin: 0;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    font-size: 0.78rem;
+    color: var(--hz-text-muted);
+    line-height: 1.8;
+  }
+
+  .hz-toolbox-clear {
+    width: 100%;
+    min-height: 40px;
+    padding: 0 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.025);
+    color: var(--hz-text-secondary);
+    font: inherit;
+    font-size: 0.83rem;
+    cursor: pointer;
+    transition: border-color var(--hz-dur-fast) var(--hz-ease), color var(--hz-dur-fast) var(--hz-ease), background-color var(--hz-dur-fast) var(--hz-ease);
+  }
+
+  .hz-toolbox-clear:hover {
+    border-color: rgba(231, 198, 139, 0.45);
+    background: rgba(231, 198, 139, 0.06);
+    color: var(--hz-gold-strong);
+  }
+
+  /* ---- Time-cost calculator ---- */
+  .hz-toolbox-calc {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hz-toolbox-calc label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.82rem;
+    color: var(--hz-text-muted);
+  }
+
+  .hz-toolbox-field {
+    width: 100%;
+    min-height: 46px;
+    padding: 10px 14px;
+    border-radius: 12px;
+    border: 1px solid var(--hz-border);
+    background: var(--hz-surface);
+    color: var(--hz-text);
+    font: inherit;
+    font-size: 1rem;
+    font-variant-numeric: tabular-nums;
+    color-scheme: dark;
+    transition: border-color var(--hz-dur-fast) var(--hz-ease), background-color var(--hz-dur-fast) var(--hz-ease);
+  }
+
+  .hz-toolbox-field::placeholder {
+    color: var(--hz-text-muted);
+  }
+
+  .hz-toolbox-field:focus {
+    outline: none;
+    border-color: var(--hz-gold);
+    background: var(--hz-surface-elevated);
+  }
+
+  .hz-toolbox-field input {
+    width: 100%;
+    min-height: 46px;
+    padding: 10px 14px;
+    border-radius: 12px;
+    border: 1px solid var(--hz-border);
+    background: var(--hz-surface);
+    color: var(--hz-text);
+    font: inherit;
+    font-size: 1rem;
+    font-variant-numeric: tabular-nums;
+    color-scheme: dark;
+  }
+
+  /* Native number spinners look broken on the dark fields — hide them. */
+  .hz-toolbox-field input[type="number"]::-webkit-outer-spin-button,
+  .hz-toolbox-field input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .hz-toolbox-field input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+  }
+
+  .hz-toolbox-field input:focus {
+    outline: none;
+    border-color: var(--hz-gold);
+    background: var(--hz-surface-elevated);
+  }
+
+  /* Hero result: one very large gold display number + its unit. */
+  .hz-toolbox-calc-result {
+    padding: 20px 18px 18px;
+    border-radius: var(--hz-radius-md);
+    border: 1px solid rgba(231, 198, 139, 0.28);
+    background: var(--hz-card-bg-featured);
+    box-shadow: var(--hz-card-shadow);
+    text-align: center;
+  }
+
+  .hz-toolbox-calc-num {
+    display: block;
+    font-family: 'Lalezar', var(--hz-font-display);
+    font-size: clamp(3.2rem, 16vw, 4.2rem);
+    font-weight: 400;
+    font-variant-numeric: tabular-nums;
+    color: var(--hz-gold-strong);
+    line-height: 1.25;
+  }
+
+  .hz-toolbox-calc-unit {
+    display: block;
+    margin-top: 2px;
+    font-size: 0.85rem;
+    color: var(--hz-text-secondary);
+    line-height: 1.7;
+  }
+
+  /* Preset chips: pill-shaped, gold outline; selected = filled gold. */
+  .hz-toolbox-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .hz-toolbox-chip {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    padding: 6px 16px;
+    border-radius: 999px;
+    border: 1px solid rgba(231, 198, 139, 0.45);
+    background: transparent;
+    color: var(--hz-text-secondary);
+    font: inherit;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color var(--hz-dur-fast) var(--hz-ease), color var(--hz-dur-fast) var(--hz-ease), border-color var(--hz-dur-fast) var(--hz-ease);
+  }
+
+  .hz-toolbox-chip:hover {
+    border-color: var(--hz-gold);
+    color: var(--hz-text);
+  }
+
+  .hz-toolbox-chip.is-selected {
+    border-color: var(--hz-gold);
+    background: var(--hz-gold);
+    color: var(--hz-bg);
+  }
+
+  /* Range slider: thin dark track + round gold thumb (WebKit + Firefox). */
+  .hz-toolbox-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 6px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.12);
+    outline: none;
+    cursor: pointer;
+  }
+
+  .hz-toolbox-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--hz-gold);
+    border: 2px solid var(--hz-gold-strong);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+  }
+
+  .hz-toolbox-slider::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--hz-gold);
+    border: 2px solid var(--hz-gold-strong);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+  }
+
+  .hz-toolbox-slider::-moz-range-track {
+    height: 6px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  /* Share of waking time: label + track + gold fill (JS sets the width). */
+  .hz-toolbox-wake {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .hz-toolbox-wake-label {
+    font-size: 0.88rem;
+    color: var(--hz-text-secondary);
+    line-height: 1.7;
+  }
+
+  .hz-toolbox-wake-track {
+    height: 10px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+  }
+
+  .hz-toolbox-wake-fill {
+    display: block;
+    height: 100%;
+    width: 0;
+    border-radius: inherit;
+    background: var(--hz-gold);
+    transition: width 300ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Comparison chips: three in a row, big Lalezar number + small label. */
+  .hz-toolbox-compare {
+    display: flex;
+    gap: 8px;
+  }
+
+  .hz-toolbox-compare-chip {
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 14px 8px 12px;
+    border-radius: var(--hz-radius-md);
+    border: 1px solid var(--hz-card-border);
+    background: var(--hz-card-bg);
+    text-align: center;
+  }
+
+  .hz-toolbox-compare-num {
+    font-family: 'Lalezar', var(--hz-font-display);
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.3;
+    color: var(--hz-gold-strong);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .hz-toolbox-compare-label {
+    font-size: 0.75rem;
+    color: var(--hz-text-muted);
+    line-height: 1.6;
+  }
+
+  .hz-toolbox-output {
+    padding: 18px;
+    border-radius: var(--hz-radius-md);
+    border: 1px solid rgba(231, 198, 139, 0.28);
+    background: var(--hz-card-bg-featured);
+    box-shadow: var(--hz-card-shadow);
+    text-align: center;
+    font-family: var(--hz-font-display);
+    font-size: 1.7rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    color: var(--hz-gold-strong);
+    line-height: 1.4;
+  }
+
+  .hz-toolbox-output small {
+    display: block;
+    margin-top: 4px;
+    font-family: var(--hz-font);
+    font-size: 0.82rem;
+    font-weight: 400;
+    color: var(--hz-text-secondary);
+    line-height: 1.7;
+  }
+
+  /* ---- Recovery journey: vertical line on the right (RTL), gold nodes ---- */
+  .hz-toolbox-journey {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .hz-toolbox-journey::before {
+    content: '';
+    position: absolute;
+    inset-inline-start: 8px;
+    top: 12px;
+    bottom: 12px;
+    width: 2px;
+    background: rgba(231, 198, 139, 0.28);
+  }
+
+  /* Gold progress fill on the same line; JS sets height as a percentage
+     (no height transition — JS drives it directly on scroll). */
+  .hz-toolbox-journey-fill {
+    position: absolute;
+    inset-inline-start: 8px;
+    top: 12px;
+    width: 2px;
+    height: 0;
+    border-radius: 2px;
+    background: var(--hz-gold);
+  }
+
+  .hz-toolbox-station {
+    position: relative;
+    padding: 18px 18px;
+    padding-inline-start: 30px;
+    border-radius: var(--hz-radius-md);
+    border: 1px solid var(--hz-card-border);
+    background: var(--hz-card-bg);
+    box-shadow: var(--hz-card-shadow);
+  }
+
+  .hz-toolbox-station::before {
+    content: '';
+    position: absolute;
+    inset-inline-start: 4px;
+    top: 20px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--hz-gold);
+    box-shadow: 0 0 8px rgba(231, 198, 139, 0.65);
+  }
+
+  .hz-toolbox-station strong {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 1rem;
+    color: var(--hz-text);
+  }
+
+  .hz-toolbox-station p {
+    margin: 0 0 10px;
+    font-size: 0.85rem;
+    color: var(--hz-text-secondary);
+    line-height: 1.8;
+  }
+
+  .hz-toolbox-station p:last-child {
+    margin-bottom: 0;
+  }
+
+  .hz-toolbox-stage-date {
+    display: inline-flex;
+    align-items: center;
+    min-height: 30px;
+    padding: 4px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(231, 198, 139, 0.45);
+    background: rgba(231, 198, 139, 0.1);
+    color: var(--hz-gold-strong);
+    font-size: 0.82rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  .hz-toolbox-date-input {
+    width: 100%;
+    min-height: 46px;
+    padding: 10px 14px;
+    border-radius: 12px;
+    border: 1px solid var(--hz-border);
+    background: var(--hz-surface);
+    color: var(--hz-text);
+    font: inherit;
+    font-size: 0.95rem;
+    font-variant-numeric: tabular-nums;
+    color-scheme: dark;
+    transition: border-color var(--hz-dur-fast) var(--hz-ease), background-color var(--hz-dur-fast) var(--hz-ease);
+  }
+
+  .hz-toolbox-date-input:focus {
+    outline: none;
+    border-color: var(--hz-gold);
+    background: var(--hz-surface-elevated);
+  }
+
+  /* Timeline date field: the label is the card (same as calc); the date
+     input sits borderless inside it. Without the flex column, the inline
+     label's box does not contain the 100%-wide date input and the journey
+     below overlaps it by ~36px. */
+  .hz-toolbox-field:has(.hz-toolbox-date-input) {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .hz-toolbox-field:has(.hz-toolbox-date-input) .hz-toolbox-date-input {
+    min-height: 28px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
+
+  /* Start-date field: a distinct card with a gold border + soft shadow. */
+  .hz-toolbox-field--start {
+    border-color: rgba(231, 198, 139, 0.45);
+    background: var(--hz-card-bg-featured);
+    box-shadow: 0 6px 18px -8px rgba(231, 198, 139, 0.25);
+  }
+
+  /* ---- Tonight: readiness bar + iOS switches ---- */
+  .hz-toolbox-readiness {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 18px;
+    border-radius: var(--hz-radius-md);
+    border: 1px solid rgba(231, 198, 139, 0.28);
+    background: var(--hz-card-bg-featured);
+    box-shadow: var(--hz-card-shadow);
+  }
+
+  /* Circular dial (120x120, r=52): same rotation trick as the
+     self-assessment gauge; JS sets the ring's dasharray/offset. */
+  .hz-toolbox-dial {
+    position: relative;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .hz-toolbox-dial svg {
+    grid-area: 1 / 1;
+    width: 120px;
+    height: 120px;
+    display: block;
+    transform: rotate(-90deg);
+  }
+
+  .hz-toolbox-dial-track {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.08);
+    stroke-width: 10;
+  }
+
+  .hz-toolbox-dial-ring {
+    fill: none;
+    stroke: var(--hz-gold);
+    stroke-width: 10;
+    stroke-linecap: round;
+    transform-origin: 50% 50%;
+    transition: stroke-dashoffset 480ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .hz-toolbox-dial-count {
+    grid-area: 1 / 1;
+    z-index: 1;
+    margin: 0;
+    font-family: 'Lalezar', var(--hz-font-display);
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.3;
+    color: var(--hz-gold-strong);
+    text-align: center;
+    pointer-events: none;
+  }
+
+  .hz-toolbox-readiness-text {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--hz-gold-strong);
+    line-height: 1.7;
+    text-align: center;
+  }
+
+  /* iOS switch row: ::before is the track, ::after is the round knob.
+     Switch sits at the inline-end (left in RTL); text keeps clear of it.
+     These rules come after .hz-toolbox-check-item on purpose, so when a
+     row carries both classes the switch wins over the old checkbox box
+     and no tick is ever drawn here. */
+  .hz-toolbox-toggle-row {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    min-height: 52px;
+    padding: 12px 14px;
+    padding-inline-end: 70px;
+    border-radius: var(--hz-radius-md);
+    border: 1px solid var(--hz-card-border);
+    background: var(--hz-card-bg);
+    box-shadow: var(--hz-card-shadow);
+    color: var(--hz-text-secondary);
+    font: inherit;
+    font-size: 0.88rem;
+    line-height: 1.7;
+    text-align: right;
+    cursor: pointer;
+    transition: border-color var(--hz-dur-fast) var(--hz-ease), background 220ms var(--hz-ease), color var(--hz-dur-fast) var(--hz-ease);
+  }
+
+  .hz-toolbox-toggle-row:hover {
+    border-color: var(--hz-cyan-border);
+    background: var(--hz-card-bg-hover);
+    color: var(--hz-text);
+  }
+
+  .hz-toolbox-toggle-row.is-checked,
+  .hz-toolbox-toggle-row[aria-checked="true"],
+  .hz-toolbox-toggle-row:has(input:checked) {
+    border-color: rgba(231, 198, 139, 0.36);
+    background: var(--hz-card-bg-featured);
+    color: var(--hz-text);
+  }
+
+  /* Track (off = faint grey). */
+  .hz-toolbox-toggle-row::before,
+  .hz-toolbox-check-item.hz-toolbox-toggle-row::before {
+    content: '';
+    position: absolute;
+    inset-inline-end: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 28px;
+    flex-shrink: 0;
+    border-radius: 999px;
+    border: 1px solid var(--hz-border);
+    background: rgba(255, 255, 255, 0.14);
+    transition: background-color 220ms ease, border-color 220ms ease;
+  }
+
+  /* Knob (off = right side of the track in RTL). */
+  .hz-toolbox-toggle-row::after,
+  .hz-toolbox-check-item.hz-toolbox-toggle-row::after {
+    content: '';
+    position: absolute;
+    inset-inline-end: 17px;
+    top: 50%;
+    transform: translateY(-50%) translateX(20px);
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--hz-text);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
+    transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+  }
+
+  /* On = gold track, knob slides to the inline-end side. */
+  .hz-toolbox-toggle-row.is-checked::before,
+  .hz-toolbox-toggle-row[aria-checked="true"]::before,
+  .hz-toolbox-toggle-row:has(input:checked)::before,
+  .hz-toolbox-check-item.hz-toolbox-toggle-row.is-checked::before,
+  .hz-toolbox-check-item.hz-toolbox-toggle-row[aria-checked="true"]::before,
+  .hz-toolbox-check-item.hz-toolbox-toggle-row:has(input:checked)::before {
+    background: var(--hz-gold);
+    border-color: var(--hz-gold-strong);
+  }
+
+  .hz-toolbox-toggle-row.is-checked::after,
+  .hz-toolbox-toggle-row[aria-checked="true"]::after,
+  .hz-toolbox-toggle-row:has(input:checked)::after,
+  .hz-toolbox-check-item.hz-toolbox-toggle-row.is-checked::after,
+  .hz-toolbox-check-item.hz-toolbox-toggle-row[aria-checked="true"]::after,
+  .hz-toolbox-check-item.hz-toolbox-toggle-row:has(input:checked)::after {
+    content: '';
+    inset-inline-start: auto;
+    transform: translateY(-50%) translateX(0);
+  }
+
+  /* Native checkbox inside a switch row, if JS builds one: hidden, state only. */
+  .hz-toolbox-toggle-row input[type="checkbox"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  /* ---- Share ---- */
+  .hz-toolbox-share {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* Step 1 (who is it for): 2×2 grid of large choices. */
+  .hz-toolbox-share-steps {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .hz-toolbox-choice {
+    position: relative;
+    width: 100%;
+    min-height: 58px;
+    padding: 12px 14px;
+    border-radius: var(--hz-radius-md);
+    border: 1px solid var(--hz-card-border);
+    background: var(--hz-card-bg);
+    color: var(--hz-text-secondary);
+    font: inherit;
+    font-size: 0.98rem;
+    line-height: 1.7;
+    text-align: right;
+    cursor: pointer;
+    transition: border-color var(--hz-dur-fast) var(--hz-ease), background 220ms var(--hz-ease), color var(--hz-dur-fast) var(--hz-ease);
+  }
+
+  .hz-toolbox-choice:hover {
+    border-color: var(--hz-cyan-border);
+    background: var(--hz-card-bg-hover);
+    color: var(--hz-text);
+  }
+
+  .hz-toolbox-choice.is-selected {
+    border-color: var(--hz-gold);
+    background: var(--hz-gold-dim);
+    color: var(--hz-gold-strong);
+    font-weight: 700;
+  }
+
+  /* Small gold dot accent ahead of the choice label. */
+  .hz-toolbox-choice::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin-inline-end: 8px;
+    border-radius: 50%;
+    background: var(--hz-gold);
+    vertical-align: middle;
+  }
+
+  .hz-toolbox-share-result {
+    padding: 16px 18px;
+    border-radius: var(--hz-radius-md);
+    border: 1px solid var(--hz-cyan-border);
+    background: rgba(114, 216, 219, 0.06);
+    font-size: 0.9rem;
+    color: var(--hz-text-secondary);
+    line-height: 1.86;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    animation: hzFadeLift 220ms var(--hz-ease) 1;
+  }
+
+  .hz-toolbox-share-result:empty {
+    display: none;
+  }
+
+  /* Gift card: gold border + gold accent along the top, Lalezar guide title. */
+  .hz-toolbox-share-result--gift {
+    position: relative;
+    padding-top: 20px;
+    border-color: rgba(231, 198, 139, 0.45);
+    background: var(--hz-card-bg-featured);
+  }
+
+  .hz-toolbox-share-result--gift::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    inset-inline: 18px;
+    height: 3px;
+    border-radius: 0 0 3px 3px;
+    background: linear-gradient(90deg, transparent, var(--hz-gold), transparent);
+  }
+
+  .hz-toolbox-share-result--gift strong {
+    font-family: 'Lalezar', var(--hz-font-display);
+    font-size: 1.15rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--hz-gold-strong);
+  }
+
+  .hz-toolbox-share-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  /* display:flex روی این عنصر، استایل پیش‌فرض [hidden] را خنثی می‌کند؛
+     بدون این قانون دکمه‌های «اشتراک‌گذاری / کپی لینک» حتی پیش از انتخاب
+     قدم‌ها هم دیده می‌شدند (همان باگ دور اول با display:grid). */
+  .hz-toolbox-share-actions[hidden] {
+    display: none;
+  }
+
+  .hz-toolbox-share-actions button,
+  .hz-toolbox-share-actions a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 0 18px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.025);
+    color: var(--hz-text-secondary);
+    font: inherit;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: border-color var(--hz-dur-fast) var(--hz-ease), color var(--hz-dur-fast) var(--hz-ease), background-color var(--hz-dur-fast) var(--hz-ease), transform var(--hz-dur-fast) var(--hz-ease);
+  }
+
+  .hz-toolbox-share-actions button:hover,
+  .hz-toolbox-share-actions a:hover {
+    border-color: rgba(231, 198, 139, 0.45);
+    background: rgba(231, 198, 139, 0.06);
+    color: var(--hz-gold-strong);
+  }
+
+  .hz-toolbox-share-actions button:first-child,
+  .hz-toolbox-share-actions a:first-child {
+    border-color: var(--hz-gold);
+    background: var(--hz-gold);
+    color: var(--hz-bg);
+  }
+
+  .hz-toolbox-share-actions button:first-child:hover,
+  .hz-toolbox-share-actions a:first-child:hover {
+    background: var(--hz-gold-strong);
+    color: var(--hz-bg);
+    transform: translateY(-1px);
+  }
+
+  /* Large full-width gold share button. */
+  .hz-toolbox-share-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    min-height: 58px;
+    padding: 0 20px;
+    border-radius: 12px;
+    border: 1px solid var(--hz-gold);
+    background: var(--theme-grad-gold-sheen, var(--hz-gold));
+    color: var(--theme-navy-900, #080e15);
+    font: inherit;
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform var(--hz-dur-fast) var(--hz-ease), background-color var(--hz-dur-fast) var(--hz-ease), box-shadow var(--hz-dur-fast) var(--hz-ease);
+  }
+
+  .hz-toolbox-share-primary:hover {
+    background: var(--hz-gold-strong);
+    color: var(--theme-navy-900, #080e15);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px -6px rgba(231, 198, 139, 0.28);
+  }
+
+  /* ---- Reduced motion: everything instant ---- */
+  @media (prefers-reduced-motion: reduce) {
+    .hz-dock-sheet,
+    .hz-dock-backdrop,
+    .hz-toolbox-stage > *,
+    .hz-toolbox-rail-tab,
+    .hz-toolbox-gauge-ring,
+    .hz-toolbox-rail-pill,
+    .hz-toolbox-dial-ring,
+    .hz-toolbox-wake-fill,
+    .hz-toolbox-toggle-row,
+    .hz-toolbox-toggle-row::before,
+    .hz-toolbox-toggle-row::after,
+    .hz-toolbox-share-primary,
+    .hz-toolbox-result,
+    .hz-toolbox-share-result {
+      animation: none !important;
+      transition: none !important;
+    }
   }
 }

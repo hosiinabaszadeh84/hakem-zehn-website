@@ -1330,7 +1330,9 @@
   var searchResultsBody = document.getElementById('hz-search-results-body');
 
   var searchIndex = [
-    { type: 'page', target: '/features.html', title: 'معرفی کامل اپلیکیشن حاکم ذهن (مایکت)', body: 'سپر SOS با قانون ۵ دقیقه، ثبت مستقل پورن و خودارضایی، مسیر ۱۴۰ روزه در ۳ فاز، ۳۰ فصل روش آسان، ۷ فاز و ۲۱ وظیفه، نسخه طلایی PRO ۹۹ هزار تومان.' },
+    { type: 'page', target: '/features.html', title: 'معرفی کامل اپلیکیشن حاکم ذهن (مایکت)', body: 'سپر SOS با قانون ۵ دقیقه، ثبت مستقل پورن و خودارضایی، مسیر ۱۴۰ روزه در ۳ فاز، ۳۰ فصل روش آسان، ۷ فاز و ۲۱ وظیفه، نسخه طلایی PRO ۱۴۹ هزار تومان.' },
+    { type: 'page', target: '/toolbox.html', title: 'جعبه‌ابزار حاکم ذهن', body: 'خودسنجی نشانه‌ها، ماشین‌حساب هزینهٔ زمانی، خط زمانی بهبود مغز، برنامهٔ امشب و ارسال راهنما.' },
+    { type: 'page', target: '/self-assessment.html', title: 'آیا به پورن معتاد شده‌ام؟ خودسنجی نشانه‌ها', body: 'پنج نشانهٔ عینِ معیارهای ICD-11؛ نشانه است، نه تشخیص. سایت آموزشی جای روان‌شناس نیست.' },
     { type: 'page', target: '/privacy.html', title: 'حریم خصوصی و نگهداری محلی در حاکم ذهن', body: 'ذخیره محلی در Room بدون ثبت‌نام و شماره تلفن، بکاپ رمزنگاری‌شده AES-256-GCM و شفافیت کامل دسترسی‌ها و پرداخت آفلاین مایکت.' },
     { type: 'page', target: '/tark-porn.html', title: 'راهنمای جامع ترک پورن (روش آسان)', body: 'قطع دسترسی ۵ دقیقه‌ای، مقایسه اراده با روش آسان، حلقه فقط یک نگاه و نقشه ۴ هفته.' },
     { type: 'page', target: '/tark-khod-arzaei.html', title: 'راهنمای جامع ترک خودارضایی (مسیر جداگانه)', body: 'تفکیک از پورن، قانون تختخواب، مدیریت خستگی و تنش شبانه و برنامه ۴ هفته.' },
@@ -1860,44 +1862,108 @@
         var show = tier === 'all' || rowTier === tier;
         row.classList.toggle('hz-hidden-row', !show);
       });
+      /* Reveal the filtered column when the table overflows (mobile). */
+      var matrixWrap = document.querySelector('.hz-matrix-table-wrap');
+      var matrixTable = document.querySelector('.hz-matrix-table');
+      if (matrixWrap && matrixTable) {
+        matrixTable.classList.toggle('is-pro-only', tier === 'pro');
+        var thIndex = tier === 'pro' ? 2 : tier === 'free' ? 1 : 0;
+        var targetTh = matrixTable.querySelectorAll('thead th')[thIndex];
+        if (targetTh && matrixWrap.scrollWidth > matrixWrap.clientWidth + 1) {
+          targetTh.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', inline: 'nearest', block: 'nearest' });
+        }
+      }
+      updateMatrixFade();
     });
   });
 
+  /* Comparison matrix: fade the hidden edge while a column is off-frame. */
+  var matrixWrapEl = document.querySelector('.hz-matrix-table-wrap');
+  var matrixTableEl = document.querySelector('.hz-matrix-table');
+  function updateMatrixFade() {
+    if (!matrixWrapEl || !matrixTableEl) return;
+    var ths = matrixTableEl.querySelectorAll('thead th');
+    var proTh = ths[2];
+    if (!proTh) return;
+    var wrapRect = matrixWrapEl.getBoundingClientRect();
+    var thRect = proTh.getBoundingClientRect();
+    matrixWrapEl.classList.toggle(
+      'hz-can-scroll-more',
+      thRect.left < wrapRect.left - 1 || thRect.right > wrapRect.right + 1
+    );
+  }
+  if (matrixWrapEl) {
+    matrixWrapEl.addEventListener('scroll', updateMatrixFade, { passive: true });
+    window.addEventListener('resize', updateMatrixFade);
+    updateMatrixFade();
+  }
+
   /* ------------------------------------------------------------------------
-     13. Interactive Orbital Bottom Dock & Expandable Command Sheet
+     13. Interactive Orbital Bottom Dock & Toolbox Sheet («جعبه‌ابزار حاکم ذهن»)
      ------------------------------------------------------------------------ */
   var mobileDock = document.querySelector('.hz-mobile-dock');
   var dockHubBtn = document.getElementById('hz-dock-hub-btn');
 
   if (mobileDock && dockHubBtn) {
-    var atlasPages = [
-      { href: '/index.html', label: 'صفحهٔ اصلی' },
-      { href: '/features.html', label: 'معرفی اپلیکیشن' },
-      { href: '/privacy.html', label: 'حریم خصوصی' },
-      { href: '/tark-porn.html', label: 'ترک پورن' },
-      { href: '/tark-khod-arzaei.html', label: 'ترک خودارضایی' },
-      { href: '/porn-brain.html', label: 'مغز و دوپامین' },
-      { href: '/relapse.html', label: 'پروتکل لغزش' },
-      { href: '/habits.html', label: 'عادت و CSBD' }
+    var toolboxIcons = {
+      assess:
+        '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4.5V3h6v1.5"/><path d="m9 13 2 2 4-4.5"/></svg>',
+      calc:
+        '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5"/><path d="M9 2h6"/></svg>',
+      timeline:
+        '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l5.5-5.5 3.5 3.5L21 6"/><path d="M15 6h6v6"/></svg>',
+      tonight:
+        '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13.5A8.5 8.5 0 0 1 10.5 4 8.5 8.5 0 1 0 20 13.5Z"/></svg>',
+      share:
+        '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg>'
+    };
+
+    var toolboxTools = [
+      { id: 'assess', short: 'نشانه‌ها', title: 'خودسنجی نشانه‌ها', desc: 'آیا این رفتار برای من مشکل شده؟' },
+      { id: 'calc', short: 'زمان', title: 'ماشین‌حساب هزینهٔ زمانی', desc: 'تا حالا چقدر وقتم رفته؟' },
+      { id: 'timeline', short: 'مغز', title: 'خط زمانی بهبود مغز', desc: 'هفته‌به‌هفته بعد از شروع، چه می‌شود؟' },
+      { id: 'tonight', short: 'امشب', title: 'برنامهٔ امشب', desc: 'محیط امشب را از پیش آماده کن' },
+      { id: 'share', short: 'ارسال', title: 'ارسال راهنما برای کسی دیگر', desc: 'راهنمای درست را برای او بفرست' }
     ];
 
-    var currentPath = window.location.pathname || '/index.html';
-    if (currentPath === '/') currentPath = '/index.html';
+    var toolboxAssessSigns = [
+      'از دست رفتن اختیار شروع و زمان: قرار است ۱۰ دقیقه گوشی ببینی اما تا نیمه‌شب یا نزدیک صبح کنترل زمان از دستت خارج می‌شود.',
+      'آسیب به حوزهٔ کار، درس یا خواب: خستگی مزمن باعث غیبت، جاانداختن کارهای مهم یا به‌هم‌خوردن ساعت استراحت شده است.',
+      'اولویت‌یافتن بر روابط و علایق واقعی: کناره‌گیری از جمع، خانواده یا علایق سابق به نفع انزوای پشت صفحه.',
+      'ادامه با وجود نبود لذت: دیگر هیجانی هم وجود ندارد، ولی انگار یک دکمهٔ اجباری دست‌بردار نیست.',
+      'وجود اضطراب یا افسردگی هم‌زمان: وقتی مصرف شدید دقیقاً نقش مسکّن برای یک فشار روانی عمیق‌تر را بازی می‌کند.'
+    ];
 
-    // Discover major headings/sections on current page dynamically
-    var sectionItems = [];
-    var discovered = Array.prototype.slice.call(document.querySelectorAll('main section[id], article section[id]'));
-    discovered.forEach(function (sec, idx) {
-      var sid = sec.getAttribute('id');
-      if (!sid) return;
-      var heading = sec.querySelector('h1, h2, h3');
-      var text = heading ? heading.textContent.trim() : sid;
-      if (text.length > 46) text = text.slice(0, 44) + '…';
-      sectionItems.push({ id: sid, num: persianDigitsMap[idx + 1] || String(idx + 1), label: text });
-    });
-    if (!sectionItems.length) {
-      sectionItems.push({ id: 'main-content', num: '۱', label: 'ابتدای راهنمای صفحه' });
-    }
+    var toolboxTonightItems = [
+      'انتقال سیم شارژر به هال یا میز کار بیرون اتاق پیش از ساعت خواب.',
+      'خاموش‌کردن اینترنت گوشی یا گذاشتن گوشی در حالت هواپیما هنگام شب.',
+      'اجرای قانون ۱۵ دقیقه: بیدارماندن در تخت یعنی ترک فوری رختخواب.',
+      'آبی به صورتت بزن و پنج دقیقه به فضای روشن‌تر خانه برو.',
+      'جابه‌جایی اتاق، خوردن آب خنک، ۱۰ دقیقه پیاده‌روی یا زنگ‌زدن عادی به یک دوست.'
+    ];
+
+    var toolboxShareTargets = {
+      'tark-nojavanan': {
+        href: '/tark-nojavanan.html',
+        title: 'ترک خودارضایی نوجوانان و پورن + راهنمای والدین | حاکم ذهن',
+        desc: 'راهنمای ترک خودارضایی و پورن برای نوجوانان: مرز کنجکاوی بلوغ با عادت اجباری، مهار فشار همسالان، قانون شبانه گوشی و بخش ویژه گفت‌وگوی آرام والدین.'
+      },
+      start: {
+        href: '/start.html',
+        title: 'شروع کاهش یا ترک در ۴۸ ساعت اول؛ قدم‌های ساده | حاکم ذهن',
+        desc: 'چطور بدون سردرگمی در ۴۸ ساعت اول کاهش یا ترک پورن و خودارضایی را شروع کنیم؟ تعریف هدف قابل مشاهده، یک تغییر محیطی و یادداشت کوتاه بدون برچسب‌زدن.'
+      },
+      relapse: {
+        href: '/relapse.html',
+        title: 'لغزش بعد از ترک چه کنیم؟ پروتکل ۶۰ دقیقهٔ اول | حاکم ذهن',
+        desc: 'بعد از شکستن عهد ترک پورن یا خودارضایی چکار کنیم؟ راهنمای علمی ۶۰ دقیقهٔ اول برای توقف اثر «حالا که خراب شد»، پیداکردن درز محیطی و ادامهٔ مسیر بدون سرزنش.'
+      },
+      'porn-brain': {
+        href: '/porn-brain.html',
+        title: 'تأثیر پورن بر مغز و دوپامین: علم در برابر شایعه | حاکم ذهن',
+        desc: 'بررسی علمی تأثیر پورن بر مغز، دوپامین و تمرکز: محرک فراهنجار، تنظیم کاهشی گیرنده‌ها، علت مه‌ذهنی صبحگاهی و واقعیت بازگشت تعادل عصبی (نوروپلاستیسیتی).'
+      }
+    };
 
     var backdrop = document.createElement('div');
     backdrop.className = 'hz-dock-backdrop';
@@ -1908,33 +1974,22 @@
     sheet.id = 'hz-dock-sheet';
     sheet.setAttribute('role', 'dialog');
     sheet.setAttribute('aria-modal', 'true');
-    sheet.setAttribute('aria-label', 'قطب‌نمای سریع و دسترسی‌های حاکم ذهن');
+    sheet.setAttribute('aria-label', 'جعبه‌ابزار حاکم ذهن');
     sheet.setAttribute('aria-hidden', 'true');
 
-    var outlineHtml = sectionItems
-      .slice(0, 6)
-      .map(function (item) {
+    var toolboxRailHtml = toolboxTools
+      .map(function (tool) {
         return (
-          '<a class="hz-dock-outline-item" href="#' +
-          item.id +
-          '"><span>' +
-          item.label +
-          '</span><span>پرش ↙</span></a>'
-        );
-      })
-      .join('');
-
-    var atlasHtml = atlasPages
-      .map(function (p) {
-        var active = currentPath === p.href;
-        return (
-          '<a class="hz-dock-atlas-link' +
-          (active ? ' is-current' : '') +
-          '" href="' +
-          p.href +
-          '"><span>' +
-          p.label +
-          '</span><span>←</span></a>'
+          '<button type="button" class="hz-toolbox-rail-tab" data-toolbox-tool="' +
+          tool.id +
+          '" aria-selected="false">' +
+          '<span class="hz-toolbox-rail-icon">' +
+          toolboxIcons[tool.id] +
+          '</span>' +
+          '<span class="hz-toolbox-rail-label">' +
+          tool.short +
+          '</span>' +
+          '</button>'
         );
       })
       .join('');
@@ -1943,27 +1998,571 @@
       '<div class="hz-dock-sheet-head">' +
       '<div class="hz-dock-sheet-brand">' +
       '<img src="/assets/icon-sm.webp" width="28" height="28" alt="نشان حاکم ذهن" referrerpolicy="no-referrer" />' +
-      '<div><strong class="hz-dock-sheet-title">قطب‌نمای سریع حاکم ذهن</strong>' +
+      '<div><strong class="hz-dock-sheet-title">جعبه‌ابزار حاکم ذهن</strong>' +
       '<span class="hz-dock-sheet-progress" id="hz-dock-sheet-progress">در حال آماده‌سازی ردیاب مطالعه...</span></div>' +
       '</div>' +
-      '<button type="button" class="hz-dock-sheet-close" id="hz-dock-sheet-close" aria-label="بستن قطب‌نما">×</button>' +
+      '<button type="button" class="hz-dock-sheet-close" id="hz-dock-sheet-close" aria-label="بستن جعبه‌ابزار">×</button>' +
       '</div>' +
-      '<div class="hz-dock-sheet-tabs" role="tablist">' +
-      '<button type="button" class="hz-dock-sheet-tab is-active" data-dock-pane="outline" role="tab" aria-selected="true">بخش‌های صفحه</button>' +
-      '<button type="button" class="hz-dock-sheet-tab" data-dock-pane="atlas" role="tab" aria-selected="false">کل مرجع و اپ</button>' +
-      '</div>' +
-      '<div class="hz-dock-pane is-active" data-dock-panel="outline"><div class="hz-dock-outline-list">' +
-      outlineHtml +
-      '</div></div>' +
-      '<div class="hz-dock-pane" data-dock-panel="atlas"><div class="hz-dock-atlas-grid">' +
-      atlasHtml +
-      '</div>' +
-      '<a class="hz-dock-outline-item" style="margin-bottom:12px" href="/guides.html"><span>مرکز همهٔ راهنماها و منابع علمی</span><span>مشاهده ←</span></a>' +
-      '</div>';
+      '<div class="hz-toolbox-stage"></div>' +
+      '<nav class="hz-toolbox-rail" aria-label="ابزارهای جعبه‌ابزار">' +
+      '<span class="hz-toolbox-rail-pill" aria-hidden="true"></span>' +
+      toolboxRailHtml +
+      '</nav>';
 
     document.body.appendChild(backdrop);
     document.body.appendChild(sheet);
     updateReadingProgress();
+
+    var toolboxStage = sheet.querySelector('.hz-toolbox-stage');
+    var toolboxRailTabs = Array.prototype.slice.call(sheet.querySelectorAll('.hz-toolbox-rail-tab'));
+
+    /* پرشدن طلایی خط زمانی، وابسته به اسکرول صحنه؛ فقط وقتی fill در صحنه هست کاری می‌کند */
+    toolboxStage.addEventListener('scroll', function () {
+      var fill = toolboxStage.querySelector('.hz-toolbox-journey-fill');
+      if (!fill) return;
+      var denom = toolboxStage.scrollHeight - toolboxStage.clientHeight;
+      var ratio = denom > 0 ? toolboxStage.scrollTop / denom : 0;
+      fill.style.height = ratio * 100 + '%';
+    });
+
+    function toolboxFaNum(n) {
+      return String(n).replace(/\d/g, function (d) {
+        return persianDigitsMap[Number(d)];
+      });
+    }
+
+    /* شمارش تدریجی عدد (count-up)؛ با reduced-motion مقدار نهایی فوری گذاشته می‌شود */
+    function toolboxCountUp(el, to, formatFn) {
+      if (!el) return;
+      var fmt = formatFn || toolboxFaNum;
+      if (el._toolboxCountUpRaf) window.cancelAnimationFrame(el._toolboxCountUpRaf);
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        el._toolboxCountUpValue = to;
+        el.textContent = fmt(to);
+        return;
+      }
+      var from = typeof el._toolboxCountUpValue === 'number' ? el._toolboxCountUpValue : 0;
+      var start = null;
+      var duration = 350;
+      function step(ts) {
+        if (start === null) start = ts;
+        var p = Math.min(1, (ts - start) / duration);
+        var eased = 1 - Math.pow(1 - p, 3);
+        var val = from + (to - from) * eased;
+        el._toolboxCountUpValue = val;
+        el.textContent = fmt(val);
+        if (p < 1) {
+          el._toolboxCountUpRaf = window.requestAnimationFrame(step);
+        } else {
+          el._toolboxCountUpValue = to;
+          el.textContent = fmt(to);
+        }
+      }
+      el._toolboxCountUpRaf = window.requestAnimationFrame(step);
+    }
+
+    function toolboxStageHead(toolId) {
+      var tool = null;
+      toolboxTools.forEach(function (t) {
+        if (t.id === toolId) tool = t;
+      });
+      if (!tool) return '';
+      return '<h3 class="hz-toolbox-stage-title">' + tool.title + '</h3>';
+    }
+
+    function toolboxShowStage(toolId) {
+      var tool = null;
+      toolboxTools.forEach(function (t) {
+        if (t.id === toolId) tool = t;
+      });
+      if (!tool) return;
+      toolboxRailTabs.forEach(function (tab) {
+        var active = tab.getAttribute('data-toolbox-tool') === toolId;
+        tab.classList.toggle('is-active', active);
+        tab.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+      toolboxPositionRailPill();
+      if (toolId === 'assess') toolboxRenderAssess();
+      else if (toolId === 'calc') toolboxRenderCalc();
+      else if (toolId === 'timeline') toolboxRenderTimeline();
+      else if (toolId === 'tonight') toolboxRenderTonight();
+      else if (toolId === 'share') toolboxRenderShare();
+      sheet.scrollTop = 0;
+      toolboxStage.scrollTop = 0;
+    }
+
+    /* قرص طلایی لغزندهٔ ریل را روی تب فعال میزان می‌کند */
+    function toolboxPositionRailPill() {
+      var pill = sheet.querySelector('.hz-toolbox-rail-pill');
+      if (!pill) return;
+      var activeTab = null;
+      toolboxRailTabs.forEach(function (tab) {
+        if (tab.classList.contains('is-active')) activeTab = tab;
+      });
+      if (!activeTab) return;
+      pill.style.width = activeTab.offsetWidth + 'px';
+      pill.style.transform = 'translateX(' + activeTab.offsetLeft + 'px)';
+    }
+
+    /* --- ابزار ۱: خودسنجی نشانه‌ها (بدون ذخیره‌سازی، بدون نمره) --- */
+    function toolboxRenderAssess() {
+      var itemsHtml = toolboxAssessSigns
+        .map(function (sign, idx) {
+          return (
+            '<label class="hz-toolbox-check-item">' +
+            '<input type="checkbox" data-assess-sign="' +
+            idx +
+            '" />' +
+            '<span>' +
+            sign +
+            '</span>' +
+            '</label>'
+          );
+        })
+        .join('');
+      toolboxStage.innerHTML =
+        toolboxStageHead('assess') +
+        '<p class="hz-toolbox-detail-intro">نیازی به نمره و جدول نیست؛ اگر دو مورد یا بیشتر از نشانه‌های زیر را ماه‌هاست با شدت بالا تجربه می‌کنی، مراجعه به متخصص روان‌شناسی بسیار کمک‌کننده خواهد بود:</p>' +
+        '<div class="hz-toolbox-assess">' +
+        '<div class="hz-toolbox-gauge">' +
+        '<svg width="200" height="200" viewBox="0 0 200 200" role="img" aria-label="تعداد نشانه‌های انتخاب‌شده">' +
+        '<circle class="hz-toolbox-gauge-track" cx="100" cy="100" r="88" fill="none" stroke-width="8" />' +
+        '<circle class="hz-toolbox-gauge-ring" cx="100" cy="100" r="88" fill="none" stroke-width="8" stroke-dasharray="552.92" stroke-dashoffset="552.92" />' +
+        '</svg>' +
+        '<span class="hz-toolbox-gauge-count">۰ از ۵</span>' +
+        '</div>' +
+        '<div class="hz-toolbox-check">' +
+        itemsHtml +
+        '</div>' +
+        '<div class="hz-toolbox-result" hidden></div>' +
+        '<button type="button" class="hz-toolbox-clear">پاک کردن پاسخ‌ها</button>' +
+        '</div>';
+      var resultEl = toolboxStage.querySelector('.hz-toolbox-result');
+      var gaugeRing = toolboxStage.querySelector('.hz-toolbox-gauge-ring');
+      var gaugeCount = toolboxStage.querySelector('.hz-toolbox-gauge-count');
+      var gaugeCirc = 552.92;
+      var boxes = Array.prototype.slice.call(toolboxStage.querySelectorAll('[data-assess-sign]'));
+      function updateAssessResult() {
+        var checked = boxes.filter(function (b) {
+          return b.checked;
+        }).length;
+        if (gaugeCount) toolboxCountUp(gaugeCount, checked, function (v) { return toolboxFaNum(Math.round(v)) + ' از ۵'; });
+        if (gaugeRing) {
+          gaugeRing.style.strokeDasharray = gaugeCirc.toFixed(2);
+          gaugeRing.style.strokeDashoffset = (gaugeCirc * (1 - checked / 5)).toFixed(2);
+        }
+        /* کلیک روی برچسب، چک‌باکس ۱ پیکسلی را فوکوس می‌کند و مرورگر صحنه را پایین می‌کشد؛ گیج (بازخورد عمل) را دوباره به دید برگردان */
+        var gaugeEl = toolboxStage.querySelector('.hz-toolbox-gauge');
+        if (gaugeEl) gaugeEl.scrollIntoView({ block: 'nearest' });
+        if (checked === 0) {
+          resultEl.setAttribute('hidden', '');
+          resultEl.className = 'hz-toolbox-result';
+          resultEl.innerHTML = '';
+          return;
+        }
+        resultEl.removeAttribute('hidden');
+        if (checked >= 2) {
+          resultEl.className = 'hz-toolbox-result hz-toolbox-result--high hz-toolbox-result--card';
+          resultEl.innerHTML =
+            '<p>مراجعه به متخصص روان‌شناسی بسیار کمک‌کننده خواهد بود.</p>' +
+            '<p><a href="/habits.html">خواندن توضیح کامل</a></p>' +
+            '<p class="hz-toolbox-disclaimer">سایت آموزشی جای روان‌شناس نیست.</p>';
+        } else {
+          resultEl.className = 'hz-toolbox-result hz-toolbox-result--low hz-toolbox-result--card';
+          resultEl.innerHTML =
+            '<p>بسیاری از رفتارهای تکرارشونده از جنس «عادت محیطی» هستند و با بستن راه‌های دسترسی، اصلاح خواب و تغییر دیدگاه قابل کنترل می‌شوند.</p>' +
+            '<p><a href="/habits.html">خواندن توضیح کامل</a></p>' +
+            '<p class="hz-toolbox-disclaimer">سایت آموزشی جای روان‌شناس نیست.</p>';
+        }
+      }
+      boxes.forEach(function (b) {
+        b.addEventListener('change', updateAssessResult);
+      });
+      var clearBtn = toolboxStage.querySelector('.hz-toolbox-clear');
+      clearBtn.addEventListener('click', function () {
+        boxes.forEach(function (b) {
+          b.checked = false;
+        });
+        updateAssessResult();
+      });
+    }
+
+    /* --- ابزار ۲: ماشین‌حساب هزینهٔ زمانی --- */
+    function toolboxRenderCalc() {
+      toolboxStage.innerHTML =
+        toolboxStageHead('calc') +
+        '<div class="hz-toolbox-calc">' +
+        '<label class="hz-toolbox-field">دقیقه در روز<input type="number" min="0" step="1" inputmode="numeric" value="30" /></label>' +
+        '<div class="hz-toolbox-chips" role="group" aria-label="دقیقه‌های آماده">' +
+        '<button type="button" class="hz-toolbox-chip" data-calc-minutes="15">۱۵</button>' +
+        '<button type="button" class="hz-toolbox-chip" data-calc-minutes="30">۳۰</button>' +
+        '<button type="button" class="hz-toolbox-chip" data-calc-minutes="60">۶۰</button>' +
+        '<button type="button" class="hz-toolbox-chip" data-calc-minutes="90">۹۰</button>' +
+        '</div>' +
+        '<input type="range" class="hz-toolbox-slider" min="0" max="180" step="5" value="30" aria-label="دقیقه در روز" />' +
+        '<label class="hz-toolbox-field">روز<input type="number" min="0" step="1" inputmode="numeric" value="30" /></label>' +
+        '<div class="hz-toolbox-chips" role="group" aria-label="روزهای آماده">' +
+        '<button type="button" class="hz-toolbox-chip" data-calc-days="30">۳۰</button>' +
+        '<button type="button" class="hz-toolbox-chip" data-calc-days="90">۹۰</button>' +
+        '<button type="button" class="hz-toolbox-chip" data-calc-days="180">۱۸۰</button>' +
+        '<button type="button" class="hz-toolbox-chip" data-calc-days="365">۳۶۵</button>' +
+        '</div>' +
+        '<p class="hz-toolbox-output hz-toolbox-calc-result" aria-live="polite"><span class="hz-toolbox-calc-num"></span> <span class="hz-toolbox-calc-unit">ساعت</span></p>' +
+        '<div class="hz-toolbox-wake"><span class="hz-toolbox-wake-label"></span><span class="hz-toolbox-wake-track"><span class="hz-toolbox-wake-fill"></span></span></div>' +
+        '<div class="hz-toolbox-compare">' +
+        '<span class="hz-toolbox-compare-chip"><span class="hz-toolbox-compare-num"></span><span class="hz-toolbox-compare-label">فیلم ۲ ساعته</span></span>' +
+        '<span class="hz-toolbox-compare-chip"><span class="hz-toolbox-compare-num"></span><span class="hz-toolbox-compare-label">شب خواب ۸ ساعته</span></span>' +
+        '<span class="hz-toolbox-compare-chip"><span class="hz-toolbox-compare-num"></span><span class="hz-toolbox-compare-label">هفتهٔ کاری ۴۰ ساعته</span></span>' +
+        '</div>' +
+        '</div>';
+      var inputs = Array.prototype.slice.call(toolboxStage.querySelectorAll('.hz-toolbox-field input'));
+      var numEl = toolboxStage.querySelector('.hz-toolbox-calc-num');
+      var unitEl = toolboxStage.querySelector('.hz-toolbox-calc-unit');
+      var sliderEl = toolboxStage.querySelector('.hz-toolbox-slider');
+      var wakeLabel = toolboxStage.querySelector('.hz-toolbox-wake-label');
+      var wakeFill = toolboxStage.querySelector('.hz-toolbox-wake-fill');
+      var compareNums = Array.prototype.slice.call(toolboxStage.querySelectorAll('.hz-toolbox-compare-num'));
+      var minuteChips = Array.prototype.slice.call(toolboxStage.querySelectorAll('[data-calc-minutes]'));
+      var dayChips = Array.prototype.slice.call(toolboxStage.querySelectorAll('[data-calc-days]'));
+      function formatFaNum(n) {
+        return n.toLocaleString('fa-IR', { maximumFractionDigits: 1 });
+      }
+      function syncCalcChips(chips, value) {
+        chips.forEach(function (chip) {
+          var attr = chip.hasAttribute('data-calc-minutes') ? 'data-calc-minutes' : 'data-calc-days';
+          chip.classList.toggle('is-selected', Number(chip.getAttribute(attr)) === value);
+        });
+      }
+      function updateCalc() {
+        var perDay = Math.max(0, parseFloat(inputs[0].value) || 0);
+        var days = Math.max(0, parseFloat(inputs[1].value) || 0);
+        var hours = (perDay * days) / 60;
+        if (numEl) toolboxCountUp(numEl, hours, formatFaNum);
+        unitEl.textContent = 'ساعت' + (hours >= 24 ? ' (' + formatFaNum(hours / 24) + ' روز)' : '');
+        if (sliderEl) sliderEl.value = perDay;
+        var wakePct = days === 0 ? 0 : (hours / (days * 16)) * 100;
+        if (wakeLabel) wakeLabel.textContent = formatFaNum(wakePct) + '٪ از ساعت‌های بیداری‌ات در این مدت';
+        if (wakeFill) wakeFill.style.width = Math.min(100, wakePct) + '%';
+        if (compareNums[0]) compareNums[0].textContent = '~' + formatFaNum(hours / 2);
+        if (compareNums[1]) compareNums[1].textContent = '~' + formatFaNum(hours / 8);
+        if (compareNums[2]) compareNums[2].textContent = '~' + formatFaNum(hours / 40);
+        syncCalcChips(minuteChips, perDay);
+        syncCalcChips(dayChips, days);
+      }
+      inputs.forEach(function (input) {
+        input.addEventListener('input', updateCalc);
+      });
+      if (sliderEl) {
+        sliderEl.addEventListener('input', function () {
+          inputs[0].value = sliderEl.value;
+          updateCalc();
+        });
+      }
+      minuteChips.forEach(function (chip) {
+        chip.addEventListener('click', function () {
+          inputs[0].value = chip.getAttribute('data-calc-minutes');
+          updateCalc();
+        });
+      });
+      dayChips.forEach(function (chip) {
+        chip.addEventListener('click', function () {
+          inputs[1].value = chip.getAttribute('data-calc-days');
+          updateCalc();
+        });
+      });
+      updateCalc();
+    }
+
+    /* --- ابزار ۳: خط زمانی بهبود مغز (از آبجکت scenarioData) --- */
+    function toolboxRenderTimeline() {
+      var stages = [
+        { key: 'brain-w1', offsetDays: 7 },
+        { key: 'brain-w2', offsetDays: 14 },
+        { key: 'brain-w4', offsetStart: 21, offsetEnd: 28 }
+      ];
+      var stagesHtml = stages
+        .map(function (stage) {
+          var item = scenarioData[stage.key];
+          if (!item) return '';
+          var stepsHtml = item.steps
+            .map(function (s) {
+              return '<li>' + s + '</li>';
+            })
+            .join('');
+          return (
+            '<article class="hz-toolbox-station" data-stage="' +
+            stage.key +
+            '">' +
+            '<span class="hz-toolbox-stage-date"></span>' +
+            '<h4>' +
+            item.title +
+            '</h4>' +
+            '<p>' +
+            item.insight +
+            '</p>' +
+            '<ul>' +
+            stepsHtml +
+            '</ul>' +
+            '</article>'
+          );
+        })
+        .join('');
+      toolboxStage.innerHTML =
+        toolboxStageHead('timeline') +
+        '<p class="hz-toolbox-detail-intro">نه معجزهٔ ۳ روزه درست است و نه عدد جادویی ۹۰ روز. هر بازهٔ زمانی را لمس کن تا تغییر واقعی مغز را ببینی:</p>' +
+        '<label class="hz-toolbox-field hz-toolbox-field--start">تاریخ شروع<input type="date" class="hz-toolbox-date-input" /></label>' +
+        '<div class="hz-toolbox-journey">' +
+        '<span class="hz-toolbox-journey-fill" aria-hidden="true"></span>' +
+        stagesHtml +
+        '</div>';
+      var dateInput = toolboxStage.querySelector('.hz-toolbox-date-input');
+      var today = new Date();
+      var iso =
+        today.getFullYear() +
+        '-' +
+        ('0' + (today.getMonth() + 1)).slice(-2) +
+        '-' +
+        ('0' + today.getDate()).slice(-2);
+      dateInput.value = iso;
+      var faDate = new Intl.DateTimeFormat('fa-IR', { day: 'numeric', month: 'long', year: 'numeric' });
+      function addDays(date, n) {
+        var d = new Date(date.getTime());
+        d.setDate(d.getDate() + n);
+        return d;
+      }
+      function updateTimelineDates() {
+        var start = dateInput.valueAsDate || new Date(dateInput.value + 'T00:00:00');
+        if (isNaN(start.getTime())) start = new Date();
+        stages.forEach(function (stage) {
+          var el = toolboxStage.querySelector('[data-stage="' + stage.key + '"] .hz-toolbox-stage-date');
+          if (!el) return;
+          if (stage.offsetEnd) {
+            el.textContent = faDate.format(addDays(start, stage.offsetStart)) + ' تا ' + faDate.format(addDays(start, stage.offsetEnd));
+          } else {
+            el.textContent = faDate.format(addDays(start, stage.offsetDays));
+          }
+        });
+      }
+      dateInput.addEventListener('change', updateTimelineDates);
+      dateInput.addEventListener('input', updateTimelineDates);
+      updateTimelineDates();
+    }
+
+    /* --- ابزار ۴: برنامهٔ امشب (ذخیره در localStorage) --- */
+    function toolboxRenderTonight() {
+      var storageKey = 'hz-toolbox-tonight';
+      var saved = [];
+      try {
+        saved = JSON.parse(window.localStorage.getItem(storageKey) || '[]');
+      } catch (e) {
+        saved = [];
+      }
+      var itemsHtml = toolboxTonightItems
+        .map(function (item, idx) {
+          return (
+            '<label class="hz-toolbox-check-item hz-toolbox-toggle-row">' +
+            '<input type="checkbox" data-tonight-item="' +
+            idx +
+            '"' +
+            (saved[idx] ? ' checked' : '') +
+            ' />' +
+            '<span>' +
+            item +
+            '</span>' +
+            '</label>'
+          );
+        })
+        .join('');
+      toolboxStage.innerHTML =
+        toolboxStageHead('tonight') +
+        '<p class="hz-toolbox-detail-intro">تفاوت افراد موفق در ترک این نیست که وسوسه سراغشان نمی‌آید؛ تفاوتشان این است که در لحظهٔ بحران فکر نمی‌کنند «حالا چی کار کنم؟» — بلکه طبق برنامهٔ ازپیش‌نوشته عمل می‌کنند.</p>' +
+        '<div class="hz-toolbox-readiness">' +
+        '<div class="hz-toolbox-dial">' +
+        '<svg width="120" height="120" viewBox="0 0 120 120" role="img" aria-label="میزان آمادگی امشب">' +
+        '<circle class="hz-toolbox-dial-track" cx="60" cy="60" r="52" fill="none" stroke-width="8" />' +
+        '<circle class="hz-toolbox-dial-ring" cx="60" cy="60" r="52" fill="none" stroke-width="8" stroke-dasharray="326.73" stroke-dashoffset="326.73" />' +
+        '</svg>' +
+        '<span class="hz-toolbox-dial-count">۰ از ۵</span>' +
+        '</div>' +
+        '<span class="hz-toolbox-readiness-text">۰ از ۵ آماده است</span>' +
+        '</div>' +
+        '<div class="hz-toolbox-check">' +
+        itemsHtml +
+        '</div>' +
+        '<button type="button" class="hz-toolbox-reset">از اول</button>';
+      var boxes = Array.prototype.slice.call(toolboxStage.querySelectorAll('[data-tonight-item]'));
+      var readinessText = toolboxStage.querySelector('.hz-toolbox-readiness-text');
+      var dialRing = toolboxStage.querySelector('.hz-toolbox-dial-ring');
+      var dialCount = toolboxStage.querySelector('.hz-toolbox-dial-count');
+      var dialCirc = 326.73;
+      function updateTonightReadiness() {
+        var done = boxes.filter(function (b) {
+          return b.checked;
+        }).length;
+        if (readinessText) readinessText.textContent = toolboxFaNum(done) + ' از ۵ آماده است';
+        if (dialRing) {
+          dialRing.style.strokeDasharray = dialCirc.toFixed(2);
+          dialRing.style.strokeDashoffset = (dialCirc * (1 - done / 5)).toFixed(2);
+        }
+        if (dialCount) toolboxCountUp(dialCount, done, function (v) { return toolboxFaNum(Math.round(v)) + ' از ۵'; });
+        /* مثل خودسنجی: فوکوس چک‌باکس صحنه را پایین می‌کشد؛ عقربه (بازخورد عمل) را دوباره به دید برگردان */
+        var dialEl = toolboxStage.querySelector('.hz-toolbox-dial');
+        if (dialEl) dialEl.scrollIntoView({ block: 'nearest' });
+      }
+      function saveTonight() {
+        var state = boxes.map(function (b) {
+          return b.checked;
+        });
+        try {
+          window.localStorage.setItem(storageKey, JSON.stringify(state));
+        } catch (e) {
+          /* ذخیره‌سازی در دسترس نیست؛ چک‌لیست همان جلسه کار می‌کند */
+        }
+      }
+      boxes.forEach(function (b) {
+        b.addEventListener('change', function () {
+          saveTonight();
+          updateTonightReadiness();
+        });
+      });
+      var resetBtn = toolboxStage.querySelector('.hz-toolbox-reset');
+      resetBtn.addEventListener('click', function () {
+        boxes.forEach(function (b) {
+          b.checked = false;
+        });
+        saveTonight();
+        updateTonightReadiness();
+      });
+      updateTonightReadiness();
+    }
+
+    /* --- ابزار ۵: ارسال راهنما برای کسی دیگر --- */
+    function toolboxRenderShare() {
+      toolboxStage.innerHTML =
+        toolboxStageHead('share') +
+        '<div class="hz-toolbox-share">' +
+        '<div class="hz-toolbox-share-steps">' +
+        '<p>قدم ۱ — برای کیست؟</p>' +
+        '<div role="group" aria-label="برای کیست؟">' +
+        '<button type="button" class="hz-toolbox-choice" data-share-who="self">خودم</button>' +
+        '<button type="button" class="hz-toolbox-choice" data-share-who="teen">فرزند نوجوانم</button>' +
+        '<button type="button" class="hz-toolbox-choice" data-share-who="spouse">همسرم</button>' +
+        '<button type="button" class="hz-toolbox-choice" data-share-who="friend">دوستم</button>' +
+        '</div>' +
+        '<p>قدم ۲ — او در چه وضعیتی است؟</p>' +
+        '<div role="group" aria-label="او در چه وضعیتی است؟">' +
+        '<button type="button" class="hz-toolbox-choice" data-share-state="start">می‌خواهد شروع کند</button>' +
+        '<button type="button" class="hz-toolbox-choice" data-share-state="relapse">لغزش کرده و ناامید است</button>' +
+        '<button type="button" class="hz-toolbox-choice" data-share-state="science">می‌خواهد علمی بفهمد چه می‌شود</button>' +
+        '</div>' +
+        '</div>' +
+        '<div class="hz-toolbox-share-result hz-toolbox-share-result--gift" hidden></div>' +
+        '<div class="hz-toolbox-share-actions" hidden>' +
+        '<button type="button" class="hz-toolbox-share-primary" data-share-action="share">اشتراک‌گذاری</button>' +
+        '<button type="button" data-share-action="copy">کپی لینک</button>' +
+        '</div>' +
+        '</div>';
+      var who = null;
+      var state = null;
+      var resultEl = toolboxStage.querySelector('.hz-toolbox-share-result');
+      var actionsEl = toolboxStage.querySelector('.hz-toolbox-share-actions');
+      var currentUrl = '';
+      var currentTarget = null;
+      function resolveTarget() {
+        if (!who || !state) return null;
+        if (who === 'teen') return toolboxShareTargets['tark-nojavanan'];
+        if (state === 'start') return toolboxShareTargets.start;
+        if (state === 'relapse') return toolboxShareTargets.relapse;
+        return toolboxShareTargets['porn-brain'];
+      }
+      function updateShareResult() {
+        var target = resolveTarget();
+        if (!target) {
+          resultEl.setAttribute('hidden', '');
+          actionsEl.setAttribute('hidden', '');
+          return;
+        }
+        currentTarget = target;
+        currentUrl = window.location.origin + target.href;
+        resultEl.innerHTML =
+          '<h4>' +
+          target.title +
+          '</h4>' +
+          '<p>' +
+          target.desc +
+          '</p>' +
+          '<p><a href="' +
+          target.href +
+          '">مشاهدهٔ راهنما</a></p>';
+        resultEl.removeAttribute('hidden');
+        actionsEl.removeAttribute('hidden');
+        /* کارت هدیه پایینِ قدم‌هاست؛ پس از انتخاب هر دو قدم آن را به دید برگردان */
+        resultEl.scrollIntoView({ block: 'nearest' });
+      }
+      function bindChoice(attr, setValue) {
+        var btns = Array.prototype.slice.call(toolboxStage.querySelectorAll('[' + attr + ']'));
+        btns.forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            btns.forEach(function (b) {
+              b.classList.remove('is-selected');
+            });
+            btn.classList.add('is-selected');
+            setValue(btn.getAttribute(attr));
+            updateShareResult();
+          });
+        });
+      }
+      bindChoice('data-share-who', function (v) {
+        who = v;
+      });
+      bindChoice('data-share-state', function (v) {
+        state = v;
+      });
+      function copyLink(btn) {
+        function done() {
+          btn.textContent = 'کپی شد';
+          window.setTimeout(function () {
+            btn.textContent = 'کپی لینک';
+          }, 2000);
+        }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(currentUrl).then(done, function () {
+            fallbackCopy(done);
+          });
+        } else {
+          fallbackCopy(done);
+        }
+      }
+      function fallbackCopy(done) {
+        var ta = document.createElement('textarea');
+        ta.value = currentUrl;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        try {
+          document.execCommand('copy');
+        } catch (e) {
+          /* کپی ناموفق؛ کاربر می‌تواند لینک را از نتیجه بردارد */
+        }
+        document.body.removeChild(ta);
+        done();
+      }
+      var shareBtn = toolboxStage.querySelector('[data-share-action="share"]');
+      var copyBtn = toolboxStage.querySelector('[data-share-action="copy"]');
+      shareBtn.addEventListener('click', function () {
+        if (navigator.share) {
+          navigator.share({ title: currentTarget.title, text: currentTarget.desc, url: currentUrl }).catch(function () {
+            copyLink(copyBtn);
+          });
+        } else {
+          copyLink(copyBtn);
+        }
+      });
+      copyBtn.addEventListener('click', function () {
+        copyLink(copyBtn);
+      });
+    }
 
     function openDockSheet() {
       sheet.classList.add('is-open');
@@ -1971,6 +2570,7 @@
       sheet.setAttribute('aria-hidden', 'false');
       dockHubBtn.setAttribute('aria-expanded', 'true');
       dockHubBtn.classList.add('is-active');
+      toolboxShowStage('assess');
       updateReadingProgress();
     }
 
@@ -1980,6 +2580,7 @@
       sheet.setAttribute('aria-hidden', 'true');
       dockHubBtn.setAttribute('aria-expanded', 'false');
       dockHubBtn.classList.remove('is-active');
+      toolboxShowStage('assess');
     }
 
     dockHubBtn.addEventListener('click', function () {
@@ -2000,38 +2601,17 @@
       }
     });
 
-    // Sheet tab switching
-    var sheetTabs = Array.prototype.slice.call(sheet.querySelectorAll('[data-dock-pane]'));
-    var sheetPanels = Array.prototype.slice.call(sheet.querySelectorAll('[data-dock-panel]'));
-    sheetTabs.forEach(function (tab) {
+    toolboxRailTabs.forEach(function (tab) {
       tab.addEventListener('click', function () {
-        var pane = tab.getAttribute('data-dock-pane');
-        sheetTabs.forEach(function (t) {
-          var active = t === tab;
-          t.classList.toggle('is-active', active);
-          t.setAttribute('aria-selected', active ? 'true' : 'false');
-        });
-        sheetPanels.forEach(function (p) {
-          p.classList.toggle('is-active', p.getAttribute('data-dock-panel') === pane);
-        });
+        toolboxShowStage(tab.getAttribute('data-toolbox-tool'));
       });
     });
 
-    // Smooth jump to anchor links from outline list & close sheet
-    sheet.querySelectorAll('.hz-dock-outline-item').forEach(function (link) {
-      link.addEventListener('click', function (e) {
-        var href = link.getAttribute('href');
-        if (href && href.charAt(0) === '#') {
-          var target = document.querySelector(href);
-          if (target) {
-            e.preventDefault();
-            closeDockSheet();
-            target.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
-          }
-        }
-      });
+    window.addEventListener('resize', function () {
+      if (sheet.classList.contains('is-open')) toolboxPositionRailPill();
     });
   }
+
 
   /* ------------------------------------------------------------------------
      14. Interactive Glass Card Pointer Spotlight (--mx / --my)
