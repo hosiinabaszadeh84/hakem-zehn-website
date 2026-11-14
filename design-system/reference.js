@@ -637,7 +637,7 @@
     var drawerRoutes = [
       { href: '/index.html', num: '۰۱', title: 'صفحهٔ اصلی و نقشهٔ علمی' },
       { href: '/tark-porn.html', num: '۰۲', title: 'چطور پورن را ترک کنیم؟' },
-      { href: '/tark-khod-arzaei.html', num: '۰۳', title: 'راهنمای ترک خودارضایی' },
+      { href: '/tark-khod-arzaei.html', num: '۰۳', title: 'برنامه ترک خودارضایی' },
       { href: '/porn-brain.html', num: '۰۴', title: 'تأثیر پورن بر مغز و دوپامین' },
       { href: '/relapse.html', num: '۰۵', title: 'پروتکل ۶۰ دقیقه بعد از لغزش' },
       { href: '/habits.html', num: '۰۶', title: 'مرز عادت و اختلال CSBD' },
@@ -1335,7 +1335,7 @@
     { type: 'page', target: '/self-assessment.html', title: 'نشانه‌های وابستگی به پورن؛ آیا به پورن معتاد شده‌ام؟', body: 'پنج نشانهٔ عینِ معیارهای ICD-11؛ نشانه است، نه تشخیص. سایت آموزشی جای روان‌شناس نیست.' },
     { type: 'page', target: '/privacy.html', title: 'حریم خصوصی و نگهداری محلی در حاکم ذهن', body: 'ذخیره محلی در Room بدون ثبت‌نام و شماره تلفن، بکاپ رمزنگاری‌شده AES-256-GCM و شفافیت کامل دسترسی‌ها و پرداخت آفلاین مایکت.' },
     { type: 'page', target: '/tark-porn.html', title: 'راهنمای جامع ترک پورن (روش آسان)', body: 'قطع دسترسی ۵ دقیقه‌ای، مقایسه اراده با روش آسان، حلقه فقط یک نگاه و نقشه ۴ هفته.' },
-    { type: 'page', target: '/tark-khod-arzaei.html', title: 'راهنمای جامع ترک خودارضایی (مسیر جداگانه)', body: 'تفکیک از پورن، قانون تختخواب، مدیریت خستگی و تنش شبانه و برنامه ۴ هفته.' },
+    { type: 'page', target: '/tark-khod-arzaei.html', title: 'برنامه ترک خودارضایی (مسیر جداگانه)', body: 'تفکیک از پورن، قانون تختخواب، مدیریت خستگی و تنش شبانه و برنامه ۴ هفته.' },
     { type: 'page', target: '/porn-brain.html', title: 'تأثیر پورن بر مغز و دوپامین', body: 'محرک فراهنجار، تنظیم کاهشی، مه‌ذهنی صبحگاهی، واقعیت علمی و رد شایعات.' },
     { type: 'page', target: '/relapse.html', title: 'بعد از لغزش در ترک پورن چه کنیم؟ پروتکل ۶۰ دقیقهٔ اول', body: 'توقف اثر حالا که خراب شد، بستن درز محیطی و ادامهٔ مسیر بدون سرزنش.' },
     { type: 'page', target: '/habits.html', title: 'تفاوت عادت و استفاده اجباری از پورن (CSBD) در ICD-11', body: 'مرز خودمدیریتی، معیارهای سازمان جهانی بهداشت و زمان مراجعه به روان‌شناس.' },
@@ -1345,8 +1345,8 @@
     { type: 'page', target: '/tark-nojavanan.html', title: 'ترک خودارضایی و پورن در نوجوانی + راهنمای والدین', body: 'مرز کنجکاوی بلوغ با عادت اجباری، فشار همسالان و گفت‌وگوی آرام والدین.' },
     { type: 'page', target: '/tark-khod-arzaei-eslam.html', title: 'ترک خودارضایی از نظر اسلام؛ حکم، توبه و عمل', body: 'حکم استمناء، سه رکن توبه واقعی و هفت قدم عبادی و محیطی هفته اول.' },
     { type: 'page', target: '/triggers.html', title: 'محرک‌های دیدن پورن چیست؟ شناخت محرک‌ها و کنترل وسوسه', body: 'الگوی ۴ پرسش برای موقعیت خطر، پاسخ اگر-پس و مکث SOS در لحظه وسوسه.' },
-    { type: 'page', target: '/start.html', title: 'برنامه عملی ترک پورن؛ شروع کاهش یا ترک در ۴۸ ساعت اول', body: 'هدف قابل مشاهده، ثبت کوتاه سه‌خطی و یک تغییر محیطی در پرخطرترین ساعت.' },
-    { type: 'page', target: '/release.html', title: 'دانلود اپلیکیشن ترک پورن و خودارضایی | حاکم ذهن از مایکت', body: 'دریافت رسمی از مایکت برای اندروید ۷ و بالاتر، امکانات رایگان و PRO دائمی.' },
+    { type: 'page', target: '/start.html', title: 'برنامه ترک پورن؛ شروع عملی کاهش یا ترک در ۴۸ ساعت اول', body: 'هدف قابل مشاهده، ثبت کوتاه سه‌خطی و یک تغییر محیطی در پرخطرترین ساعت.' },
+    { type: 'page', target: '/release.html', title: 'دانلود اپلیکیشن و نرم‌افزار ترک پورن و خودارضایی | حاکم ذهن از مایکت', body: 'دریافت رسمی از مایکت برای اندروید ۷ و بالاتر، امکانات رایگان و PRO دائمی.' },
     { type: 'section', target: '#app-showcase', title: 'تور زندهٔ نرم‌افزار حاکم ذهن', body: 'معرفی سپر SOS، آینه رفتاری، داشبورد ۱۴۰ روزه، روش آسان و نسخه طلایی PRO.' },
     { type: 'section', target: '#brain-prism', title: 'شبیه‌ساز دوپامین و منشور مغز', body: 'مقایسه جهش فراهنجار، افت خلأ و بازگشت تعادل.' },
     { type: 'section', target: '#perspective-shift', title: 'تغییر زاویهٔ دید: جنگ اراده یا روش آسان', body: 'مقایسهٔ باور محرومیت با رهایی و جدول چهاربعدی.' },
@@ -1899,718 +1899,996 @@
   }
 
   /* ------------------------------------------------------------------------
-     13. Interactive Orbital Bottom Dock & Toolbox Sheet («جعبه‌ابزار حاکم ذهن»)
+     13. Toolbox Sheet — NEW "console / calibration" module (merged 2026-11-14).
+     Source: /tmp/toolbox-new/design-system/reference.js (984 lines).
+     Old orbital-dock toolbox module removed; internal search, dock and all
+     other site JS untouched. Sheet opens from any page via #hz-dock-hub-btn
+     or [data-hz-open-tool]; visibility uses [hidden], not .is-open.
      ------------------------------------------------------------------------ */
-  var mobileDock = document.querySelector('.hz-mobile-dock');
-  var dockHubBtn = document.getElementById('hz-dock-hub-btn');
+/**
+ * HAKEM ZEHN — PRECISION INSTRUMENT TOOLBOX MODULE (reference.js)
+ * Vanilla JS | Zero Dependencies | RTL Persian | 390px First-Fold Engineered
+ */
+(function () {
+  'use strict';
 
-  if (mobileDock && dockHubBtn) {
-    var toolboxIcons = {
-      assess:
-        '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4.5V3h6v1.5"/><path d="m9 13 2 2 4-4.5"/></svg>',
-      calc:
-        '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5"/><path d="M9 2h6"/></svg>',
-      timeline:
-        '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l5.5-5.5 3.5 3.5L21 6"/><path d="M15 6h6v6"/></svg>',
-      tonight:
-        '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13.5A8.5 8.5 0 0 1 10.5 4 8.5 8.5 0 1 0 20 13.5Z"/></svg>',
-      share:
-        '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg>'
-    };
+  var STORAGE_KEY_TONIGHT = 'hz-toolbox-tonight';
+  var RING_RADIUS = 41;
+  var RING_CIRCUMFERENCE = +(2 * Math.PI * RING_RADIUS).toFixed(2); // ~257.61
 
-    var toolboxTools = [
-      { id: 'assess', short: 'نشانه‌ها', title: 'خودسنجی نشانه‌ها', desc: 'آیا این رفتار برای من مشکل شده؟' },
-      { id: 'calc', short: 'زمان', title: 'ماشین‌حساب هزینهٔ زمانی', desc: 'تا حالا چقدر وقتم رفته؟' },
-      { id: 'timeline', short: 'مغز', title: 'خط زمانی بهبود مغز', desc: 'هفته‌به‌هفته بعد از شروع، چه می‌شود؟' },
-      { id: 'tonight', short: 'امشب', title: 'برنامهٔ امشب', desc: 'محیط امشب را از پیش آماده کن' },
-      { id: 'share', short: 'ارسال', title: 'ارسال راهنما برای کسی دیگر', desc: 'راهنمای درست را برای او بفرست' }
-    ];
+  var FA_DIGITS = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
 
-    var toolboxAssessSigns = [
-      'از دست رفتن اختیار شروع و زمان: قرار است ۱۰ دقیقه گوشی ببینی اما تا نیمه‌شب یا نزدیک صبح کنترل زمان از دستت خارج می‌شود.',
-      'آسیب به حوزهٔ کار، درس یا خواب: خستگی مزمن باعث غیبت، جاانداختن کارهای مهم یا به‌هم‌خوردن ساعت استراحت شده است.',
-      'اولویت‌یافتن بر روابط و علایق واقعی: کناره‌گیری از جمع، خانواده یا علایق سابق به نفع انزوای پشت صفحه.',
-      'ادامه با وجود نبود لذت: دیگر هیجانی هم وجود ندارد، ولی انگار یک دکمهٔ اجباری دست‌بردار نیست.',
-      'وجود اضطراب یا افسردگی هم‌زمان: وقتی مصرف شدید دقیقاً نقش مسکّن برای یک فشار روانی عمیق‌تر را بازی می‌کند.'
-    ];
+  function toFaNum(val) {
+    if (val === null || val === undefined || Number.isNaN(val)) return '۰';
+    var str = String(val).replace('.', '٫');
+    return str.replace(/\d/g, function (d) {
+      return FA_DIGITS[+d];
+    });
+  }
 
-    var toolboxTonightItems = [
-      'انتقال سیم شارژر به هال یا میز کار بیرون اتاق پیش از ساعت خواب.',
-      'خاموش‌کردن اینترنت گوشی یا گذاشتن گوشی در حالت هواپیما هنگام شب.',
-      'اجرای قانون ۱۵ دقیقه: بیدارماندن در تخت یعنی ترک فوری رختخواب.',
-      'آبی به صورتت بزن و پنج دقیقه به فضای روشن‌تر خانه برو.',
-      'جابه‌جایی اتاق، خوردن آب خنک، ۱۰ دقیقه پیاده‌روی یا زنگ‌زدن عادی به یک دوست.'
-    ];
+  function round1(num) {
+    return Math.round(num * 10) / 10;
+  }
 
-    var toolboxShareTargets = {
-      'tark-nojavanan': {
-        href: '/tark-nojavanan.html',
-        title: 'ترک خودارضایی نوجوانان و پورن + راهنمای والدین | حاکم ذهن',
-        desc: 'راهنمای ترک خودارضایی و پورن برای نوجوانان: مرز کنجکاوی بلوغ با عادت اجباری، مهار فشار همسالان، قانون شبانه گوشی و بخش ویژه گفت‌وگوی آرام والدین.'
-      },
-      start: {
-        href: '/start.html',
-        title: 'برنامه عملی ترک پورن؛ شروع کاهش یا ترک در ۴۸ ساعت اول | حاکم ذهن',
-        desc: 'برنامه عملی ترک پورن: چطور بدون سردرگمی در ۴۸ ساعت اول کاهش یا ترک پورن و خودارضایی را شروع کنیم؟ تعریف هدف قابل مشاهده، یک تغییر محیطی و یادداشت کوتاه بدون برچسب‌زدن.'
-      },
-      relapse: {
-        href: '/relapse.html',
-        title: 'بعد از لغزش در ترک پورن چه کنیم؟ پروتکل ۶۰ دقیقهٔ اول | حاکم ذهن',
-        desc: 'بعد از لغزش در ترک پورن چه کنیم؟ راهنمای علمی ۶۰ دقیقهٔ اول: توقف اثر «حالا که خراب شد»، پیداکردن درز محیطی و ادامهٔ مسیر بدون سرزنش.'
-      },
-      'porn-brain': {
-        href: '/porn-brain.html',
-        title: 'تأثیر پورن بر مغز و دوپامین: علم در برابر شایعه | حاکم ذهن',
-        desc: 'بررسی علمی تأثیر پورن بر مغز، دوپامین و تمرکز: محرک فراهنجار، تنظیم کاهشی گیرنده‌ها، علت مه‌ذهنی صبحگاهی و واقعیت بازگشت تعادل عصبی (نوروپلاستیسیتی).'
+  function formatFaDecimal(num) {
+    var r = round1(num);
+    return toFaNum(r);
+  }
+
+  function formatJalali(dateObj, includeYear) {
+    try {
+      var opts = includeYear
+        ? { year: 'numeric', month: 'long', day: 'numeric' }
+        : { month: 'long', day: 'numeric' };
+      return new Intl.DateTimeFormat('fa-IR', opts).format(dateObj);
+    } catch (e) {
+      return toFaNum(dateObj.toLocaleDateString());
+    }
+  }
+
+  function addDays(baseDate, days) {
+    var d = new Date(baseDate.getTime());
+    d.setDate(d.getDate() + days);
+    return d;
+  }
+
+  function loadTonightState() {
+    try {
+      var raw = window.localStorage.getItem(STORAGE_KEY_TONIGHT);
+      if (!raw) return [false, false, false, false, false];
+      var parsed = JSON.parse(raw);
+      if (Array.isArray(parsed) && parsed.length === 5) {
+        return parsed.map(Boolean);
       }
-    };
+    } catch (e) {
+      /* Sandbox / private mode safe fallback */
+    }
+    return [false, false, false, false, false];
+  }
 
-    var backdrop = document.createElement('div');
-    backdrop.className = 'hz-dock-backdrop';
-    backdrop.id = 'hz-dock-backdrop';
+  function saveTonightState(arr) {
+    try {
+      window.localStorage.setItem(STORAGE_KEY_TONIGHT, JSON.stringify(arr));
+    } catch (e) {
+      /* Ignore storage quota or sandbox restrictions */
+    }
+  }
 
-    var sheet = document.createElement('section');
-    sheet.className = 'hz-dock-sheet';
-    sheet.id = 'hz-dock-sheet';
-    sheet.setAttribute('role', 'dialog');
-    sheet.setAttribute('aria-modal', 'true');
-    sheet.setAttribute('aria-label', 'جعبه‌ابزار حاکم ذهن');
-    sheet.setAttribute('aria-hidden', 'true');
+  /* ========================================================================
+     EXACT VERBATIM DATA DEFINITIONS (Section 4 — Unmodified Site Copy)
+     ======================================================================== */
 
-    var toolboxRailHtml = toolboxTools
-      .map(function (tool) {
-        return (
-          '<button type="button" class="hz-toolbox-rail-tab" data-toolbox-tool="' +
-          tool.id +
-          '" aria-selected="false">' +
-          '<span class="hz-toolbox-rail-icon">' +
-          toolboxIcons[tool.id] +
-          '</span>' +
-          '<span class="hz-toolbox-rail-label">' +
-          tool.short +
-          '</span>' +
-          '</button>'
-        );
-      })
-      .join('');
+  var TOOLS_META = [
+    { id: 'signs', index: '۰۱', code: 'SYS.01 // CSBD', tabLabel: 'نشانه‌ها', title: 'خودسنجی نشانه‌ها', subtitle: 'آیا این رفتار برای من مشکل شده؟' },
+    { id: 'time', index: '۰۲', code: 'SYS.02 // CHRONO', tabLabel: 'زمان', title: 'ماشین‌حساب هزینهٔ زمانی', subtitle: 'تا حالا چقدر وقتم رفته؟' },
+    { id: 'brain', index: '۰۳', code: 'SYS.03 // NEURO', tabLabel: 'مغز', title: 'خط زمانی بهبود مغز', subtitle: 'هفته‌به‌هفته بعد از شروع، چه می‌شود؟' },
+    { id: 'tonight', index: '۰۴', code: 'SYS.04 // ENV', tabLabel: 'امشب', title: 'برنامهٔ امشب', subtitle: 'محیط امشب را از پیش آماده کن' },
+    { id: 'share', index: '۰۵', code: 'SYS.05 // RELAY', tabLabel: 'ارسال', title: 'ارسال راهنما برای کسی دیگر', subtitle: 'راهنمای درست را برای او بفرست' }
+  ];
 
-    sheet.innerHTML =
-      '<div class="hz-dock-sheet-head">' +
-      '<div class="hz-dock-sheet-brand">' +
-      '<img src="/assets/icon-sm.webp" width="28" height="28" alt="نشان حاکم ذهن" referrerpolicy="no-referrer" />' +
-      '<div><strong class="hz-dock-sheet-title">جعبه‌ابزار حاکم ذهن</strong>' +
-      '<span class="hz-dock-sheet-progress" id="hz-dock-sheet-progress">در حال آماده‌سازی ردیاب مطالعه...</span></div>' +
-      '</div>' +
-      '<button type="button" class="hz-dock-sheet-close" id="hz-dock-sheet-close" aria-label="بستن جعبه‌ابزار">×</button>' +
-      '</div>' +
-      '<div class="hz-toolbox-stage"></div>' +
-      '<nav class="hz-toolbox-rail" aria-label="ابزارهای جعبه‌ابزار">' +
-      '<span class="hz-toolbox-rail-pill" aria-hidden="true"></span>' +
-      toolboxRailHtml +
-      '</nav>';
+  var SIGNS_INTRO = 'اگر دو مورد یا بیشتر از نشانه‌های زیر را ماه‌هاست با شدت بالا تجربه می‌کنی، مراجعه به متخصص روان‌شناسی بسیار کمک‌کننده خواهد بود:';
 
-    document.body.appendChild(backdrop);
-    document.body.appendChild(sheet);
-    updateReadingProgress();
+  var SIGNS_ITEMS = [
+    'از دست رفتن اختیار شروع و زمان: قرار است ۱۰ دقیقه گوشی ببینی اما تا نیمه‌شب یا نزدیک صبح کنترل زمان از دستت خارج می‌شود.',
+    'آسیب به حوزهٔ کار، درس یا خواب: خستگی مزمن باعث غیبت، جاانداختن کارهای مهم یا به‌هم‌خوردن ساعت استراحت شده است.',
+    'اولویت‌یافتن بر روابط و علایق واقعی: کناره‌گیری از جمع، خانواده یا علایق سابق به نفع انزوای پشت صفحه.',
+    'ادامه با وجود نبود لذت: دیگر هیجانی هم وجود ندارد، ولی انگار یک دکمهٔ اجباری دست‌بردار نیست.',
+    'وجود اضطراب یا افسردگی همزمان: وقتی مصرف شدید دقیقاً نقش مسکّن برای یک فشار روانی عمیق‌تر را بازی می‌کند.'
+  ];
 
-    var toolboxStage = sheet.querySelector('.hz-toolbox-stage');
-    var toolboxRailTabs = Array.prototype.slice.call(sheet.querySelectorAll('.hz-toolbox-rail-tab'));
+  var BRAIN_INTRO = 'نه معجزهٔ ۳ روزه درست است و نه عدد جادویی ۹۰ روز. هر بازهٔ زمانی را لمس کن تا تغییر واقعی مغز را ببینی:';
 
-    /* پرشدن طلایی خط زمانی، وابسته به اسکرول صحنه؛ فقط وقتی fill در صحنه هست کاری می‌کند */
-    toolboxStage.addEventListener('scroll', function () {
-      var fill = toolboxStage.querySelector('.hz-toolbox-journey-fill');
-      if (!fill) return;
-      var denom = toolboxStage.scrollHeight - toolboxStage.clientHeight;
-      var ratio = denom > 0 ? toolboxStage.scrollTop / denom : 0;
-      fill.style.height = ratio * 100 + '%';
+  var BRAIN_STATIONS = [
+    {
+      key: 'w1',
+      shortTitle: 'هفتهٔ ۱',
+      offsetLabel: '۷ روز بعد از شروع',
+      startOffset: 7,
+      endOffset: 7,
+      title: 'هفتهٔ ۱: قطع شوک و بی‌قراری اولیه',
+      desc: 'در روزهای اول چون سوخت مصنوعی قطع شده، ذهن برای مدت کوتاهی بی‌قرارتر می‌شود؛ این واکنش خروج عادت است، نه نیاز واقعی بدن [۵].',
+      bullets: [
+        'نوسان لحظه‌ای خلق طبیعی است و طی چند روز آرام‌تر می‌شود.',
+        'کاهش حجم ورودی تصویر روی چشم، فشار فوری روی جسم مخطط را کم می‌کند.',
+        'مهم‌ترین دستاورد هفتهٔ اول: فاصله‌انداختن میان فکر و عمل.'
+      ]
+    },
+    {
+      key: 'w2',
+      shortTitle: 'هفتهٔ ۲',
+      offsetLabel: '۱۴ روز بعد',
+      startOffset: 14,
+      endOffset: 14,
+      title: 'هفتهٔ ۲: نظم ملاتونین و سبک‌شدن صبح‌ها',
+      desc: 'با دورشدن صفحه از رختخواب، کیفیت خواب عمیق بالا می‌رود و مه‌ذهنی سنگین صبحگاهی به شکل محسوسی کم می‌شود.',
+      bullets: [
+        'طول کشیدن کمتر برای به خواب رفتن در پایان شب.',
+        'بیداری سرحال‌تر بدون حس کلافگی پس از شب‌های اسکرول.',
+        'بازگشت تدریجی حوصله برای کارهای ۳۰ دقیقه‌ای روزانه.'
+      ]
+    },
+    {
+      key: 'w3',
+      shortTitle: 'هفتهٔ ۳ تا ۴',
+      offsetLabel: '۲۱ تا ۲۸ روز بعد',
+      startOffset: 21,
+      endOffset: 28,
+      title: 'هفتهٔ ۳ تا ۴: تعادل حساسیت پاداش (نوروپلاستیسیتی)',
+      desc: 'مطالعات نشان می‌دهند کاهش محرک‌های شدید به مدار فرونتواستریاتال فرصت می‌دهد حساسیت به محرک‌های طبیعی زندگی را بازیابی کند [۵].',
+      bullets: [
+        'کاهش چشمگیر قدرت و تعداد وسوسه‌های ناگهانی در طول هفته.',
+        'لذت‌بردن دوباره از گفت‌وگو، ورزش، مطالعه و پیشرفت‌های آرام.',
+        'تبدیل‌شدن فکر تصویر به یک صدای دوردست بدون اجبار پاسخ‌دادن.'
+      ]
+    }
+  ];
+
+  var TONIGHT_INTRO = 'افراد موفق در لحظهٔ بحران طبق برنامهٔ ازپیش‌نوشته عمل می‌کنند، نه اینکه فکر کنند «حالا چی کار کنم؟».';
+
+  var TONIGHT_ITEMS = [
+    'انتقال سیم شارژر به هال یا میز کار بیرون اتاق پیش از ساعت خواب.',
+    'خاموش‌کردن اینترنت گوشی یا گذاشتن گوشی در حالت هواپیما هنگام شب.',
+    'اجرای قانون ۱۵ دقیقه: بیدارماندن در تخت یعنی ترک فوری رختخواب.',
+    'آبی به صورتت بزن و پنج دقیقه به فضای روشن‌تر خانه برو.',
+    'جابه‌جایی اتاق، خوردن آب خنک، ۱۰ دقیقه پیاده‌روی یا زنگ‌زدن عادی به یک دوست.'
+  ];
+
+  var SHARE_WHO_OPTIONS = [
+    { id: 'self', label: 'خودم' },
+    { id: 'teen', label: 'فرزند نوجوانم' },
+    { id: 'spouse', label: 'همسرم' },
+    { id: 'friend', label: 'دوستم' }
+  ];
+
+  var SHARE_STATE_OPTIONS = [
+    { id: 'start', label: 'می‌خواهد شروع کند' },
+    { id: 'relapse', label: 'لغزش کرده و ناامید است' },
+    { id: 'science', label: 'می‌خواهد علمی بفهمد چه می‌شود' }
+  ];
+
+  var SHARE_GUIDES = {
+    '/tark-nojavanan.html': {
+      path: '/tark-nojavanan.html',
+      title: 'ترک خودارضایی و پورن در نوجوانی؛ راهنمای دوطرفه (نوجوان و والدین)',
+      note: 'چون گزینهٔ «فرزند نوجوانم» انتخاب شده، همیشه راهنمای اختصاصی نوجوانان و والدین ارسال می‌شود.'
+    },
+    '/start.html': {
+      path: '/start.html',
+      title: 'شروع کاهش یا ترک در ۴۸ ساعت اول؛ قدم‌های ساده و عملی',
+      note: 'مناسب برای کسی که می‌خواهد بدون شعارهای سنگین، از همین ۴۸ ساعت اول یک قدم واقعی بردارد.'
+    },
+    '/relapse.html': {
+      path: '/relapse.html',
+      title: 'لغزش بعد از ترک؛ در ساعت اول چه کنیم تا مسیر صفر نشود؟',
+      note: 'مناسب برای عبور آرام از ساعت اول پس از لغزش و جلوگیری از تلهٔ «حالا که خراب شد».'
+    },
+    '/porn-brain.html': {
+      path: '/porn-brain.html',
+      title: 'تأثیر پورن بر مغز، دوپامین و تمرکز؛ واقعیت علمی در برابر شایعات',
+      note: 'توضیح مستند علوم اعصاب رفتاری دربارهٔ مدار پاداش، پدیدهٔ تحمل و بازگشت توجه.'
+    }
+  };
+
+  /* ========================================================================
+     SHEET BUILDER & RENDERING
+     ======================================================================== */
+
+  function buildSheetMarkup() {
+    var signsRows = SIGNS_ITEMS.map(function (text, i) {
+      return (
+        '<label class="hz-switch-row" data-signs-row="' + i + '">' +
+          '<span class="hz-switch-idx">' + toFaNum(i + 1) + '</span>' +
+          '<span class="hz-switch-text">' + text + '</span>' +
+          '<input type="checkbox" class="hz-switch-input" data-signs-check="' + i + '" aria-label="نشانه ' + toFaNum(i + 1) + '">' +
+          '<span class="hz-check-indicator" aria-hidden="true"></span>' +
+        '</label>'
+      );
+    }).join('');
+
+    var tonightState = loadTonightState();
+    var tonightRows = TONIGHT_ITEMS.map(function (text, i) {
+      var checked = tonightState[i];
+      return (
+        '<label class="hz-switch-row hz-switch-row--tonight' + (checked ? ' is-checked' : '') + '" data-tonight-row="' + i + '">' +
+          '<span class="hz-switch-idx">' + toFaNum(i + 1) + '</span>' +
+          '<span class="hz-switch-text">' + text + '</span>' +
+          '<input type="checkbox" class="hz-switch-input" data-tonight-check="' + i + '"' + (checked ? ' checked' : '') + ' aria-label="اقدام ' + toFaNum(i + 1) + '">' +
+          '<span class="hz-check-indicator" aria-hidden="true"></span>' +
+        '</label>'
+      );
+    }).join('');
+
+    var stationTabs = BRAIN_STATIONS.map(function (st, idx) {
+      return (
+        '<button type="button" class="hz-station-tab' + (idx === 0 ? ' is-active' : '') + '" data-brain-tab="' + idx + '" aria-selected="' + (idx === 0 ? 'true' : 'false') + '">' +
+          '<span class="hz-st-badge">' + st.shortTitle + '</span>' +
+          '<span class="hz-st-offset">' + st.offsetLabel + '</span>' +
+          '<span class="hz-st-date" data-brain-tab-date="' + idx + '">—</span>' +
+        '</button>'
+      );
+    }).join('');
+
+    var stationCards = BRAIN_STATIONS.map(function (st, idx) {
+      var bulletsHtml = st.bullets.map(function (b) {
+        return '<li>' + b + '</li>';
+      }).join('');
+      return (
+        '<article class="hz-station-card' + (idx === 0 ? ' is-active' : '') + '" data-brain-card="' + idx + '">' +
+          '<div class="hz-station-head" data-brain-card-trigger="' + idx + '">' +
+            '<h4 class="hz-station-title">' + st.title + '</h4>' +
+            '<span class="hz-station-jalali" data-brain-card-date="' + idx + '">' + st.offsetLabel + '</span>' +
+          '</div>' +
+          '<div class="hz-station-body"' + (idx === 0 ? '' : ' hidden') + ' data-brain-card-body="' + idx + '">' +
+            '<p class="hz-station-desc">' + st.desc + '</p>' +
+            '<ul class="hz-station-bullets">' + bulletsHtml + '</ul>' +
+          '</div>' +
+        '</article>'
+      );
+    }).join('');
+
+    var whoButtons = SHARE_WHO_OPTIONS.map(function (opt, idx) {
+      return (
+        '<button type="button" class="hz-choice-btn' + (idx === 0 ? ' is-selected' : '') + '" data-share-who="' + opt.id + '" aria-pressed="' + (idx === 0 ? 'true' : 'false') + '">' +
+          '<span>' + opt.label + '</span>' +
+          '<span aria-hidden="true">●</span>' +
+        '</button>'
+      );
+    }).join('');
+
+    var stateButtons = SHARE_STATE_OPTIONS.map(function (opt, idx) {
+      return (
+        '<button type="button" class="hz-choice-btn' + (idx === 0 ? ' is-selected' : '') + '" data-share-state="' + opt.id + '" aria-pressed="' + (idx === 0 ? 'true' : 'false') + '">' +
+          '<span>' + opt.label + '</span>' +
+          '<span aria-hidden="true">←</span>' +
+        '</button>'
+      );
+    }).join('');
+
+    var railButtons = TOOLS_META.map(function (t, idx) {
+      return (
+        '<button type="button" class="hz-rail-tab' + (idx === 0 ? ' is-active' : '') + '" role="tab" aria-selected="' + (idx === 0 ? 'true' : 'false') + '" data-hz-tab="' + t.id + '">' +
+          '<span class="hz-rail-idx">' + t.index + '</span>' +
+          '<span class="hz-rail-name">' + t.tabLabel + '</span>' +
+        '</button>'
+      );
+    }).join('');
+
+    return (
+      '<div class="hz-sheet-chassis" role="document">' +
+        '<header class="hz-sheet-header">' +
+          '<div class="hz-sheet-id">' +
+            '<span class="hz-sheet-code" id="hz-sheet-active-code">SYS.01 // CSBD</span>' +
+            '<span class="hz-sheet-label">جعبه‌ابزار حاکم ذهن</span>' +
+          '</div>' +
+          '<button type="button" class="hz-sheet-close" id="hz-sheet-close-btn" aria-label="بستن جعبه‌ابزار">بستن ✕</button>' +
+        '</header>' +
+
+        '<div class="hz-toolbox-stage" id="hz-toolbox-stage">' +
+          /* TOOL 1: خودسنجی نشانه‌ها */
+          '<section class="hz-tool-pane" id="hz-pane-signs" data-hz-pane="signs" role="tabpanel">' +
+            '<div class="hz-pane-head">' +
+              '<h2 class="hz-pane-title">خودسنجی نشانه‌ها</h2>' +
+              '<p class="hz-pane-subtitle">آیا این رفتار برای من مشکل شده؟</p>' +
+            '</div>' +
+            '<div class="hz-hud-split" id="hz-signs-feedback">' +
+              '<div class="hz-ring-wrap">' +
+                '<svg class="hz-ring-svg" viewBox="0 0 100 100" aria-hidden="true">' +
+                  '<circle class="hz-ring-track" cx="50" cy="50" r="' + RING_RADIUS + '"></circle>' +
+                  '<circle class="hz-ring-ticks" cx="50" cy="50" r="' + RING_RADIUS + '"></circle>' +
+                  '<circle class="hz-ring-fill" id="hz-signs-ring" cx="50" cy="50" r="' + RING_RADIUS + '" stroke-dasharray="' + RING_CIRCUMFERENCE + '" stroke-dashoffset="' + RING_CIRCUMFERENCE + '"></circle>' +
+                '</svg>' +
+                '<div class="hz-ring-center">' +
+                  '<span class="hz-ring-value" id="hz-signs-count">۰ از ۵</span>' +
+                  '<span class="hz-ring-caption">نشانه است، نه تشخیص</span>' +
+                '</div>' +
+              '</div>' +
+              '<div class="hz-hud-copy">' +
+                '<div class="hz-hud-tag-row">' +
+                  '<span class="hz-pill-caveat">نشانه است، نه تشخیص</span>' +
+                  '<span class="hz-pill-storage">بدون نمره · بدون ذخیره</span>' +
+                '</div>' +
+                '<p class="hz-hud-intro">' + SIGNS_INTRO + '</p>' +
+                '<p class="hz-hud-status" id="hz-signs-status">هیچ موردی انتخاب نشده است (صرفاً جهت خودآگاهی شخصی).</p>' +
+              '</div>' +
+            '</div>' +
+            '<div class="hz-switch-stack">' + signsRows + '</div>' +
+          '</section>' +
+
+          /* TOOL 2: ماشین‌حساب هزینهٔ زمانی */
+          '<section class="hz-tool-pane" id="hz-pane-time" data-hz-pane="time" role="tabpanel" hidden>' +
+            '<div class="hz-pane-head">' +
+              '<h2 class="hz-pane-title">ماشین‌حساب هزینهٔ زمانی</h2>' +
+              '<p class="hz-pane-subtitle">تا حالا چقدر وقتم رفته؟</p>' +
+            '</div>' +
+            '<div class="hz-calc-hud" id="hz-time-feedback">' +
+              '<div class="hz-calc-primary-row">' +
+                '<div class="hz-calc-main-readout" id="hz-calc-total-readout">' +
+                  '<span class="hz-calc-hours-big" id="hz-calc-hours-num">۱۸۰</span>' +
+                  '<span class="hz-calc-hours-unit">ساعت</span>' +
+                  '<span class="hz-calc-days-eq" id="hz-calc-days-eq">(۷٫۵ روز)</span>' +
+                '</div>' +
+                '<span class="hz-calc-formula-tag" id="hz-calc-formula-summary">۶۰ دقیقه × ۱۸۰ روز</span>' +
+              '</div>' +
+              '<div class="hz-awake-meter">' +
+                '<div class="hz-awake-head">' +
+                  '<span class="hz-awake-label">سهم از بیداری (روزانه ۱۶ ساعت بیداری)</span>' +
+                  '<span class="hz-awake-val" id="hz-calc-awake-pct">۶٫۳٪</span>' +
+                '</div>' +
+                '<div class="hz-awake-track">' +
+                  '<div class="hz-awake-fill" id="hz-calc-awake-bar" style="width: 6.3%;"></div>' +
+                '</div>' +
+              '</div>' +
+              '<div class="hz-calc-comparisons">' +
+                '<div class="hz-cmp-cell">' +
+                  '<span class="hz-cmp-tag">حدود</span>' +
+                  '<span class="hz-cmp-val" id="hz-cmp-movies">~۹۰ فیلم ۲ ساعته</span>' +
+                '</div>' +
+                '<div class="hz-cmp-cell">' +
+                  '<span class="hz-cmp-tag">حدود</span>' +
+                  '<span class="hz-cmp-val" id="hz-cmp-sleep">~۲۲٫۵ شب خواب ۸ ساعته</span>' +
+                '</div>' +
+                '<div class="hz-cmp-cell">' +
+                  '<span class="hz-cmp-tag">حدود</span>' +
+                  '<span class="hz-cmp-val" id="hz-cmp-work">~۴٫۵ هفتهٔ کاری ۴۰ ساعته</span>' +
+                '</div>' +
+              '</div>' +
+            '</div>' +
+
+            '<div class="hz-calc-deck">' +
+              '<div class="hz-control-card">' +
+                '<div class="hz-control-top">' +
+                  '<label class="hz-control-label" for="hz-input-minutes">دقیقه در روز</label>' +
+                  '<div class="hz-num-field-wrap">' +
+                    '<input type="number" id="hz-input-minutes" class="hz-num-input" min="0" max="180" step="5" value="60">' +
+                    '<span class="hz-num-unit">دقیقه</span>' +
+                  '</div>' +
+                '</div>' +
+                '<div class="hz-chip-strip" data-chip-group="minutes">' +
+                  '<button type="button" class="hz-preset-chip" data-min-chip="15">۱۵</button>' +
+                  '<button type="button" class="hz-preset-chip" data-min-chip="30">۳۰</button>' +
+                  '<button type="button" class="hz-preset-chip is-active" data-min-chip="60">۶۰</button>' +
+                  '<button type="button" class="hz-preset-chip" data-min-chip="90">۹۰</button>' +
+                '</div>' +
+                '<input type="range" id="hz-slider-minutes" class="hz-range-slider" min="0" max="180" step="5" value="60" aria-label="اسلایدر دقیقه در روز">' +
+              '</div>' +
+
+              '<div class="hz-control-card">' +
+                '<div class="hz-control-top">' +
+                  '<label class="hz-control-label" for="hz-input-days">تعداد روز</label>' +
+                  '<div class="hz-num-field-wrap">' +
+                    '<input type="number" id="hz-input-days" class="hz-num-input" min="1" max="3650" step="1" value="180">' +
+                    '<span class="hz-num-unit">روز</span>' +
+                  '</div>' +
+                '</div>' +
+                '<div class="hz-chip-strip" data-chip-group="days">' +
+                  '<button type="button" class="hz-preset-chip" data-day-chip="30">۳۰</button>' +
+                  '<button type="button" class="hz-preset-chip" data-day-chip="90">۹۰</button>' +
+                  '<button type="button" class="hz-preset-chip is-active" data-day-chip="180">۱۸۰</button>' +
+                  '<button type="button" class="hz-preset-chip" data-day-chip="365">۳۶۵</button>' +
+                '</div>' +
+              '</div>' +
+            '</div>' +
+          '</section>' +
+
+          /* TOOL 3: خط زمانی بهبود مغز */
+          '<section class="hz-tool-pane" id="hz-pane-brain" data-hz-pane="brain" role="tabpanel" hidden>' +
+            '<div class="hz-pane-head">' +
+              '<h2 class="hz-pane-title">خط زمانی بهبود مغز</h2>' +
+              '<p class="hz-pane-subtitle">هفته‌به‌هفته بعد از شروع، چه می‌شود؟</p>' +
+            '</div>' +
+            '<div class="hz-brain-top">' +
+              '<p class="hz-brain-intro">' + BRAIN_INTRO + '</p>' +
+              '<div class="hz-date-bar">' +
+                '<label class="hz-date-label" for="hz-brain-start-date">تاریخ شروع:</label>' +
+                '<input type="date" id="hz-brain-start-date" class="hz-date-input">' +
+                '<span class="hz-jalali-readout" id="hz-brain-start-jalali">امروز</span>' +
+              '</div>' +
+            '</div>' +
+            '<div class="hz-station-selector" role="tablist" aria-label="ایستگاه‌های بهبود مغز">' +
+              stationTabs +
+            '</div>' +
+            '<div class="hz-station-panels">' +
+              stationCards +
+            '</div>' +
+          '</section>' +
+
+          /* TOOL 4: برنامهٔ امشب */
+          '<section class="hz-tool-pane" id="hz-pane-tonight" data-hz-pane="tonight" role="tabpanel" hidden>' +
+            '<div class="hz-pane-head">' +
+              '<h2 class="hz-pane-title">برنامهٔ امشب</h2>' +
+              '<p class="hz-pane-subtitle">محیط امشب را از پیش آماده کن</p>' +
+            '</div>' +
+            '<div class="hz-hud-split" id="hz-tonight-feedback">' +
+              '<div class="hz-ring-wrap">' +
+                '<svg class="hz-ring-svg" viewBox="0 0 100 100" aria-hidden="true">' +
+                  '<circle class="hz-ring-track" cx="50" cy="50" r="' + RING_RADIUS + '"></circle>' +
+                  '<circle class="hz-ring-ticks" cx="50" cy="50" r="' + RING_RADIUS + '"></circle>' +
+                  '<circle class="hz-ring-fill hz-ring-fill--cyan" id="hz-tonight-ring" cx="50" cy="50" r="' + RING_RADIUS + '" stroke-dasharray="' + RING_CIRCUMFERENCE + '" stroke-dashoffset="' + RING_CIRCUMFERENCE + '"></circle>' +
+                '</svg>' +
+                '<div class="hz-ring-center">' +
+                  '<span class="hz-ring-value" id="hz-tonight-count"><span>۰ از ۵</span> <span class="hz-ring-value-sub">آماده است</span></span>' +
+                '</div>' +
+              '</div>' +
+              '<div class="hz-hud-copy">' +
+                '<div class="hz-hud-tag-row">' +
+                  '<span class="hz-pill-storage">ذخیره در مرورگر (localStorage)</span>' +
+                '</div>' +
+                '<p class="hz-hud-intro">' + TONIGHT_INTRO + '</p>' +
+              '</div>' +
+            '</div>' +
+            '<div class="hz-switch-stack">' + tonightRows + '</div>' +
+          '</section>' +
+
+          /* TOOL 5: ارسال راهنما برای کسی دیگر */
+          '<section class="hz-tool-pane" id="hz-pane-share" data-hz-pane="share" role="tabpanel" hidden>' +
+            '<div class="hz-pane-head">' +
+              '<h2 class="hz-pane-title">ارسال راهنما برای کسی دیگر</h2>' +
+              '<p class="hz-pane-subtitle">راهنمای درست را برای او بفرست</p>' +
+            '</div>' +
+
+            '<div class="hz-step-module" id="hz-share-step-1">' +
+              '<div class="hz-step-bar">' +
+                '<span class="hz-step-tag">قدم ۱ از ۲</span>' +
+                '<h3 class="hz-step-question">برای کیست؟</h3>' +
+              '</div>' +
+              '<div class="hz-who-grid">' + whoButtons + '</div>' +
+            '</div>' +
+
+            '<div class="hz-step-module hz-step-module--two" id="hz-share-step-2">' +
+              '<div class="hz-step-bar">' +
+                '<span class="hz-step-tag">قدم ۲ از ۲</span>' +
+                '<h3 class="hz-step-question">او در چه وضعیتی است؟</h3>' +
+              '</div>' +
+              '<div class="hz-state-stack">' + stateButtons + '</div>' +
+            '</div>' +
+
+            '<div class="hz-route-console" id="hz-share-result">' +
+              '<div class="hz-route-top">' +
+                '<span class="hz-route-kicker">راهنمای انتخاب‌شده</span>' +
+                '<code class="hz-route-path" id="hz-share-path">/start.html</code>' +
+              '</div>' +
+              '<h4 class="hz-route-title" id="hz-share-title">شروع کاهش یا ترک در ۴۸ ساعت اول؛ قدم‌های ساده و عملی</h4>' +
+              '<p class="hz-route-note" id="hz-share-note">مناسب برای کسی که می‌خواهد بدون شعارهای سنگین، از همین ۴۸ ساعت اول یک قدم واقعی بردارد.</p>' +
+              '<div class="hz-route-actions">' +
+                '<button type="button" class="hz-btn-share-primary" id="hz-btn-native-share">اشتراک‌گذاری ↗</button>' +
+                '<button type="button" class="hz-btn-copy-link" id="hz-btn-copy-url">کپی لینک</button>' +
+                '<a class="hz-btn-open-route" id="hz-link-open-guide" href="/start.html">مشاهده ←</a>' +
+              '</div>' +
+            '</div>' +
+          '</section>' +
+        '</div>' +
+
+        '<nav class="hz-toolbox-rail" role="tablist" aria-label="ابزارهای جعبه‌ابزار">' +
+          railButtons +
+        '</nav>' +
+      '</div>'
+    );
+  }
+
+  /* ========================================================================
+     INTERACTIVE CONTROLLER
+     ======================================================================== */
+
+  function initToolbox() {
+    var sheetEl = document.getElementById('hz-dock-sheet');
+    if (!sheetEl) {
+      sheetEl = document.createElement('div');
+      sheetEl.id = 'hz-dock-sheet';
+      sheetEl.className = 'hz-dock-sheet';
+      sheetEl.setAttribute('role', 'dialog');
+      sheetEl.setAttribute('aria-modal', 'true');
+      sheetEl.setAttribute('aria-label', 'جعبه‌ابزار حاکم ذهن');
+      sheetEl.hidden = true;
+      document.body.appendChild(sheetEl);
+    }
+
+    if (!sheetEl.querySelector('.hz-toolbox-stage')) {
+      sheetEl.innerHTML = buildSheetMarkup();
+    }
+
+    var toastEl = document.getElementById('hz-toast');
+    if (!toastEl) {
+      toastEl = document.createElement('div');
+      toastEl.id = 'hz-toast';
+      toastEl.className = 'hz-toast';
+      toastEl.setAttribute('role', 'status');
+      toastEl.setAttribute('aria-live', 'polite');
+      toastEl.hidden = true;
+      document.body.appendChild(toastEl);
+    }
+
+    var toastTimer = null;
+    function showToast(msg) {
+      toastEl.textContent = msg;
+      toastEl.hidden = false;
+      if (toastTimer) clearTimeout(toastTimer);
+      toastTimer = setTimeout(function () {
+        toastEl.hidden = true;
+      }, 2600);
+    }
+
+    /* --- Sheet Open / Close & Tab Switching --- */
+    var activeToolId = 'signs';
+
+    function selectTool(toolId) {
+      var meta = TOOLS_META.find(function (m) { return m.id === toolId; }) || TOOLS_META[0];
+      activeToolId = meta.id;
+
+      var codeBadge = document.getElementById('hz-sheet-active-code');
+      if (codeBadge) codeBadge.textContent = meta.code;
+
+      var panes = sheetEl.querySelectorAll('[data-hz-pane]');
+      panes.forEach(function (pane) {
+        var isMatch = pane.getAttribute('data-hz-pane') === activeToolId;
+        pane.hidden = !isMatch;
+      });
+
+      var tabs = sheetEl.querySelectorAll('[data-hz-tab]');
+      tabs.forEach(function (tab) {
+        var isMatch = tab.getAttribute('data-hz-tab') === activeToolId;
+        tab.classList.toggle('is-active', isMatch);
+        tab.setAttribute('aria-selected', isMatch ? 'true' : 'false');
+      });
+
+      var stage = document.getElementById('hz-toolbox-stage');
+      if (stage) stage.scrollTop = 0;
+    }
+
+    function openSheet(toolId) {
+      if (toolId) selectTool(toolId);
+      sheetEl.hidden = false;
+      document.body.classList.add('hz-sheet-open');
+    }
+
+    function closeSheet() {
+      sheetEl.hidden = true;
+      document.body.classList.remove('hz-sheet-open');
+    }
+
+    var hubBtn = document.getElementById('hz-dock-hub-btn');
+    if (hubBtn) {
+      hubBtn.addEventListener('click', function () {
+        if (sheetEl.hidden) {
+          openSheet(activeToolId);
+        } else {
+          closeSheet();
+        }
+      });
+    }
+
+    var closeBtn = document.getElementById('hz-sheet-close-btn');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', closeSheet);
+    }
+
+    sheetEl.addEventListener('click', function (e) {
+      if (e.target === sheetEl) closeSheet();
     });
 
-    function toolboxFaNum(n) {
-      return String(n).replace(/\d/g, function (d) {
-        return persianDigitsMap[Number(d)];
-      });
-    }
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !sheetEl.hidden) closeSheet();
+    });
 
-    /* شمارش تدریجی عدد (count-up)؛ با reduced-motion مقدار نهایی فوری گذاشته می‌شود */
-    function toolboxCountUp(el, to, formatFn) {
-      if (!el) return;
-      var fmt = formatFn || toolboxFaNum;
-      if (el._toolboxCountUpRaf) window.cancelAnimationFrame(el._toolboxCountUpRaf);
-      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        el._toolboxCountUpValue = to;
-        el.textContent = fmt(to);
-        return;
+    sheetEl.querySelectorAll('[data-hz-tab]').forEach(function (tabBtn) {
+      tabBtn.addEventListener('click', function () {
+        selectTool(tabBtn.getAttribute('data-hz-tab'));
+      });
+    });
+
+    document.querySelectorAll('[data-hz-open-tool]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var targetTool = btn.getAttribute('data-hz-open-tool');
+        openSheet(targetTool);
+      });
+    });
+
+    /* --- TOOL 1: خودسنجی نشانه‌ها --- */
+    var signsRing = document.getElementById('hz-signs-ring');
+    var signsCountEl = document.getElementById('hz-signs-count');
+    var signsStatusEl = document.getElementById('hz-signs-status');
+    var signsFeedbackEl = document.getElementById('hz-signs-feedback');
+
+    function updateSignsGauge(triggerScrollGuard) {
+      var checks = sheetEl.querySelectorAll('[data-signs-check]');
+      var count = 0;
+      checks.forEach(function (chk, idx) {
+        var row = sheetEl.querySelector('[data-signs-row="' + idx + '"]');
+        if (chk.checked) {
+          count++;
+          if (row) row.classList.add('is-checked');
+        } else if (row) {
+          row.classList.remove('is-checked');
+        }
+      });
+
+      var offset = RING_CIRCUMFERENCE - (count / 5) * RING_CIRCUMFERENCE;
+      if (signsRing) {
+        signsRing.style.strokeDashoffset = String(offset.toFixed(2));
       }
-      var from = typeof el._toolboxCountUpValue === 'number' ? el._toolboxCountUpValue : 0;
-      var start = null;
-      var duration = 350;
-      function step(ts) {
-        if (start === null) start = ts;
-        var p = Math.min(1, (ts - start) / duration);
-        var eased = 1 - Math.pow(1 - p, 3);
-        var val = from + (to - from) * eased;
-        el._toolboxCountUpValue = val;
-        el.textContent = fmt(val);
-        if (p < 1) {
-          el._toolboxCountUpRaf = window.requestAnimationFrame(step);
+      if (signsCountEl) {
+        signsCountEl.textContent = toFaNum(count) + ' از ۵';
+      }
+      if (signsStatusEl) {
+        if (count === 0) {
+          signsStatusEl.textContent = 'هیچ موردی انتخاب نشده است (صرفاً جهت خودآگاهی شخصی).';
+        } else if (count === 1) {
+          signsStatusEl.textContent = '۱ نشانه علامت خورده است؛ آگاهی از الگو، قدم اول پیشگیری است.';
         } else {
-          el._toolboxCountUpValue = to;
-          el.textContent = fmt(to);
+          signsStatusEl.textContent = toFaNum(count) + ' نشانه انتخاب شده؛ گفت‌وگو با متخصص روان‌شناسی بسیار کمک‌کننده خواهد بود.';
         }
       }
-      el._toolboxCountUpRaf = window.requestAnimationFrame(step);
+      if (triggerScrollGuard && signsFeedbackEl && typeof signsFeedbackEl.scrollIntoView === 'function') {
+        signsFeedbackEl.scrollIntoView({ block: 'nearest' });
+      }
     }
 
-    function toolboxStageHead(toolId) {
-      var tool = null;
-      toolboxTools.forEach(function (t) {
-        if (t.id === toolId) tool = t;
+    sheetEl.querySelectorAll('[data-signs-check]').forEach(function (chk) {
+      chk.addEventListener('change', function () {
+        updateSignsGauge(true);
       });
-      if (!tool) return '';
-      return '<h3 class="hz-toolbox-stage-title">' + tool.title + '</h3>';
+    });
+
+    /* --- TOOL 2: ماشین‌حساب هزینهٔ زمانی --- */
+    var minInput = document.getElementById('hz-input-minutes');
+    var minSlider = document.getElementById('hz-slider-minutes');
+    var dayInput = document.getElementById('hz-input-days');
+    var hoursNumEl = document.getElementById('hz-calc-hours-num');
+    var daysEqEl = document.getElementById('hz-calc-days-eq');
+    var formulaSumEl = document.getElementById('hz-calc-formula-summary');
+    var awakePctEl = document.getElementById('hz-calc-awake-pct');
+    var awakeBarEl = document.getElementById('hz-calc-awake-bar');
+    var cmpMoviesEl = document.getElementById('hz-cmp-movies');
+    var cmpSleepEl = document.getElementById('hz-cmp-sleep');
+    var cmpWorkEl = document.getElementById('hz-cmp-work');
+
+    var calcState = { minutes: 60, days: 180 };
+
+    function renderCalculator() {
+      var m = Math.max(0, Number(calcState.minutes) || 0);
+      var d = Math.max(0, Number(calcState.days) || 0);
+
+      var totalHours = (m * d) / 60;
+      var totalDays = totalHours / 24;
+      var awakeShare = d > 0 ? (totalHours / (d * 16)) * 100 : 0;
+
+      var movies = totalHours / 2;
+      var sleepNights = totalHours / 8;
+      var workWeeks = totalHours / 40;
+
+      if (hoursNumEl) hoursNumEl.textContent = formatFaDecimal(totalHours);
+      if (daysEqEl) daysEqEl.textContent = '(' + formatFaDecimal(totalDays) + ' روز)';
+      if (formulaSumEl) formulaSumEl.textContent = toFaNum(m) + ' دقیقه × ' + toFaNum(d) + ' روز';
+
+      var awakeFormatted = formatFaDecimal(awakeShare) + '٪';
+      if (awakePctEl) awakePctEl.textContent = awakeFormatted;
+      if (awakeBarEl) {
+        var clampedWidth = Math.min(100, Math.max(0, round1(awakeShare)));
+        awakeBarEl.style.width = clampedWidth + '%';
+      }
+
+      if (cmpMoviesEl) cmpMoviesEl.textContent = '~' + formatFaDecimal(movies) + ' فیلم ۲ ساعته';
+      if (cmpSleepEl) cmpSleepEl.textContent = '~' + formatFaDecimal(sleepNights) + ' شب خواب ۸ ساعته';
+      if (cmpWorkEl) cmpWorkEl.textContent = '~' + formatFaDecimal(workWeeks) + ' هفتهٔ کاری ۴۰ ساعته';
+
+      sheetEl.querySelectorAll('[data-min-chip]').forEach(function (chip) {
+        chip.classList.toggle('is-active', Number(chip.getAttribute('data-min-chip')) === m);
+      });
+      sheetEl.querySelectorAll('[data-day-chip]').forEach(function (chip) {
+        chip.classList.toggle('is-active', Number(chip.getAttribute('data-day-chip')) === d);
+      });
     }
 
-    function toolboxShowStage(toolId) {
-      var tool = null;
-      toolboxTools.forEach(function (t) {
-        if (t.id === toolId) tool = t;
+    function setMinutes(val) {
+      var parsed = Math.max(0, Math.min(1440, Number(val) || 0));
+      calcState.minutes = parsed;
+      if (minInput && Number(minInput.value) !== parsed) minInput.value = String(parsed);
+      if (minSlider) minSlider.value = String(Math.min(180, parsed));
+      renderCalculator();
+    }
+
+    function setDays(val) {
+      var parsed = Math.max(0, Math.min(36500, Number(val) || 0));
+      calcState.days = parsed;
+      if (dayInput && Number(dayInput.value) !== parsed) dayInput.value = String(parsed);
+      renderCalculator();
+    }
+
+    if (minSlider) {
+      minSlider.addEventListener('input', function () {
+        setMinutes(minSlider.value);
       });
-      if (!tool) return;
-      toolboxRailTabs.forEach(function (tab) {
-        var active = tab.getAttribute('data-toolbox-tool') === toolId;
+    }
+    if (minInput) {
+      minInput.addEventListener('input', function () {
+        setMinutes(minInput.value);
+      });
+    }
+    if (dayInput) {
+      dayInput.addEventListener('input', function () {
+        setDays(dayInput.value);
+      });
+    }
+
+    sheetEl.querySelectorAll('[data-min-chip]').forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        setMinutes(chip.getAttribute('data-min-chip'));
+      });
+    });
+
+    sheetEl.querySelectorAll('[data-day-chip]').forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        setDays(chip.getAttribute('data-day-chip'));
+      });
+    });
+
+    /* --- TOOL 3: خط زمانی بهبود مغز --- */
+    var startDateInput = document.getElementById('hz-brain-start-date');
+    var startJalaliEl = document.getElementById('hz-brain-start-jalali');
+    var activeStationIdx = 0;
+
+    function getTodayIso() {
+      var now = new Date();
+      var yyyy = now.getFullYear();
+      var mm = String(now.getMonth() + 1).padStart(2, '0');
+      var dd = String(now.getDate()).padStart(2, '0');
+      return yyyy + '-' + mm + '-' + dd;
+    }
+
+    if (startDateInput && !startDateInput.value) {
+      startDateInput.value = getTodayIso();
+    }
+
+    function updateBrainDates() {
+      var baseDate = startDateInput && startDateInput.value
+        ? new Date(startDateInput.value + 'T12:00:00')
+        : new Date();
+      if (Number.isNaN(baseDate.getTime())) baseDate = new Date();
+
+      if (startJalaliEl) {
+        startJalaliEl.textContent = formatJalali(baseDate, true);
+      }
+
+      BRAIN_STATIONS.forEach(function (st, idx) {
+        var d1 = addDays(baseDate, st.startOffset);
+        var dateLabel = st.startOffset === st.endOffset
+          ? formatJalali(d1, false)
+          : formatJalali(d1, false) + ' تا ' + formatJalali(addDays(baseDate, st.endOffset), false);
+
+        var tabDateEl = sheetEl.querySelector('[data-brain-tab-date="' + idx + '"]');
+        if (tabDateEl) tabDateEl.textContent = dateLabel;
+
+        var cardDateEl = sheetEl.querySelector('[data-brain-card-date="' + idx + '"]');
+        if (cardDateEl) cardDateEl.textContent = st.offsetLabel + ' · ' + dateLabel;
+      });
+    }
+
+    function selectBrainStation(idx) {
+      activeStationIdx = idx;
+      sheetEl.querySelectorAll('[data-brain-tab]').forEach(function (tab, i) {
+        var active = i === activeStationIdx;
         tab.classList.toggle('is-active', active);
         tab.setAttribute('aria-selected', active ? 'true' : 'false');
       });
-      toolboxPositionRailPill();
-      if (toolId === 'assess') toolboxRenderAssess();
-      else if (toolId === 'calc') toolboxRenderCalc();
-      else if (toolId === 'timeline') toolboxRenderTimeline();
-      else if (toolId === 'tonight') toolboxRenderTonight();
-      else if (toolId === 'share') toolboxRenderShare();
-      sheet.scrollTop = 0;
-      toolboxStage.scrollTop = 0;
-    }
-
-    /* قرص طلایی لغزندهٔ ریل را روی تب فعال میزان می‌کند */
-    function toolboxPositionRailPill() {
-      var pill = sheet.querySelector('.hz-toolbox-rail-pill');
-      if (!pill) return;
-      var activeTab = null;
-      toolboxRailTabs.forEach(function (tab) {
-        if (tab.classList.contains('is-active')) activeTab = tab;
-      });
-      if (!activeTab) return;
-      pill.style.width = activeTab.offsetWidth + 'px';
-      pill.style.transform = 'translateX(' + activeTab.offsetLeft + 'px)';
-    }
-
-    /* --- ابزار ۱: خودسنجی نشانه‌ها (بدون ذخیره‌سازی، بدون نمره) --- */
-    function toolboxRenderAssess() {
-      var itemsHtml = toolboxAssessSigns
-        .map(function (sign, idx) {
-          return (
-            '<label class="hz-toolbox-check-item">' +
-            '<input type="checkbox" data-assess-sign="' +
-            idx +
-            '" />' +
-            '<span>' +
-            sign +
-            '</span>' +
-            '</label>'
-          );
-        })
-        .join('');
-      toolboxStage.innerHTML =
-        toolboxStageHead('assess') +
-        '<p class="hz-toolbox-detail-intro">نیازی به نمره و جدول نیست؛ اگر دو مورد یا بیشتر از نشانه‌های زیر را ماه‌هاست با شدت بالا تجربه می‌کنی، مراجعه به متخصص روان‌شناسی بسیار کمک‌کننده خواهد بود:</p>' +
-        '<div class="hz-toolbox-assess">' +
-        '<div class="hz-toolbox-gauge">' +
-        '<svg width="200" height="200" viewBox="0 0 200 200" role="img" aria-label="تعداد نشانه‌های انتخاب‌شده">' +
-        '<circle class="hz-toolbox-gauge-track" cx="100" cy="100" r="88" fill="none" stroke-width="8" />' +
-        '<circle class="hz-toolbox-gauge-ring" cx="100" cy="100" r="88" fill="none" stroke-width="8" stroke-dasharray="552.92" stroke-dashoffset="552.92" />' +
-        '</svg>' +
-        '<span class="hz-toolbox-gauge-count">۰ از ۵</span>' +
-        '</div>' +
-        '<div class="hz-toolbox-check">' +
-        itemsHtml +
-        '</div>' +
-        '<div class="hz-toolbox-result" hidden></div>' +
-        '<button type="button" class="hz-toolbox-clear">پاک کردن پاسخ‌ها</button>' +
-        '</div>';
-      var resultEl = toolboxStage.querySelector('.hz-toolbox-result');
-      var gaugeRing = toolboxStage.querySelector('.hz-toolbox-gauge-ring');
-      var gaugeCount = toolboxStage.querySelector('.hz-toolbox-gauge-count');
-      var gaugeCirc = 552.92;
-      var boxes = Array.prototype.slice.call(toolboxStage.querySelectorAll('[data-assess-sign]'));
-      function updateAssessResult() {
-        var checked = boxes.filter(function (b) {
-          return b.checked;
-        }).length;
-        if (gaugeCount) toolboxCountUp(gaugeCount, checked, function (v) { return toolboxFaNum(Math.round(v)) + ' از ۵'; });
-        if (gaugeRing) {
-          gaugeRing.style.strokeDasharray = gaugeCirc.toFixed(2);
-          gaugeRing.style.strokeDashoffset = (gaugeCirc * (1 - checked / 5)).toFixed(2);
-        }
-        /* کلیک روی برچسب، چک‌باکس ۱ پیکسلی را فوکوس می‌کند و مرورگر صحنه را پایین می‌کشد؛ گیج (بازخورد عمل) را دوباره به دید برگردان */
-        var gaugeEl = toolboxStage.querySelector('.hz-toolbox-gauge');
-        if (gaugeEl) gaugeEl.scrollIntoView({ block: 'nearest' });
-        if (checked === 0) {
-          resultEl.setAttribute('hidden', '');
-          resultEl.className = 'hz-toolbox-result';
-          resultEl.innerHTML = '';
-          return;
-        }
-        resultEl.removeAttribute('hidden');
-        if (checked >= 2) {
-          resultEl.className = 'hz-toolbox-result hz-toolbox-result--high hz-toolbox-result--card';
-          resultEl.innerHTML =
-            '<p>مراجعه به متخصص روان‌شناسی بسیار کمک‌کننده خواهد بود.</p>' +
-            '<p><a href="/habits.html">خواندن توضیح کامل</a></p>' +
-            '<p class="hz-toolbox-disclaimer">سایت آموزشی جای روان‌شناس نیست.</p>';
-        } else {
-          resultEl.className = 'hz-toolbox-result hz-toolbox-result--low hz-toolbox-result--card';
-          resultEl.innerHTML =
-            '<p>بسیاری از رفتارهای تکرارشونده از جنس «عادت محیطی» هستند و با بستن راه‌های دسترسی، اصلاح خواب و تغییر دیدگاه قابل کنترل می‌شوند.</p>' +
-            '<p><a href="/habits.html">خواندن توضیح کامل</a></p>' +
-            '<p class="hz-toolbox-disclaimer">سایت آموزشی جای روان‌شناس نیست.</p>';
-        }
-      }
-      boxes.forEach(function (b) {
-        b.addEventListener('change', updateAssessResult);
-      });
-      var clearBtn = toolboxStage.querySelector('.hz-toolbox-clear');
-      clearBtn.addEventListener('click', function () {
-        boxes.forEach(function (b) {
-          b.checked = false;
-        });
-        updateAssessResult();
+      sheetEl.querySelectorAll('[data-brain-card]').forEach(function (card, i) {
+        var active = i === activeStationIdx;
+        card.classList.toggle('is-active', active);
+        var body = card.querySelector('[data-brain-card-body]');
+        if (body) body.hidden = !active;
       });
     }
 
-    /* --- ابزار ۲: ماشین‌حساب هزینهٔ زمانی --- */
-    function toolboxRenderCalc() {
-      toolboxStage.innerHTML =
-        toolboxStageHead('calc') +
-        '<div class="hz-toolbox-calc">' +
-        '<label class="hz-toolbox-field">دقیقه در روز<input type="number" min="0" step="1" inputmode="numeric" value="30" /></label>' +
-        '<div class="hz-toolbox-chips" role="group" aria-label="دقیقه‌های آماده">' +
-        '<button type="button" class="hz-toolbox-chip" data-calc-minutes="15">۱۵</button>' +
-        '<button type="button" class="hz-toolbox-chip" data-calc-minutes="30">۳۰</button>' +
-        '<button type="button" class="hz-toolbox-chip" data-calc-minutes="60">۶۰</button>' +
-        '<button type="button" class="hz-toolbox-chip" data-calc-minutes="90">۹۰</button>' +
-        '</div>' +
-        '<input type="range" class="hz-toolbox-slider" min="0" max="180" step="5" value="30" aria-label="دقیقه در روز" />' +
-        '<label class="hz-toolbox-field">روز<input type="number" min="0" step="1" inputmode="numeric" value="30" /></label>' +
-        '<div class="hz-toolbox-chips" role="group" aria-label="روزهای آماده">' +
-        '<button type="button" class="hz-toolbox-chip" data-calc-days="30">۳۰</button>' +
-        '<button type="button" class="hz-toolbox-chip" data-calc-days="90">۹۰</button>' +
-        '<button type="button" class="hz-toolbox-chip" data-calc-days="180">۱۸۰</button>' +
-        '<button type="button" class="hz-toolbox-chip" data-calc-days="365">۳۶۵</button>' +
-        '</div>' +
-        '<p class="hz-toolbox-output hz-toolbox-calc-result" aria-live="polite"><span class="hz-toolbox-calc-num"></span> <span class="hz-toolbox-calc-unit">ساعت</span></p>' +
-        '<div class="hz-toolbox-wake"><span class="hz-toolbox-wake-label"></span><span class="hz-toolbox-wake-track"><span class="hz-toolbox-wake-fill"></span></span></div>' +
-        '<div class="hz-toolbox-compare">' +
-        '<span class="hz-toolbox-compare-chip"><span class="hz-toolbox-compare-num"></span><span class="hz-toolbox-compare-label">فیلم ۲ ساعته</span></span>' +
-        '<span class="hz-toolbox-compare-chip"><span class="hz-toolbox-compare-num"></span><span class="hz-toolbox-compare-label">شب خواب ۸ ساعته</span></span>' +
-        '<span class="hz-toolbox-compare-chip"><span class="hz-toolbox-compare-num"></span><span class="hz-toolbox-compare-label">هفتهٔ کاری ۴۰ ساعته</span></span>' +
-        '</div>' +
-        '</div>';
-      var inputs = Array.prototype.slice.call(toolboxStage.querySelectorAll('.hz-toolbox-field input'));
-      var numEl = toolboxStage.querySelector('.hz-toolbox-calc-num');
-      var unitEl = toolboxStage.querySelector('.hz-toolbox-calc-unit');
-      var sliderEl = toolboxStage.querySelector('.hz-toolbox-slider');
-      var wakeLabel = toolboxStage.querySelector('.hz-toolbox-wake-label');
-      var wakeFill = toolboxStage.querySelector('.hz-toolbox-wake-fill');
-      var compareNums = Array.prototype.slice.call(toolboxStage.querySelectorAll('.hz-toolbox-compare-num'));
-      var minuteChips = Array.prototype.slice.call(toolboxStage.querySelectorAll('[data-calc-minutes]'));
-      var dayChips = Array.prototype.slice.call(toolboxStage.querySelectorAll('[data-calc-days]'));
-      function formatFaNum(n) {
-        return n.toLocaleString('fa-IR', { maximumFractionDigits: 1 });
-      }
-      function syncCalcChips(chips, value) {
-        chips.forEach(function (chip) {
-          var attr = chip.hasAttribute('data-calc-minutes') ? 'data-calc-minutes' : 'data-calc-days';
-          chip.classList.toggle('is-selected', Number(chip.getAttribute(attr)) === value);
-        });
-      }
-      function updateCalc() {
-        var perDay = Math.max(0, parseFloat(inputs[0].value) || 0);
-        var days = Math.max(0, parseFloat(inputs[1].value) || 0);
-        var hours = (perDay * days) / 60;
-        if (numEl) toolboxCountUp(numEl, hours, formatFaNum);
-        unitEl.textContent = 'ساعت' + (hours >= 24 ? ' (' + formatFaNum(hours / 24) + ' روز)' : '');
-        if (sliderEl) sliderEl.value = perDay;
-        var wakePct = days === 0 ? 0 : (hours / (days * 16)) * 100;
-        if (wakeLabel) wakeLabel.textContent = formatFaNum(wakePct) + '٪ از ساعت‌های بیداری‌ات در این مدت';
-        if (wakeFill) wakeFill.style.width = Math.min(100, wakePct) + '%';
-        if (compareNums[0]) compareNums[0].textContent = '~' + formatFaNum(hours / 2);
-        if (compareNums[1]) compareNums[1].textContent = '~' + formatFaNum(hours / 8);
-        if (compareNums[2]) compareNums[2].textContent = '~' + formatFaNum(hours / 40);
-        syncCalcChips(minuteChips, perDay);
-        syncCalcChips(dayChips, days);
-      }
-      inputs.forEach(function (input) {
-        input.addEventListener('input', updateCalc);
-      });
-      if (sliderEl) {
-        sliderEl.addEventListener('input', function () {
-          inputs[0].value = sliderEl.value;
-          updateCalc();
-        });
-      }
-      minuteChips.forEach(function (chip) {
-        chip.addEventListener('click', function () {
-          inputs[0].value = chip.getAttribute('data-calc-minutes');
-          updateCalc();
-        });
-      });
-      dayChips.forEach(function (chip) {
-        chip.addEventListener('click', function () {
-          inputs[1].value = chip.getAttribute('data-calc-days');
-          updateCalc();
-        });
-      });
-      updateCalc();
+    if (startDateInput) {
+      startDateInput.addEventListener('input', updateBrainDates);
+      startDateInput.addEventListener('change', updateBrainDates);
     }
 
-    /* --- ابزار ۳: خط زمانی بهبود مغز (از آبجکت scenarioData) --- */
-    function toolboxRenderTimeline() {
-      var stages = [
-        { key: 'brain-w1', offsetDays: 7 },
-        { key: 'brain-w2', offsetDays: 14 },
-        { key: 'brain-w4', offsetStart: 21, offsetEnd: 28 }
-      ];
-      var stagesHtml = stages
-        .map(function (stage) {
-          var item = scenarioData[stage.key];
-          if (!item) return '';
-          var stepsHtml = item.steps
-            .map(function (s) {
-              return '<li>' + s + '</li>';
-            })
-            .join('');
-          return (
-            '<article class="hz-toolbox-station" data-stage="' +
-            stage.key +
-            '">' +
-            '<span class="hz-toolbox-stage-date"></span>' +
-            '<h4>' +
-            item.title +
-            '</h4>' +
-            '<p>' +
-            item.insight +
-            '</p>' +
-            '<ul>' +
-            stepsHtml +
-            '</ul>' +
-            '</article>'
-          );
-        })
-        .join('');
-      toolboxStage.innerHTML =
-        toolboxStageHead('timeline') +
-        '<p class="hz-toolbox-detail-intro">نه معجزهٔ ۳ روزه درست است و نه عدد جادویی ۹۰ روز. هر بازهٔ زمانی را لمس کن تا تغییر واقعی مغز را ببینی:</p>' +
-        '<label class="hz-toolbox-field hz-toolbox-field--start">تاریخ شروع<input type="date" class="hz-toolbox-date-input" /></label>' +
-        '<div class="hz-toolbox-journey">' +
-        '<span class="hz-toolbox-journey-fill" aria-hidden="true"></span>' +
-        stagesHtml +
-        '</div>';
-      var dateInput = toolboxStage.querySelector('.hz-toolbox-date-input');
-      var today = new Date();
-      var iso =
-        today.getFullYear() +
-        '-' +
-        ('0' + (today.getMonth() + 1)).slice(-2) +
-        '-' +
-        ('0' + today.getDate()).slice(-2);
-      dateInput.value = iso;
-      var faDate = new Intl.DateTimeFormat('fa-IR', { day: 'numeric', month: 'long', year: 'numeric' });
-      function addDays(date, n) {
-        var d = new Date(date.getTime());
-        d.setDate(d.getDate() + n);
-        return d;
-      }
-      function updateTimelineDates() {
-        var start = dateInput.valueAsDate || new Date(dateInput.value + 'T00:00:00');
-        if (isNaN(start.getTime())) start = new Date();
-        stages.forEach(function (stage) {
-          var el = toolboxStage.querySelector('[data-stage="' + stage.key + '"] .hz-toolbox-stage-date');
-          if (!el) return;
-          if (stage.offsetEnd) {
-            el.textContent = faDate.format(addDays(start, stage.offsetStart)) + ' تا ' + faDate.format(addDays(start, stage.offsetEnd));
-          } else {
-            el.textContent = faDate.format(addDays(start, stage.offsetDays));
-          }
-        });
-      }
-      dateInput.addEventListener('change', updateTimelineDates);
-      dateInput.addEventListener('input', updateTimelineDates);
-      updateTimelineDates();
-    }
-
-    /* --- ابزار ۴: برنامهٔ امشب (ذخیره در localStorage) --- */
-    function toolboxRenderTonight() {
-      var storageKey = 'hz-toolbox-tonight';
-      var saved = [];
-      try {
-        saved = JSON.parse(window.localStorage.getItem(storageKey) || '[]');
-      } catch (e) {
-        saved = [];
-      }
-      var itemsHtml = toolboxTonightItems
-        .map(function (item, idx) {
-          return (
-            '<label class="hz-toolbox-check-item hz-toolbox-toggle-row">' +
-            '<input type="checkbox" data-tonight-item="' +
-            idx +
-            '"' +
-            (saved[idx] ? ' checked' : '') +
-            ' />' +
-            '<span>' +
-            item +
-            '</span>' +
-            '</label>'
-          );
-        })
-        .join('');
-      toolboxStage.innerHTML =
-        toolboxStageHead('tonight') +
-        '<p class="hz-toolbox-detail-intro">تفاوت افراد موفق در ترک این نیست که وسوسه سراغشان نمی‌آید؛ تفاوتشان این است که در لحظهٔ بحران فکر نمی‌کنند «حالا چی کار کنم؟» — بلکه طبق برنامهٔ ازپیش‌نوشته عمل می‌کنند.</p>' +
-        '<div class="hz-toolbox-readiness">' +
-        '<div class="hz-toolbox-dial">' +
-        '<svg width="120" height="120" viewBox="0 0 120 120" role="img" aria-label="میزان آمادگی امشب">' +
-        '<circle class="hz-toolbox-dial-track" cx="60" cy="60" r="52" fill="none" stroke-width="8" />' +
-        '<circle class="hz-toolbox-dial-ring" cx="60" cy="60" r="52" fill="none" stroke-width="8" stroke-dasharray="326.73" stroke-dashoffset="326.73" />' +
-        '</svg>' +
-        '<span class="hz-toolbox-dial-count">۰ از ۵</span>' +
-        '</div>' +
-        '<span class="hz-toolbox-readiness-text">۰ از ۵ آماده است</span>' +
-        '</div>' +
-        '<div class="hz-toolbox-check">' +
-        itemsHtml +
-        '</div>' +
-        '<button type="button" class="hz-toolbox-reset">از اول</button>';
-      var boxes = Array.prototype.slice.call(toolboxStage.querySelectorAll('[data-tonight-item]'));
-      var readinessText = toolboxStage.querySelector('.hz-toolbox-readiness-text');
-      var dialRing = toolboxStage.querySelector('.hz-toolbox-dial-ring');
-      var dialCount = toolboxStage.querySelector('.hz-toolbox-dial-count');
-      var dialCirc = 326.73;
-      function updateTonightReadiness() {
-        var done = boxes.filter(function (b) {
-          return b.checked;
-        }).length;
-        if (readinessText) readinessText.textContent = toolboxFaNum(done) + ' از ۵ آماده است';
-        if (dialRing) {
-          dialRing.style.strokeDasharray = dialCirc.toFixed(2);
-          dialRing.style.strokeDashoffset = (dialCirc * (1 - done / 5)).toFixed(2);
-        }
-        if (dialCount) toolboxCountUp(dialCount, done, function (v) { return toolboxFaNum(Math.round(v)) + ' از ۵'; });
-        /* مثل خودسنجی: فوکوس چک‌باکس صحنه را پایین می‌کشد؛ عقربه (بازخورد عمل) را دوباره به دید برگردان */
-        var dialEl = toolboxStage.querySelector('.hz-toolbox-dial');
-        if (dialEl) dialEl.scrollIntoView({ block: 'nearest' });
-      }
-      function saveTonight() {
-        var state = boxes.map(function (b) {
-          return b.checked;
-        });
-        try {
-          window.localStorage.setItem(storageKey, JSON.stringify(state));
-        } catch (e) {
-          /* ذخیره‌سازی در دسترس نیست؛ چک‌لیست همان جلسه کار می‌کند */
-        }
-      }
-      boxes.forEach(function (b) {
-        b.addEventListener('change', function () {
-          saveTonight();
-          updateTonightReadiness();
-        });
-      });
-      var resetBtn = toolboxStage.querySelector('.hz-toolbox-reset');
-      resetBtn.addEventListener('click', function () {
-        boxes.forEach(function (b) {
-          b.checked = false;
-        });
-        saveTonight();
-        updateTonightReadiness();
-      });
-      updateTonightReadiness();
-    }
-
-    /* --- ابزار ۵: ارسال راهنما برای کسی دیگر --- */
-    function toolboxRenderShare() {
-      toolboxStage.innerHTML =
-        toolboxStageHead('share') +
-        '<div class="hz-toolbox-share">' +
-        '<div class="hz-toolbox-share-steps">' +
-        '<p>قدم ۱ — برای کیست؟</p>' +
-        '<div role="group" aria-label="برای کیست؟">' +
-        '<button type="button" class="hz-toolbox-choice" data-share-who="self">خودم</button>' +
-        '<button type="button" class="hz-toolbox-choice" data-share-who="teen">فرزند نوجوانم</button>' +
-        '<button type="button" class="hz-toolbox-choice" data-share-who="spouse">همسرم</button>' +
-        '<button type="button" class="hz-toolbox-choice" data-share-who="friend">دوستم</button>' +
-        '</div>' +
-        '<p>قدم ۲ — او در چه وضعیتی است؟</p>' +
-        '<div role="group" aria-label="او در چه وضعیتی است؟">' +
-        '<button type="button" class="hz-toolbox-choice" data-share-state="start">می‌خواهد شروع کند</button>' +
-        '<button type="button" class="hz-toolbox-choice" data-share-state="relapse">لغزش کرده و ناامید است</button>' +
-        '<button type="button" class="hz-toolbox-choice" data-share-state="science">می‌خواهد علمی بفهمد چه می‌شود</button>' +
-        '</div>' +
-        '</div>' +
-        '<div class="hz-toolbox-share-result hz-toolbox-share-result--gift" hidden></div>' +
-        '<div class="hz-toolbox-share-actions" hidden>' +
-        '<button type="button" class="hz-toolbox-share-primary" data-share-action="share">اشتراک‌گذاری</button>' +
-        '<button type="button" data-share-action="copy">کپی لینک</button>' +
-        '</div>' +
-        '</div>';
-      var who = null;
-      var state = null;
-      var resultEl = toolboxStage.querySelector('.hz-toolbox-share-result');
-      var actionsEl = toolboxStage.querySelector('.hz-toolbox-share-actions');
-      var currentUrl = '';
-      var currentTarget = null;
-      function resolveTarget() {
-        if (!who || !state) return null;
-        if (who === 'teen') return toolboxShareTargets['tark-nojavanan'];
-        if (state === 'start') return toolboxShareTargets.start;
-        if (state === 'relapse') return toolboxShareTargets.relapse;
-        return toolboxShareTargets['porn-brain'];
-      }
-      function updateShareResult() {
-        var target = resolveTarget();
-        if (!target) {
-          resultEl.setAttribute('hidden', '');
-          actionsEl.setAttribute('hidden', '');
-          return;
-        }
-        currentTarget = target;
-        currentUrl = window.location.origin + target.href;
-        resultEl.innerHTML =
-          '<h4>' +
-          target.title +
-          '</h4>' +
-          '<p>' +
-          target.desc +
-          '</p>' +
-          '<p><a href="' +
-          target.href +
-          '">مشاهدهٔ راهنما</a></p>';
-        resultEl.removeAttribute('hidden');
-        actionsEl.removeAttribute('hidden');
-        /* کارت هدیه پایینِ قدم‌هاست؛ پس از انتخاب هر دو قدم آن را به دید برگردان */
-        resultEl.scrollIntoView({ block: 'nearest' });
-      }
-      function bindChoice(attr, setValue) {
-        var btns = Array.prototype.slice.call(toolboxStage.querySelectorAll('[' + attr + ']'));
-        btns.forEach(function (btn) {
-          btn.addEventListener('click', function () {
-            btns.forEach(function (b) {
-              b.classList.remove('is-selected');
-            });
-            btn.classList.add('is-selected');
-            setValue(btn.getAttribute(attr));
-            updateShareResult();
-          });
-        });
-      }
-      bindChoice('data-share-who', function (v) {
-        who = v;
-      });
-      bindChoice('data-share-state', function (v) {
-        state = v;
-      });
-      function copyLink(btn) {
-        function done() {
-          btn.textContent = 'کپی شد';
-          window.setTimeout(function () {
-            btn.textContent = 'کپی لینک';
-          }, 2000);
-        }
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(currentUrl).then(done, function () {
-            fallbackCopy(done);
-          });
-        } else {
-          fallbackCopy(done);
-        }
-      }
-      function fallbackCopy(done) {
-        var ta = document.createElement('textarea');
-        ta.value = currentUrl;
-        ta.style.position = 'fixed';
-        ta.style.opacity = '0';
-        document.body.appendChild(ta);
-        ta.select();
-        try {
-          document.execCommand('copy');
-        } catch (e) {
-          /* کپی ناموفق؛ کاربر می‌تواند لینک را از نتیجه بردارد */
-        }
-        document.body.removeChild(ta);
-        done();
-      }
-      var shareBtn = toolboxStage.querySelector('[data-share-action="share"]');
-      var copyBtn = toolboxStage.querySelector('[data-share-action="copy"]');
-      shareBtn.addEventListener('click', function () {
-        if (navigator.share) {
-          navigator.share({ title: currentTarget.title, text: currentTarget.desc, url: currentUrl }).catch(function () {
-            copyLink(copyBtn);
-          });
-        } else {
-          copyLink(copyBtn);
-        }
-      });
-      copyBtn.addEventListener('click', function () {
-        copyLink(copyBtn);
-      });
-    }
-
-    function openDockSheet() {
-      sheet.classList.add('is-open');
-      backdrop.classList.add('is-open');
-      sheet.setAttribute('aria-hidden', 'false');
-      dockHubBtn.setAttribute('aria-expanded', 'true');
-      dockHubBtn.classList.add('is-active');
-      toolboxShowStage('assess');
-      updateReadingProgress();
-    }
-
-    function closeDockSheet() {
-      sheet.classList.remove('is-open');
-      backdrop.classList.remove('is-open');
-      sheet.setAttribute('aria-hidden', 'true');
-      dockHubBtn.setAttribute('aria-expanded', 'false');
-      dockHubBtn.classList.remove('is-active');
-      toolboxShowStage('assess');
-    }
-
-    dockHubBtn.addEventListener('click', function () {
-      if (sheet.classList.contains('is-open')) {
-        closeDockSheet();
-      } else {
-        openDockSheet();
-      }
-    });
-
-    backdrop.addEventListener('click', closeDockSheet);
-    var closeBtn = document.getElementById('hz-dock-sheet-close');
-    if (closeBtn) closeBtn.addEventListener('click', closeDockSheet);
-
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && sheet.classList.contains('is-open')) {
-        closeDockSheet();
-      }
-    });
-
-    toolboxRailTabs.forEach(function (tab) {
+    sheetEl.querySelectorAll('[data-brain-tab]').forEach(function (tab) {
       tab.addEventListener('click', function () {
-        toolboxShowStage(tab.getAttribute('data-toolbox-tool'));
+        selectBrainStation(Number(tab.getAttribute('data-brain-tab')));
       });
     });
 
-    window.addEventListener('resize', function () {
-      if (sheet.classList.contains('is-open')) toolboxPositionRailPill();
+    sheetEl.querySelectorAll('[data-brain-card-trigger]').forEach(function (head) {
+      head.addEventListener('click', function () {
+        selectBrainStation(Number(head.getAttribute('data-brain-card-trigger')));
+      });
     });
+
+    /* --- TOOL 4: برنامهٔ امشب --- */
+    var tonightRing = document.getElementById('hz-tonight-ring');
+    var tonightCountEl = document.getElementById('hz-tonight-count');
+    var tonightFeedbackEl = document.getElementById('hz-tonight-feedback');
+
+    function updateTonightDial(shouldSave, triggerScrollGuard) {
+      var checks = sheetEl.querySelectorAll('[data-tonight-check]');
+      var stateArr = [];
+      var count = 0;
+
+      checks.forEach(function (chk, idx) {
+        var checked = Boolean(chk.checked);
+        stateArr.push(checked);
+        var row = sheetEl.querySelector('[data-tonight-row="' + idx + '"]');
+        if (checked) {
+          count++;
+          if (row) row.classList.add('is-checked');
+        } else if (row) {
+          row.classList.remove('is-checked');
+        }
+      });
+
+      if (shouldSave) {
+        saveTonightState(stateArr);
+      }
+
+      var offset = RING_CIRCUMFERENCE - (count / 5) * RING_CIRCUMFERENCE;
+      if (tonightRing) {
+        tonightRing.style.strokeDashoffset = String(offset.toFixed(2));
+      }
+      if (tonightCountEl) {
+        tonightCountEl.innerHTML = '<span>' + toFaNum(count) + ' از ۵</span> <span class="hz-ring-value-sub">آماده است</span>';
+      }
+      if (triggerScrollGuard && tonightFeedbackEl && typeof tonightFeedbackEl.scrollIntoView === 'function') {
+        tonightFeedbackEl.scrollIntoView({ block: 'nearest' });
+      }
+    }
+
+    sheetEl.querySelectorAll('[data-tonight-check]').forEach(function (chk) {
+      chk.addEventListener('change', function () {
+        updateTonightDial(true, true);
+      });
+    });
+
+    /* --- TOOL 5: ارسال راهنما برای کسی دیگر --- */
+    var shareState = { who: 'self', situation: 'start' };
+    var sharePathEl = document.getElementById('hz-share-path');
+    var shareTitleEl = document.getElementById('hz-share-title');
+    var shareNoteEl = document.getElementById('hz-share-note');
+    var openGuideLink = document.getElementById('hz-link-open-guide');
+    var nativeShareBtn = document.getElementById('hz-btn-native-share');
+    var copyUrlBtn = document.getElementById('hz-btn-copy-url');
+
+    function resolveGuidePath(who, situation) {
+      if (who === 'teen') return '/tark-nojavanan.html';
+      if (situation === 'relapse') return '/relapse.html';
+      if (situation === 'science') return '/porn-brain.html';
+      return '/start.html';
+    }
+
+    function renderShareRoute() {
+      var path = resolveGuidePath(shareState.who, shareState.situation);
+      var info = SHARE_GUIDES[path] || SHARE_GUIDES['/start.html'];
+
+      if (sharePathEl) sharePathEl.textContent = info.path;
+      if (shareTitleEl) shareTitleEl.textContent = info.title;
+      if (shareNoteEl) shareNoteEl.textContent = info.note;
+      if (openGuideLink) openGuideLink.setAttribute('href', 'https://hakemzehn.ir' + info.path);
+
+      sheetEl.querySelectorAll('[data-share-who]').forEach(function (btn) {
+        var active = btn.getAttribute('data-share-who') === shareState.who;
+        btn.classList.toggle('is-selected', active);
+        btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
+
+      sheetEl.querySelectorAll('[data-share-state]').forEach(function (btn) {
+        var active = btn.getAttribute('data-share-state') === shareState.situation;
+        btn.classList.toggle('is-selected', active);
+        btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
+    }
+
+    sheetEl.querySelectorAll('[data-share-who]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        shareState.who = btn.getAttribute('data-share-who');
+        renderShareRoute();
+      });
+    });
+
+    sheetEl.querySelectorAll('[data-share-state]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        shareState.situation = btn.getAttribute('data-share-state');
+        renderShareRoute();
+      });
+    });
+
+    function copyTextWithFallback(text) {
+      if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+        return navigator.clipboard.writeText(text).catch(function () {
+          return legacyCopy(text);
+        });
+      }
+      return Promise.resolve(legacyCopy(text));
+    }
+
+    function legacyCopy(text) {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand('copy');
+      } catch (e) {
+        /* Fallback ignored */
+      }
+      document.body.removeChild(ta);
+    }
+
+    function getCurrentShareUrl() {
+      var path = resolveGuidePath(shareState.who, shareState.situation);
+      return 'https://hakemzehn.ir' + path;
+    }
+
+    if (nativeShareBtn) {
+      nativeShareBtn.addEventListener('click', function () {
+        var path = resolveGuidePath(shareState.who, shareState.situation);
+        var info = SHARE_GUIDES[path] || SHARE_GUIDES['/start.html'];
+        var fullUrl = getCurrentShareUrl();
+        if (navigator.share) {
+          navigator.share({
+            title: info.title + ' | حاکم ذهن',
+            text: info.title,
+            url: fullUrl
+          }).catch(function () {});
+        } else {
+          copyTextWithFallback(fullUrl).then(function () {
+            showToast('لینک راهنما کپی شد: ' + info.path);
+          });
+        }
+      });
+    }
+
+    if (copyUrlBtn) {
+      copyUrlBtn.addEventListener('click', function () {
+        var path = resolveGuidePath(shareState.who, shareState.situation);
+        var fullUrl = getCurrentShareUrl();
+        copyTextWithFallback(fullUrl).then(function () {
+          showToast('لینک کپی شد: ' + path);
+        });
+      });
+    }
+
+    /* Initial Hydrate */
+    updateSignsGauge(false);
+    renderCalculator();
+    updateBrainDates();
+    selectBrainStation(0);
+    updateTonightDial(false, false);
+    renderShareRoute();
+
+    window.HZToolbox = {
+      open: openSheet,
+      close: closeSheet,
+      selectTool: selectTool
+    };
   }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initToolbox);
+  } else {
+    initToolbox();
+  }
+})();
 
 
   /* ------------------------------------------------------------------------
