@@ -7872,3 +7872,316 @@ body.hz-toolbox-page {
   border-radius: 999px;
   box-shadow: 0 10px 26px rgba(0, 0, 0, 0.5);
 }
+
+/* ==========================================================================
+   11. DAY COUNTER PAGE (روزشمار روزهای بدون پورن) — added 2026-11-15, Phase 2
+   Additive only: no existing rule is modified. Uses the site tokens
+   (--bg, --surface, --line, --ink, --muted, --gold, --cyan) and the
+   warm warning tone #efb29d already used elsewhere on the site.
+   ========================================================================== */
+
+.hz-counter-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px 20px 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 560px;
+  margin-inline: auto;
+}
+
+.hz-counter-days-num {
+  font-size: clamp(3rem, 1rem + 8vw, 4.5rem);
+  font-weight: 800;
+  color: var(--gold);
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+
+.hz-counter-days-label {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.hz-counter-start {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.hz-counter-start strong {
+  color: var(--cyan);
+  font-weight: 800;
+}
+
+.hz-counter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 420px;
+  margin-inline: auto;
+  text-align: right;
+}
+
+.hz-counter-form label {
+  display: block;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-block-end: 6px;
+}
+
+.hz-counter-date {
+  font: inherit;
+  font-size: max(1rem, 1em);
+  min-height: 48px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.75rem;
+  background: var(--surface);
+  border: 1px solid var(--line-bright);
+  color: var(--ink);
+  border-radius: 12px;
+}
+
+.hz-counter-date:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.hz-counter-error {
+  color: #efb29d;
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.hz-counter-note {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+.hz-counter-milestones {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 560px;
+  margin-inline: auto;
+}
+
+.hz-counter-milestone {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 0.88rem;
+}
+
+.hz-counter-milestone .hz-counter-ms-name {
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.hz-counter-milestone .hz-counter-ms-desc {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.hz-counter-milestone .hz-counter-ms-mark {
+  color: var(--muted);
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.hz-counter-milestone.is-reached {
+  border-color: var(--gold);
+}
+
+.hz-counter-milestone.is-reached .hz-counter-ms-mark {
+  color: var(--gold);
+}
+
+.hz-counter-monster {
+  height: 10px;
+  background: #060b10;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  overflow: hidden;
+  max-width: 560px;
+  margin-inline: auto;
+}
+
+.hz-counter-monster-fill {
+  height: 100%;
+  width: var(--monster, 100%);
+  background: var(--gold);
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+
+.hz-counter-monster-label {
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-align: center;
+  max-width: 560px;
+  margin-inline: auto;
+}
+
+.hz-counter-monster-label strong {
+  color: var(--gold);
+  font-weight: 800;
+}
+
+/* ============================================================
+   12. PHASE 2 POLISH — added 2026-11-16
+   Responsive fixes + content-appeal visuals for the three
+   Phase 2 pages only. ADDITIVE — no existing rule touched.
+   ============================================================ */
+
+/* --- 12a. Tap targets: small buttons on the new pages -> 48px --- */
+#challenge-clear,
+#counter-change,
+#counter-reset {
+  min-height: 48px;
+  padding: 0 16px;
+}
+.hz-counter-form .hz-btn-primary {
+  min-height: 48px;
+}
+
+/* --- 12b. Pull-quote: one real sentence from the app, standing out --- */
+.hz-pull-quote {
+  font-family: var(--hz-font-display, 'Lalezar', 'Vazirmatn', system-ui, sans-serif);
+  font-size: clamp(1.35rem, 1.1rem + 1.2vw, 1.8rem);
+  line-height: 1.7;
+  color: var(--gold);
+  border-inline-start: 3px solid var(--gold);
+  padding-inline-start: 16px;
+  margin: 28px 0;
+}
+
+/* --- 12c. Challenge checklist: each day becomes a clear card --- */
+#challenge .hz-toolbox-check-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 16px;
+  margin: 0 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface);
+  cursor: pointer;
+}
+#challenge .hz-toolbox-check-item input[type="checkbox"] {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  accent-color: var(--gold);
+  cursor: pointer;
+}
+#challenge .hz-toolbox-check-item span strong {
+  display: block;
+  color: var(--gold);
+  font-size: 1.05rem;
+  margin-bottom: 4px;
+}
+#challenge .hz-toolbox-check-item:has(input:checked) {
+  border-color: rgba(231, 198, 139, 0.55);
+}
+#challenge .hz-toolbox-check-item:has(input:checked) span {
+  opacity: 0.72;
+}
+
+/* --- 12d. Challenge progress path: 7 dots on one line --- */
+#challenge-dots {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  max-width: 320px;
+  margin: 4px auto 24px;
+}
+#challenge-dots::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  inset-inline: 12px;
+  height: 2px;
+  transform: translateY(-50%);
+  background: var(--line);
+}
+.hz-challenge-dot {
+  position: relative;
+  z-index: 1;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid var(--muted);
+  background: var(--bg);
+}
+.hz-challenge-dot.is-done {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+/* --- 12e. Relapse cycle: 5 numbered steps on one connected line --- */
+.hz-cycle-flow {
+  list-style: none;
+  margin: 24px 0;
+  padding: 0;
+  counter-reset: cycle;
+}
+.hz-cycle-flow li {
+  position: relative;
+  padding-inline-start: 52px;
+  padding-bottom: 22px;
+}
+.hz-cycle-flow li::before {
+  counter-increment: cycle;
+  content: counter(cycle, persian);
+  position: absolute;
+  inset-inline-start: 0;
+  top: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1.5px solid var(--gold);
+  color: var(--gold);
+  background: var(--bg);
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-size: 1.05rem;
+}
+.hz-cycle-flow li::after {
+  content: '';
+  position: absolute;
+  inset-inline-start: 16px;
+  top: 38px;
+  bottom: 2px;
+  width: 2px;
+  background: var(--line);
+}
+.hz-cycle-flow li:last-child {
+  padding-bottom: 0;
+}
+.hz-cycle-flow li:last-child::after {
+  display: none;
+}
+.hz-cycle-flow li:last-child::before {
+  background: var(--gold);
+  color: var(--bg);
+}
+.hz-cycle-flow li strong {
+  color: var(--gold);
+}

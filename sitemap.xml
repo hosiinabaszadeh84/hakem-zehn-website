@@ -121,7 +121,7 @@
   </url>
   <url>
     <loc>https://hakemzehn.ir/guides.html</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
     <image:image>
@@ -170,5 +170,35 @@
     <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://hakemzehn.ir/chera-bar-migardam.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://hakemzehn.ir/assets/guide_relapse_reset_1794539082798.jpg</image:loc>
+      <image:title>چرا نمی‌توانم پورن را ترک کنم؟ علت بازگشت</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://hakemzehn.ir/challenge-7-rooz.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://hakemzehn.ir/assets/app-journey-mountain.jpg</image:loc>
+      <image:title>چالش ۷ روز بدون پورن</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://hakemzehn.ir/rooz-shomar.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://hakemzehn.ir/assets/dashboard.webp</image:loc>
+      <image:title>روزشمار روزهای بدون پورن</image:title>
+    </image:image>
   </url>
 </urlset>
