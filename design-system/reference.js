@@ -142,7 +142,7 @@
     var rafId = 0;
     var lastTs = 0;
 
-    // Normalized anatomical anchors inside hero_sovereign_brain_1794567948769.jpg
+    // Normalized anatomical anchors inside hero_sovereign_brain_1794567948769.webp
     var nodes = [
       { u: 0.465, v: 0.34, r: 3.1, kind: 'crown' }, // 0 Prefrontal Executive Crown
       { u: 0.495, v: 0.43, r: 2.6, kind: 'crown' }, // 1 Frontal Pole
@@ -1732,7 +1732,7 @@
       title: 'شست‌وشوی مغزی را باز کن، نه زور اراده را بیشتر',
       summary:
         'توی تب روش آسان، هم کتاب کامل ۱۹۸ صفحه‌ای «ترک پورنوگرافی به روش آسان» توی ۳۰ گام (۳۰ فصل) در اختیارت قرار گرفته، هم یک مسیر عملی در ۷ فاز (هر فاز ۳ وظیفه، جمعاً ۲۱ وظیفه) تا هم «هیولای کوچک» شیمیایی آروم بشه و هم «هیولای بزرگ»ِ فریب ذهنی فرو بریزه.',
-      screenshot: '/assets/curtain_illusion_break_1794517421527.jpg',
+      screenshot: '/assets/curtain_illusion_break_1794517421527.webp',
       alt: 'فضای روشن پنجرهٔ رو به صبح به نشانهٔ کنار رفتن باورهای فریبنده در روش آسان',
       caption: 'روش آسان در حاکم ذهن ۱٫۸: گام‌های ۱ تا ۵ برای همیشه رایگان است',
       landscape: true,
@@ -2939,7 +2939,7 @@
       headline: 'کتاب روش آسان روی جادهٔ کوهستانی ۳۰ قله',
       insight:
         'چهار بخش «مسیر · حقایق · تأمل · SOS» با گام‌های صفحه به صفحه (۵ فصل اول همیشه رایگان).',
-      src: '/assets/app-journey-mountain.jpg',
+      src: '/assets/app-journey-mountain.webp',
       alt: 'نمایی از مسیر کوهستانی ۳۰ فصل روش آسان در اپلیکیشن حاکم ذهن ۱٫۸',
       overlayMode: 'journey'
     },
@@ -2949,7 +2949,7 @@
       headline: 'نقشهٔ ۳بعدی کورتکس با پالس‌های کنترل اجرایی',
       insight:
         'چرخاندن لمسی و تطبیق رادار وسوسه با ساعات خطر خودت (سنجش پزشکی مغز نیست).',
-      src: '/assets/app-neural-cortex.jpg',
+      src: '/assets/app-neural-cortex.webp',
       alt: 'نمای کورتکس سه بعدی و پالس های سیناپسی در نقشه مغز اپلیکیشن حاکم ذهن ۱٫۸',
       overlayMode: 'cortex'
     },
