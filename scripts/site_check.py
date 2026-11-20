@@ -70,7 +70,7 @@ def check_link(page, link):
 
 
 def main():
-    files = sorted(ROOT.glob("*.html"))
+    files = [p for p in sorted(ROOT.glob("*.html")) if not p.name.startswith("google") or not p.name.endswith(".html")]
     report(bool(files), "No HTML files found")
     sitemap = {}
     try:
@@ -112,7 +112,7 @@ def main():
         report(parsed.scheme == "https" and parsed.netloc == DOMAIN, f"Sitemap wrong host: {url}")
         target = ROOT / (parsed.path.lstrip("/") or "index.html")
         report(target.is_file(), f"Sitemap URL without HTML file: {url}")
-        if target.is_file() and target.suffix == ".html" or parsed.path == "/":
+        if target.is_file() and (target.suffix == ".html" or parsed.path == "/"):
             report(url in all_canonicals, f"Sitemap URL not declared as canonical: {url}")
 
     if issues:
