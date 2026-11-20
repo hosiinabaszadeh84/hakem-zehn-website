@@ -1,52 +1,51 @@
 {
-  "schemaVersion": 1,
-  "lastUpdated": "1403/08/29",
+  "schema_version": 1,
+  "last_updated": "1403/08/29",
   "update": {
-    "latestVersionCode": 11,
-    "latestVersionName": "1.9.2",
-    "forceUpdate": false,
-    "titleFa": "نسخه جدید حاکمیت ذهن در مایکت",
-    "changeLogFa": [
-      "بهبود اساسی و روان‌سازی ریتم امروز و تمرکز روزانه",
-      "سیستم جدید هاب اطلاع‌رسانی ابری",
-      "بهینه‌سازی ثبت لغزش‌ها و حالات شناختی",
-      "رفع باگ‌های گزارش‌شده و ارتقای سرعت اجرای برنامه"
-    ],
-    "downloadUrlMyket": "myket://download/ir.hakemzehn.app",
-    "downloadUrlDirect": "https://myket.ir/app/ir.hakemzehn.app"
+    "latest_version_code": 11,
+    "latest_version_name": "1.9.2",
+    "min_supported_version_code": 10,
+    "force_update": false,
+    "title": "نسخه جدید حاکمیت ذهن در مایکت",
+    "message": "بهبود اساسی و روان‌سازی ریتم امروز و تمرکز روزانه، سیستم جدید هاب اطلاع‌رسانی ابری، بهینه‌سازی ثبت لغزش‌ها و حالات شناختی.",
+    "market_url": "myket://download/ir.hakemzehn.app",
+    "direct_download_url": "https://myket.ir/app/ir.hakemzehn.app"
   },
   "announcements": [
     {
       "id": "welcome_announcement_1",
-      "title": "حاکمیت ذهن آنلاین شد",
-      "body": "از این پس پیام‌ها، راهنماها و مقالات پژوهشی جدید بدون نیاز به دانلود کل برنامه مستقیماً در اختیار شما قرار می‌گیرد.",
-      "actionTitle": "اطلاعات بیشتر",
-      "actionUrl": "https://myket.ir/app/ir.hakemzehn.app",
+      "active": false,
+      "priority": 1,
       "type": "info",
-      "active": false
+      "title": "حاکمیت ذهن آنلاین شد",
+      "message": "از این پس پیام‌ها، راهنماها و مقالات پژوهشی جدید بدون نیاز به دانلود کل برنامه مستقیماً در اختیار شما قرار می‌گیرد.",
+      "action_label": "اطلاعات بیشتر",
+      "action_target": "https://myket.ir/app/ir.hakemzehn.app",
+      "dismissible": true
     }
   ],
-  "wisdom": {
-    "enabled": true,
-    "currentQuote": "پیروزی واقعی غلبه بر خشم، وسوسه و عادت‌های ویرانگر در لحظه تنهایی است.",
-    "author": "پیام آرامش و هوشیاری",
-    "deepReflection": "هر بار که در برابر یک موج وسوسه ۲ دقیقه مکث می‌کنی، یک مسیر عصبی جدید و قدرتمند در قشر پیش‌پیشانی مغزت متولد می‌شود."
+  "daily_wisdom": {
+    "active": true,
+    "quote": "پیروزی واقعی غلبه بر خشم، وسوسه و عادت‌های ویرانگر در لحظه تنهایی است.",
+    "source": "پیام آرامش و هوشیاری"
   },
-  "broadcastNotification": {
+  "broadcast_notification": {
     "id": "notif_cloud_sync_1",
+    "active": false,
     "title": "یک مکث آگاهانه برای آرامش ذهنت",
-    "bodyFriendly": "اگر درگیر افکار شلوغ یا احساس خستگی هستی، وارد برنامه شو و ۲ دقیقه تنفس متمرکز را تجربه کن.",
-    "active": false
+    "body_friendly": "اگر درگیر افکار شلوغ یا احساس خستگی هستی، وارد برنامه شو و ۲ دقیقه تنفس متمرکز را تجربه کن.",
+    "body_discreet": "یادآوری تمرین ذهن‌آگاهی روزانه",
+    "target_phase": 0
   },
-  "communityPulse": {
-    "activeWarriorsCount": 1420,
-    "collectiveSoberDays": 28450,
-    "pulseMessage": "امروز بیش از ۱,۴۰۰ همراه در مسیر تسلط بر ذهن در کنار تو ایستاده‌اند."
+  "community_pulse": {
+    "active": true,
+    "active_users_count": 1420,
+    "days_clean_total": 28450,
+    "message": "امروز بیش از ۱,۴۰۰ همراه در مسیر تسلط بر ذهن در کنار تو ایستاده‌اند."
   },
-  "researchConfig": {
-    "collectionEnabled": true,
-    "ingestEndpoint": "https://script.google.com/macros/s/AKfycbz_YOUR_SCRIPT_ID/exec",
-    "batchSize": 10,
-    "sampleRatio": 1.0
+  "research_config": {
+    "active": true,
+    "ingest_endpoint": "https://script.google.com/macros/s/AKfycbzADq6Q8fhJrzAvYIWP9vKNUyMP1xeQi7YWUkg9Fx_Dy9IFjG8bQhj_8SIxJ9jwzNUBpw/exec",
+    "batch_interval_days": 1
   }
 }
